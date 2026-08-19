@@ -1,0 +1,73 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 27 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from OpLogBatchTypesTest
+[ RUN      ] OpLogBatchTypesTest.RejectsEmptyEntries
+[       OK ] OpLogBatchTypesTest.RejectsEmptyEntries (0 ms)
+[ RUN      ] OpLogBatchTypesTest.RejectsFirstSeqMismatch
+[       OK ] OpLogBatchTypesTest.RejectsFirstSeqMismatch (0 ms)
+[ RUN      ] OpLogBatchTypesTest.RejectsLastSeqMismatch
+[       OK ] OpLogBatchTypesTest.RejectsLastSeqMismatch (0 ms)
+[ RUN      ] OpLogBatchTypesTest.RejectsNonContiguousEntrySequence
+[       OK ] OpLogBatchTypesTest.RejectsNonContiguousEntrySequence (0 ms)
+[ RUN      ] OpLogBatchTypesTest.RejectsZeroSchemaVersion
+[       OK ] OpLogBatchTypesTest.RejectsZeroSchemaVersion (0 ms)
+[ RUN      ] OpLogBatchTypesTest.AcceptsValidContiguousBatch
+[       OK ] OpLogBatchTypesTest.AcceptsValidContiguousBatch (0 ms)
+[----------] 6 tests from OpLogBatchTypesTest (0 ms total)
+
+[----------] 6 tests from OpLogBatchKeyLayoutTest
+[ RUN      ] OpLogBatchKeyLayoutTest.BuildsPaddedBatchRecordKey
+[       OK ] OpLogBatchKeyLayoutTest.BuildsPaddedBatchRecordKey (0 ms)
+[ RUN      ] OpLogBatchKeyLayoutTest.BuildsDurablePrefixKey
+[       OK ] OpLogBatchKeyLayoutTest.BuildsDurablePrefixKey (0 ms)
+[ RUN      ] OpLogBatchKeyLayoutTest.BuildsBatchRangeBounds
+[       OK ] OpLogBatchKeyLayoutTest.BuildsBatchRangeBounds (0 ms)
+[ RUN      ] OpLogBatchKeyLayoutTest.MaxBatchRangeIsEmpty
+[       OK ] OpLogBatchKeyLayoutTest.MaxBatchRangeIsEmpty (0 ms)
+[ RUN      ] OpLogBatchKeyLayoutTest.RejectsInvalidClusterId
+[       OK ] OpLogBatchKeyLayoutTest.RejectsInvalidClusterId (0 ms)
+[ RUN      ] OpLogBatchKeyLayoutTest.NormalizesTrailingSlashClusterId
+[       OK ] OpLogBatchKeyLayoutTest.NormalizesTrailingSlashClusterId (0 ms)
+[----------] 6 tests from OpLogBatchKeyLayoutTest (0 ms total)
+
+[----------] 5 tests from OpLogDurablePrefixCodecTest
+[ RUN      ] OpLogDurablePrefixCodecTest.RoundTripsZeroPrefix
+[       OK ] OpLogDurablePrefixCodecTest.RoundTripsZeroPrefix (0 ms)
+[ RUN      ] OpLogDurablePrefixCodecTest.RoundTripsNonZeroPrefix
+[       OK ] OpLogDurablePrefixCodecTest.RoundTripsNonZeroPrefix (0 ms)
+[ RUN      ] OpLogDurablePrefixCodecTest.RejectsMalformedPayload
+[       OK ] OpLogDurablePrefixCodecTest.RejectsMalformedPayload (0 ms)
+[ RUN      ] OpLogDurablePrefixCodecTest.RejectsMalformedTypedFieldsWithoutThrowing
+[       OK ] OpLogDurablePrefixCodecTest.RejectsMalformedTypedFieldsWithoutThrowing (0 ms)
+[ RUN      ] OpLogDurablePrefixCodecTest.RejectsUnsupportedSchemaVersion
+[       OK ] OpLogDurablePrefixCodecTest.RejectsUnsupportedSchemaVersion (0 ms)
+[----------] 5 tests from OpLogDurablePrefixCodecTest (0 ms total)
+
+[----------] 10 tests from OpLogBatchRecordCodecTest
+[ RUN      ] OpLogBatchRecordCodecTest.RoundTripsSingleEntryBatch
+[       OK ] OpLogBatchRecordCodecTest.RoundTripsSingleEntryBatch (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.EncodesCompactArraySchema
+[       OK ] OpLogBatchRecordCodecTest.EncodesCompactArraySchema (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RebuildsNonPersistedEntryFields
+[       OK ] OpLogBatchRecordCodecTest.RebuildsNonPersistedEntryFields (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RoundTripsMultiEntryBatch
+[       OK ] OpLogBatchRecordCodecTest.RoundTripsMultiEntryBatch (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RejectsCorruptedChecksum
+[       OK ] OpLogBatchRecordCodecTest.RejectsCorruptedChecksum (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RejectsMalformedTypedFieldsWithoutThrowing
+[       OK ] OpLogBatchRecordCodecTest.RejectsMalformedTypedFieldsWithoutThrowing (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RejectsWrongElementCount
+[       OK ] OpLogBatchRecordCodecTest.RejectsWrongElementCount (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RejectsCorruptedSequenceContinuity
+[       OK ] OpLogBatchRecordCodecTest.RejectsCorruptedSequenceContinuity (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RejectsUnsupportedSchemaVersion
+[       OK ] OpLogBatchRecordCodecTest.RejectsUnsupportedSchemaVersion (0 ms)
+[ RUN      ] OpLogBatchRecordCodecTest.RejectsInvalidBase64Payload
+[       OK ] OpLogBatchRecordCodecTest.RejectsInvalidBase64Payload (0 ms)
+[----------] 10 tests from OpLogBatchRecordCodecTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 27 tests from 4 test suites ran. (0 ms total)
+[  PASSED  ] 27 tests.

@@ -1,0 +1,14 @@
+{
+  "problemId": "base-speedup",
+  "lastActivity": "2026-08-19T19:02:46.206Z",
+  "sessions": [
+    {
+      "timestamp": "2026-08-19T19-01-22-120Z",
+      "category": "tests",
+      "command": "test",
+      "status": "failed",
+      "duration": 84085,
+      "error": "3 test(s) failed or partially passed"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "task": {
+        "path": "tasks/training-task-samples/attribution-speedup"
+    },
+    "trial_name": "attribution-speedup__ccHam3J",
+    "trials_dir": "/home/ubuntu/jobs/x86/attribution-speedup/2026-08-18__09-50-56",
+    "agent": {
+        "name": "claude-code",
+        "model_name": "claude-opus-5",
+        "extra_allowed_hosts": [
+            "api.anthropic.com",
+            "statsig.anthropic.com",
+            "sentry.io"
+        ]
+    },
+    "job_id": "79676d1f-318f-48b7-bcc0-43867c13850a"
+}

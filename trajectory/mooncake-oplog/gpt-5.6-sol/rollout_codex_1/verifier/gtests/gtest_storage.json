@@ -1,0 +1,273 @@
+{
+  "tests": 24,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-19T18:53:18Z",
+  "time": "0s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "OpLogBatchStorageTest",
+      "tests": 21,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T18:53:18Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "InitializesEmptyNamespaceAtZero",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 141,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsLegacyLatest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 159,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsLegacyEntry",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 168,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsLegacySnapshotSidecar",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 178,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "InitDurablePrefixFailsClosedWhenBatchesExist",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 188,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsInvalidClusterId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 199,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RereadsDurablePrefixWhenCreateIfAbsentLosesRace",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 207,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "UsesExistingDurablePrefixWithoutReadingLatest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 221,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "WriteBatchAndAdvancePrefixCommitsAtomically",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 235,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "CompareFailureDoesNotWriteBatchOrAdvancePrefix",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 261,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "CompareFailureIsOkWhenTargetBatchAlreadyDurable",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 284,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsSkippedBatchId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 300,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsSkippedSequenceRange",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 313,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsRegressedSequenceRange",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 326,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "RejectsMaxDurablePrefixAdvance",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 339,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "NonTxnBackendRejectsWriteBatchAndAdvancePrefix",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 353,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "ReadBatchRejectsCorruptedRecord",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 364,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "ReadBatchesAfterReturnsOrderedBatches",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 380,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "ReadBatchesAfterSkipsNonBatchKeysInRange",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 399,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "ReadBatchesAfterLimitCountsOnlyBatchKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 416,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        },
+        {
+          "name": "ReadBatchesAfterHonorsLimit",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 441,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageTest"
+        }
+      ]
+    },
+    {
+      "name": "OpLogBatchStorageBackendErrorTest",
+      "tests": 3,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T18:53:18Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "PropagatesReadDurablePrefixError",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 459,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageBackendErrorTest"
+        },
+        {
+          "name": "PropagatesRangeError",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 469,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageBackendErrorTest"
+        },
+        {
+          "name": "TxnErrorDoesNotAdvanceDurablePrefix",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_storage_test.cpp",
+          "line": 481,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogBatchStorageBackendErrorTest"
+        }
+      ]
+    }
+  ]
+}

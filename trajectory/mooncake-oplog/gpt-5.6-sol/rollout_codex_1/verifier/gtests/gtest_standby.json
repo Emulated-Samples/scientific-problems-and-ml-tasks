@@ -1,0 +1,544 @@
+{
+  "tests": 43,
+  "failures": 1,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-19T18:53:18Z",
+  "time": "10.094s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "HotStandbyServiceTest",
+      "tests": 35,
+      "failures": 1,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T18:53:18Z",
+      "time": "10.033s",
+      "testsuite": [
+        {
+          "name": "TestStart",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 116,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:120\nRequires real etcd connection, run in integration environment.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestStart_AlreadyRunning",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 130,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:132\nRequires real etcd connection to verify double start semantics.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestStart_InvalidEtcdEndpoints",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 146,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:148\nRequires real etcd to simulate invalid endpoints.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestStop",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 157,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestStop_WhenNotRunning",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 163,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestStateTransition_StartToWatching",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 172,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:174\nRequires real etcd to drive full state transition to WATCHING.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestStateTransition_ConnectionFailed",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 187,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:189\nConnection failure requires real etcd and invalid endpoints.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestStateTransition_SyncFailed",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 200,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:202\nSync failure requires real etcd and OpLog watcher behavior.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestGetSyncStatus_InitialState",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 215,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestGetSyncStatus_AfterSync",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 225,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:227\nRequires real etcd and OpLog activity to change sync status.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestGetSyncStatus",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 238,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestPromote_WhenNotReady",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 248,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestPromote_WhenReady",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 255,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestPromoteAndExportSnapshot_FinalCatchUp",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 264,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestWarmStart_WithLocalState",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 307,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:309\nRequires real etcd and pre-populated local metadata to test warm start.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestWarmStart_WithoutLocalState",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 318,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:320\nRequires real etcd and snapshot provider configuration.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestWarmStart_WithSnapshot",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 327,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:329\nRequires snapshot provider and real etcd to exercise snapshot bootstrap.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestStart_SnapshotOnlyWithSnapshot",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 340,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 368,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestStart_SnapshotOnlyWhenProviderFails",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 401,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestGetMetadataCount",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 416,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestExportMetadataSnapshot",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 420,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestGetLatestAppliedSequenceId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 426,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestExportStandbySnapshot_NotRunning",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 433,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "failures": [
+            {
+              "failure": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:435\nValue of: service_->ExportStandbySnapshot(snapshot)\n  Actual: true\nExpected: false\n",
+              "type": ""
+            }
+          ]
+        },
+        {
+          "name": "TestExportStandbySnapshot_SnapshotOnly",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 438,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestExportStandbySnapshot_Empty",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 452,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "TestReplicationLoop_UpdatesMetrics",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 472,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:474\nRequires real etcd and running replication loop to update metrics.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestReplicationLoop_HandlesDisconnect",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 484,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:486\nRequires real etcd and watcher disconnect to exercise disconnect path.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestVerificationLoop_WhenEnabled",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 497,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:499\nRequires real etcd and running verification loop to observe behavior.\n"
+            }
+          ]
+        },
+        {
+          "name": "TestVerificationLoop_WhenDisabled",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 510,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:514\nRequires real etcd connection to start service.\n"
+            }
+          ]
+        },
+        {
+          "name": "BatchRecordStandbyPollsInjectedBackendWithoutNotifier",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 623,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "BatchRecordRetriesTransientBackendFailure",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 654,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0.01s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "BatchRecordRetryTimeoutTransitionsToFailed",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 689,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0.01s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "BatchRecordCanRestartAfterRetryTimeout",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 714,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0.01s",
+          "classname": "HotStandbyServiceTest"
+        },
+        {
+          "name": "BatchRecordStandbyPollsDurablePrefixInReplicationLoop",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 759,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "10.002s",
+          "classname": "HotStandbyServiceTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp:775\netcd is unavailable: ETCD_OPERATION_ERROR\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PromotionCatchUpTest",
+      "tests": 8,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T18:53:28Z",
+      "time": "0.06s",
+      "testsuite": [
+        {
+          "name": "UsesDurablePrefixLastSeqAsCatchUpTarget",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 805,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "RetriesTransientDurablePrefixReadFailure",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 827,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0.02s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "MissingDurablePrefixPromotesAtSequenceZero",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 847,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "MissingDurablePrefixRejectsNonzeroSequence",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 856,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "CatchesUpPrefixThatAppearsBeforePromotion",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 872,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "PaginatesBatchRecords",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 889,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0.018s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "FailsPromotionWhenDurablePrefixUnreadable",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 916,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0.02s",
+          "classname": "PromotionCatchUpTest"
+        },
+        {
+          "name": "FailsPromotionWhenTargetBatchUnreadable",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/hot_standby_service_test.cpp",
+          "line": 927,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:28Z",
+          "time": "0s",
+          "classname": "PromotionCatchUpTest"
+        }
+      ]
+    }
+  ]
+}

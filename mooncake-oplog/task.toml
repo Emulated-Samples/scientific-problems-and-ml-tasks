@@ -1,0 +1,32 @@
+schema_version = "1.3"
+
+[task]
+name = "emulated/mooncake-oplog"
+description = "Implement Mooncake Store's batch-record HA OpLog subsystem from RFC 2756 against a fixed interface contract: JSON+base64 batch codec, txn/CAS batch storage with legacy-cutover initialization, the fail-closed OrderedOpLogWriter (Reserve/Commit/Abort, no sequence gaps, no batch overtaking, in-order durable callbacks), the strict no-gap standby reader/applier, and full MasterService/HotStandbyService integration (visible-before-durable vs finalize-after-durable, REMOVED-replica exclusion, standby promotion catch-up, snapshot bootstrap, allocator-state restore) — graded by the upstream deterministic CPU-only gtest suites."
+keywords = ["cpp", "distributed-storage", "kv-cache", "durability", "write-ahead-log", "high-availability", "crash-recovery", "distributed-protocol", "mooncake"]
+
+[metadata]
+difficulty = "hard"
+category = "systems-distributed-durability"
+bug_class = "missing-feature,durability-protocol,ordered-write-ahead-log,fail-closed-recovery,distributed-state-machine"
+min_replay_score = 0.9
+
+[agent]
+timeout_sec = 86400.0
+network_mode = "allowlist"
+allowed_hosts = ["api.anthropic.com", "statsig.anthropic.com", "sentry.io", "api.openai.com", "chatgpt.com", "auth.openai.com"]
+user = "agent"
+
+[verifier]
+timeout_sec = 3000.0
+environment_mode = "shared"
+network_mode = "no-network"
+user = "root"
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 3600.0
+cpus = 16
+memory_mb = 65536
+storage_mb = 65536
+workdir = "/workspace"

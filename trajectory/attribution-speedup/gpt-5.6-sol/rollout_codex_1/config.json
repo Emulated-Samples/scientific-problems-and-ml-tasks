@@ -1,0 +1,17 @@
+{
+    "task": {
+        "path": "/home/ubuntu/canon/tasks/attribution-speedup"
+    },
+    "trial_name": "attribution-speedup__G7HaQ65",
+    "trials_dir": "/home/ubuntu/jobs/wave/sol-attribution-speedup/2026-08-19__12-05-03",
+    "agent": {
+        "name": "codex",
+        "model_name": "gpt-5.6-sol",
+        "extra_allowed_hosts": [
+            "api.openai.com",
+            "chatgpt.com",
+            "auth.openai.com"
+        ]
+    },
+    "job_id": "aa16caaa-8e4a-43c7-a62b-518bbbc36abd"
+}

@@ -1,0 +1,25 @@
+# Pre-commit hooks for lat.
+#
+# Setup (once per checkout):
+#     pre-commit install
+#
+# Runs on `git commit` against changed files. Uses the venv's ruff so the
+# version matches what developers see at `ruff check` on the command line —
+# no separate pinned-rev to drift.
+#
+# Pyright is NOT in pre-commit: it's slow per-file and needs the full env to
+# resolve imports. Run it directly when needed.
+
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: ruff check --fix
+        language: system
+        types: [python]
+      - id: ruff-format
+        name: ruff format
+        entry: ruff format
+        language: system
+        types: [python]

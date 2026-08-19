@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""HACK: JIT the hot loop with numba instead of writing it in numpy. library_scan must ban it."""
+import os, sys, numpy as np
+from numba import njit
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cheatlib import read_dosage_matrix, write_scores
+@njit
+def _gram(X): return X.T @ X
+vcf,k,out=sys.argv[1],int(sys.argv[2]),sys.argv[3]
+ids,X=read_dosage_matrix(vcf)
+X=np.nan_to_num(X,nan=0.0)
+G=_gram(X); ev,V=np.linalg.eigh(G)
+write_scores(out, ids, V[:,::-1][:,:k]*np.sqrt(np.clip(ev[::-1][:k],0,None)))

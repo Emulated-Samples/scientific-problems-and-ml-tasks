@@ -1,0 +1,192 @@
+{
+  "tests": 17,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-18T10:49:41Z",
+  "time": "0s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "HAMetricManagerTest",
+      "tests": 17,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:41Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "TestSetOpLogLastSequenceId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 27,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestSetOpLogAppliedSequenceId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 32,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestSetOpLogStandbyLag",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 37,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestSetOpLogPendingEntries",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 42,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestSetPendingMutationQueueSize",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 47,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestIncOpLogSkippedEntries",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 52,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestIncOpLogChecksumFailures",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 58,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestIncGapResolveCounters",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 64,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestIncOpLogEtcdWriteFailuresAndRetries",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 75,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestIncWatchDisconnectionsAndAppliedEntries",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 86,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestRecordOpLogEtcdWriteLatency",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 97,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestRecordOpLogApplyLatency",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 104,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "BatchRecordMetricsAreAbsentWhenDisabled",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 156,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestSerializeMetrics",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 164,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestGetSummaryString",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 178,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestSingletonInstance",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 192,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        },
+        {
+          "name": "TestConcurrentAccess",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/standby\/ha_metric_manager_test.cpp",
+          "line": 202,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:41Z",
+          "time": "0s",
+          "classname": "HAMetricManagerTest"
+        }
+      ]
+    }
+  ]
+}

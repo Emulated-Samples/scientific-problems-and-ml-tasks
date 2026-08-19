@@ -1,0 +1,84 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 24 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 21 tests from OpLogBatchStorageTest
+[ RUN      ] OpLogBatchStorageTest.InitializesEmptyNamespaceAtZero
+[       OK ] OpLogBatchStorageTest.InitializesEmptyNamespaceAtZero (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsLegacyLatest
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E0818 10:49:23.279016 918210 oplog_batch_storage.cpp:87] Batch OpLog refuses to start on a legacy namespace: /oplog/clusterA/latest exists
+[       OK ] OpLogBatchStorageTest.RejectsLegacyLatest (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsLegacyEntry
+E0818 10:49:23.279033 918210 oplog_batch_storage.cpp:104] Batch OpLog refuses to start on a legacy namespace: per-entry key /oplog/clusterA/00000000000000000042 exists
+[       OK ] OpLogBatchStorageTest.RejectsLegacyEntry (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsLegacySnapshotSidecar
+E0818 10:49:23.279039 918210 oplog_batch_storage.cpp:119] Batch OpLog refuses to start on a legacy namespace: snapshot key /oplog/clusterA/snapshot/old/sequence_id exists
+[       OK ] OpLogBatchStorageTest.RejectsLegacySnapshotSidecar (0 ms)
+[ RUN      ] OpLogBatchStorageTest.InitDurablePrefixFailsClosedWhenBatchesExist
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_storage_test.cpp:196: Failure
+Expected equality of these values:
+  ErrorCode::INTERNAL_ERROR
+    Which is: INTERNAL_ERROR
+  storage.InitDurablePrefix(prefix)
+    Which is: OK
+
+[  FAILED  ] OpLogBatchStorageTest.InitDurablePrefixFailsClosedWhenBatchesExist (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsInvalidClusterId
+E0818 10:49:23.279096 918210 oplog_batch_storage.cpp:129] Batch OpLog storage has an invalid cluster_id
+[       OK ] OpLogBatchStorageTest.RejectsInvalidClusterId (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RereadsDurablePrefixWhenCreateIfAbsentLosesRace
+[       OK ] OpLogBatchStorageTest.RereadsDurablePrefixWhenCreateIfAbsentLosesRace (0 ms)
+[ RUN      ] OpLogBatchStorageTest.UsesExistingDurablePrefixWithoutReadingLatest
+[       OK ] OpLogBatchStorageTest.UsesExistingDurablePrefixWithoutReadingLatest (0 ms)
+[ RUN      ] OpLogBatchStorageTest.WriteBatchAndAdvancePrefixCommitsAtomically
+[       OK ] OpLogBatchStorageTest.WriteBatchAndAdvancePrefixCommitsAtomically (0 ms)
+[ RUN      ] OpLogBatchStorageTest.CompareFailureDoesNotWriteBatchOrAdvancePrefix
+[       OK ] OpLogBatchStorageTest.CompareFailureDoesNotWriteBatchOrAdvancePrefix (0 ms)
+[ RUN      ] OpLogBatchStorageTest.CompareFailureIsOkWhenTargetBatchAlreadyDurable
+W0818 10:49:23.279258 918210 oplog_batch_storage.cpp:297] Batch OpLog transaction reported failure but the batch is durable, batch_id=2
+[       OK ] OpLogBatchStorageTest.CompareFailureIsOkWhenTargetBatchAlreadyDurable (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsSkippedBatchId
+E0818 10:49:23.279268 918210 oplog_batch_storage.cpp:234] Batch record is discontinuous with the durable prefix: batch_id=3, first_seq=4, prefix.batch_id=1, prefix.last_seq=3
+[       OK ] OpLogBatchStorageTest.RejectsSkippedBatchId (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsSkippedSequenceRange
+E0818 10:49:23.279274 918210 oplog_batch_storage.cpp:234] Batch record is discontinuous with the durable prefix: batch_id=2, first_seq=5, prefix.batch_id=1, prefix.last_seq=3
+[       OK ] OpLogBatchStorageTest.RejectsSkippedSequenceRange (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsRegressedSequenceRange
+E0818 10:49:23.279280 918210 oplog_batch_storage.cpp:234] Batch record is discontinuous with the durable prefix: batch_id=2, first_seq=3, prefix.batch_id=1, prefix.last_seq=3
+[       OK ] OpLogBatchStorageTest.RejectsRegressedSequenceRange (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsMaxDurablePrefixAdvance
+E0818 10:49:23.279289 918210 oplog_batch_storage.cpp:224] Refusing to persist malformed batch record: batch_id must be non-zero
+[       OK ] OpLogBatchStorageTest.RejectsMaxDurablePrefixAdvance (0 ms)
+[ RUN      ] OpLogBatchStorageTest.NonTxnBackendRejectsWriteBatchAndAdvancePrefix
+E0818 10:49:23.279292 918210 oplog_batch_storage.cpp:218] Batch-record HA OpLog requires a transactional backend
+[       OK ] OpLogBatchStorageTest.NonTxnBackendRejectsWriteBatchAndAdvancePrefix (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchRejectsCorruptedRecord
+E0818 10:49:23.279312 918210 oplog_batch_storage.cpp:319] Failed to decode batch record 1: batch record checksum mismatch
+[       OK ] OpLogBatchStorageTest.ReadBatchRejectsCorruptedRecord (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterReturnsOrderedBatches
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterReturnsOrderedBatches (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterSkipsNonBatchKeysInRange
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterSkipsNonBatchKeysInRange (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterLimitCountsOnlyBatchKeys
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterLimitCountsOnlyBatchKeys (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterHonorsLimit
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterHonorsLimit (0 ms)
+[----------] 21 tests from OpLogBatchStorageTest (0 ms total)
+
+[----------] 3 tests from OpLogBatchStorageBackendErrorTest
+[ RUN      ] OpLogBatchStorageBackendErrorTest.PropagatesReadDurablePrefixError
+[       OK ] OpLogBatchStorageBackendErrorTest.PropagatesReadDurablePrefixError (0 ms)
+[ RUN      ] OpLogBatchStorageBackendErrorTest.PropagatesRangeError
+[       OK ] OpLogBatchStorageBackendErrorTest.PropagatesRangeError (0 ms)
+[ RUN      ] OpLogBatchStorageBackendErrorTest.TxnErrorDoesNotAdvanceDurablePrefix
+[       OK ] OpLogBatchStorageBackendErrorTest.TxnErrorDoesNotAdvanceDurablePrefix (0 ms)
+[----------] 3 tests from OpLogBatchStorageBackendErrorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 24 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 23 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] OpLogBatchStorageTest.InitDurablePrefixFailsClosedWhenBatchesExist
+
+ 1 FAILED TEST

@@ -1,0 +1,205 @@
+{
+  "tests": 16,
+  "failures": 2,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-18T10:55:36Z",
+  "time": "2.063s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "BufferAllocatorTest",
+      "tests": 12,
+      "failures": 2,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:55:36Z",
+      "time": "2.063s",
+      "testsuite": [
+        {
+          "name": "AllocateAndDeallocate",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 65,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "AllocateMultiple",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 87,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RestoreOffsetAllocationsAtOriginalAddresses",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 114,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RestoreOffsetAllocationsValidatesRangesAndOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 170,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0s",
+          "classname": "BufferAllocatorTest",
+          "failures": [
+            {
+              "failure": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp:202\nValue of: RestoreOffsetBufferAllocator( segment, std::numeric_limits<size_t>::max() - 100, 200, endpoint, {}) .has_value()\n  Actual: true\nExpected: false\n",
+              "type": ""
+            }
+          ]
+        },
+        {
+          "name": "RestoredOffsetHandleReleasesItsExactAddress",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 213,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RestoreOffsetAllocationsHasNoArbitraryGapLimit",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 230,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0.036s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RestoreCachelibAllocationsAtOriginalAddresses",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 248,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0.004s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RestoreCachelibAllocationsRejectsInvalidLayouts",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 298,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0.001s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RestoreCachelibRejectsNonMemoryDescriptors",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 351,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0.004s",
+          "classname": "BufferAllocatorTest",
+          "failures": [
+            {
+              "failure": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp:374\nExpected equality of these values:\n  restored.protocol_\n    Which is: \"tcp\"\n  descriptors[0].protocol_\n    Which is: \"rdma\"\n",
+              "type": ""
+            }
+          ]
+        },
+        {
+          "name": "AllocateTooLarge",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 380,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0.001s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "RepeatAllocateAndDeallocate",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 397,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "0.013s",
+          "classname": "BufferAllocatorTest"
+        },
+        {
+          "name": "ParallelAllocation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 416,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:36Z",
+          "time": "2s",
+          "classname": "BufferAllocatorTest"
+        }
+      ]
+    },
+    {
+      "name": "SimpleAllocatorTest",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:55:38Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "BasicAllocationAndDeallocation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 486,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:38Z",
+          "time": "0s",
+          "classname": "SimpleAllocatorTest"
+        },
+        {
+          "name": "MultipleAllocations",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 507,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:38Z",
+          "time": "0s",
+          "classname": "SimpleAllocatorTest"
+        },
+        {
+          "name": "AllocationTooLarge",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 530,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:38Z",
+          "time": "0s",
+          "classname": "SimpleAllocatorTest"
+        },
+        {
+          "name": "StressTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/buffer_allocator_test.cpp",
+          "line": 539,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:55:38Z",
+          "time": "0s",
+          "classname": "SimpleAllocatorTest"
+        }
+      ]
+    }
+  ]
+}

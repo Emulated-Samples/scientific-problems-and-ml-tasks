@@ -1,0 +1,41 @@
+version = "1.0"
+
+[metadata]
+source = "emulated"
+environment = "lat-bench"
+branch = "problem/base-speedup"
+problem_id = "base-speedup"
+difficulty = "medium"
+tags = [ "emulated" ]
+min_replay_score = 0.90
+
+[agent]
+timeout_sec = 86400
+user = "agent"
+network_mode = "allowlist"
+allowed_hosts = [ "api.anthropic.com", "statsig.anthropic.com", "sentry.io", "api.openai.com", "chatgpt.com", "auth.openai.com" ]
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+user = "root"
+
+[verifier.env]
+# Grade fully offline against the HF cache baked at image build time (see
+# environment/warmup-hf-cache.py). The verifier runs no-network; these force
+# the HF hub client to resolve gelu-2l from the local cache without any
+# network probe, even if egress were available.
+HF_HUB_OFFLINE = "1"
+TRANSFORMERS_OFFLINE = "1"
+
+[solution.env]
+[environment]
+# With this commented out, it builds from source by default. For the optional prebuilt image, contact us at founders@emulated.so.
+build_timeout_sec = 2700
+cpus = 4
+memory_mb = 16384
+storage_mb = 20480
+gpus = 0
+network_mode = "public"
+workdir = "/hyperfocal/env/workspace"
+mcp_servers = []

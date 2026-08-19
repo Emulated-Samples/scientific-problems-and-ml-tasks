@@ -1,0 +1,18 @@
+{
+    "task": {
+        "path": "/home/ubuntu/canon/tasks/population-genetics-pca"
+    },
+    "trial_name": "population-genetics-pca__tAyHYZ3",
+    "trials_dir": "/home/ubuntu/jobs/wave/sol-population-genetics-pca/2026-08-19__16-09-35",
+    "agent_timeout_multiplier": 0.1,
+    "agent": {
+        "name": "codex",
+        "model_name": "gpt-5.6-sol",
+        "extra_allowed_hosts": [
+            "api.openai.com",
+            "chatgpt.com",
+            "auth.openai.com"
+        ]
+    },
+    "job_id": "889efc14-e5aa-45b3-b972-2ba392bb8f1c"
+}

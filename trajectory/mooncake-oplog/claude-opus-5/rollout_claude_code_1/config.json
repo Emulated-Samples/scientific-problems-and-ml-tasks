@@ -1,0 +1,17 @@
+{
+    "task": {
+        "path": "tasks/benchmark-task-samples/mooncake-oplog"
+    },
+    "trial_name": "mooncake-oplog__jDNrzKL",
+    "trials_dir": "/home/ubuntu/jobs/x86/mooncake-oplog/2026-08-18__09-03-34",
+    "agent": {
+        "name": "claude-code",
+        "model_name": "claude-opus-5",
+        "extra_allowed_hosts": [
+            "api.anthropic.com",
+            "statsig.anthropic.com",
+            "sentry.io"
+        ]
+    },
+    "job_id": "436c87d3-a62a-4f34-b36f-4e71e014d412"
+}

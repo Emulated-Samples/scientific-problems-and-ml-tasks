@@ -1,0 +1,14 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from OpLogTestFailPointTest
+[ RUN      ] OpLogTestFailPointTest.UnarmedPointReturnsImmediately
+[       OK ] OpLogTestFailPointTest.UnarmedPointReturnsImmediately (0 ms)
+[ RUN      ] OpLogTestFailPointTest.CreatesHitAndWaitsForRelease
+[       OK ] OpLogTestFailPointTest.CreatesHitAndWaitsForRelease (10 ms)
+[----------] 2 tests from OpLogTestFailPointTest (10 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (10 ms total)
+[  PASSED  ] 2 tests.

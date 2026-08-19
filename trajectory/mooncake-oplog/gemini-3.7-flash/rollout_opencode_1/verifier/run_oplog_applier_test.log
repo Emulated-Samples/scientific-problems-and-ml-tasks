@@ -1,0 +1,136 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 27 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 27 tests from OpLogApplierTest
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd
+[       OK ] OpLogApplierTest.TestApplyPutEnd (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutRevoke
+[       OK ] OpLogApplierTest.TestApplyPutRevoke (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyRemove
+[       OK ] OpLogApplierTest.TestApplyRemove (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_InvalidOpType
+[       OK ] OpLogApplierTest.TestApplyOpLogEntry_InvalidOpType (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyInOrder
+[       OK ] OpLogApplierTest.TestApplyInOrder (0 ms)
+[ RUN      ] OpLogApplierTest.FutureSequenceFailsWithoutBuffering
+[       OK ] OpLogApplierTest.FutureSequenceFailsWithoutBuffering (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyDuplicateSequenceId
+[       OK ] OpLogApplierTest.TestApplyDuplicateSequenceId (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_ValidChecksum
+[       OK ] OpLogApplierTest.TestApplyOpLogEntry_ValidChecksum (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_InvalidChecksum
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:202: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:203: Failure
+Expected equality of these values:
+  1u
+    Which is: 1
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:204: Failure
+Value of: mock_metadata_store_->Exists("key1")
+  Actual: true
+Expected: false
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidChecksum (0 ms)
+[ RUN      ] OpLogApplierTest.TestChecksumFailureMetric
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:214: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+[  FAILED  ] OpLogApplierTest.TestChecksumFailureMetric (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_ValidSize
+[       OK ] OpLogApplierTest.TestApplyOpLogEntry_ValidSize (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_InvalidSize
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:235: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:236: Failure
+Expected equality of these values:
+  1u
+    Which is: 1
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidSize (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_PayloadTooLarge
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:247: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:248: Failure
+Expected equality of these values:
+  1u
+    Which is: 1
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_PayloadTooLarge (4 ms)
+[ RUN      ] OpLogApplierTest.TestRecover
+[       OK ] OpLogApplierTest.TestRecover (0 ms)
+[ RUN      ] OpLogApplierTest.TestRecover_ZeroSequenceId
+[       OK ] OpLogApplierTest.TestRecover_ZeroSequenceId (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd_ValidPayload
+[       OK ] OpLogApplierTest.TestApplyPutEnd_ValidPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd_InvalidPayload
+[       OK ] OpLogApplierTest.TestApplyPutEnd_InvalidPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd_EmptyPayload
+[       OK ] OpLogApplierTest.TestApplyPutEnd_EmptyPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntries_Batch
+[       OK ] OpLogApplierTest.TestApplyOpLogEntries_Batch (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntries_WithGaps
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:350: Failure
+Expected equality of these values:
+  2u
+    Which is: 2
+  applied
+    Which is: 1
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:351: Failure
+Expected equality of these values:
+  3u
+    Which is: 3
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:353: Failure
+Value of: mock_metadata_store_->Exists("key2")
+  Actual: false
+Expected: true
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntries_WithGaps (0 ms)
+[ RUN      ] OpLogApplierTest.TestGetExpectedSequenceId
+[       OK ] OpLogApplierTest.TestGetExpectedSequenceId (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentMount
+[       OK ] OpLogApplierTest.TestApplySegmentMount (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentUnmount
+[       OK ] OpLogApplierTest.TestApplySegmentUnmount (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentUpdate
+[       OK ] OpLogApplierTest.TestApplySegmentUpdate (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentMount_InvalidPayload
+[       OK ] OpLogApplierTest.TestApplySegmentMount_InvalidPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentUnmount_NonExistent
+[       OK ] OpLogApplierTest.TestApplySegmentUnmount_NonExistent (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentOperations_Mixed
+[       OK ] OpLogApplierTest.TestApplySegmentOperations_Mixed (0 ms)
+[----------] 27 tests from OpLogApplierTest (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 27 tests from 1 test suite ran. (4 ms total)
+[  PASSED  ] 22 tests.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidChecksum
+[  FAILED  ] OpLogApplierTest.TestChecksumFailureMetric
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidSize
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_PayloadTooLarge
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntries_WithGaps
+
+ 5 FAILED TESTS

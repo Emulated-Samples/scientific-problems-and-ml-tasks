@@ -1,0 +1,512 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 43 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 35 tests from HotStandbyServiceTest
+[ RUN      ] HotStandbyServiceTest.TestStart
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:120: Skipped
+Requires real etcd connection, run in integration environment.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_AlreadyRunning
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:132: Skipped
+Requires real etcd connection to verify double start semantics.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart_AlreadyRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:148: Skipped
+Requires real etcd to simulate invalid endpoints.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStop
+[       OK ] HotStandbyServiceTest.TestStop (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStop_WhenNotRunning
+[       OK ] HotStandbyServiceTest.TestStop_WhenNotRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_StartToWatching
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:174: Skipped
+Requires real etcd to drive full state transition to WATCHING.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_StartToWatching (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:189: Skipped
+Connection failure requires real etcd and invalid endpoints.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_SyncFailed
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:202: Skipped
+Sync failure requires real etcd and OpLog watcher behavior.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_SyncFailed (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus_InitialState
+[       OK ] HotStandbyServiceTest.TestGetSyncStatus_InitialState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:227: Skipped
+Requires real etcd and OpLog activity to change sync status.
+
+[  SKIPPED ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus
+[       OK ] HotStandbyServiceTest.TestGetSyncStatus (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromote_WhenNotReady
+E0818 10:49:35.616590 918282 hot_standby_service.cpp:635] Standby is not ready for promotion, state=STOPPED
+[       OK ] HotStandbyServiceTest.TestPromote_WhenNotReady (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromote_WhenReady
+I0818 10:49:35.616611 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616612 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616699 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616703 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616704 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616708 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1, segments=0
+I0818 10:49:35.616710 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=42, expected_sequence_id set to=43
+I0818 10:49:35.616712 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616714 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616714 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0818 10:49:35.616716 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:35.616719 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:35.616719 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 42, lag: 0 entries, state: PROMOTING
+I0818 10:49:35.616720 918282 hot_standby_service.cpp:503] Promotion does not require final OpLog catch-up
+I0818 10:49:35.616721 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:35.616724 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:35.616726 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:35.616727 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:35.616729 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:35.616730 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=42, objects=1, segments=0
+[       OK ] HotStandbyServiceTest.TestPromote_WhenReady (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromoteAndExportSnapshot_FinalCatchUp
+I0818 10:49:35.616735 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616736 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616737 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616739 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616739 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616740 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=snap-001, snapshot_seq_id=10, keys=1, segments=0
+I0818 10:49:35.616742 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=10, expected_sequence_id set to=11
+I0818 10:49:35.616743 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616744 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616746 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=10, metadata_keys=1
+I0818 10:49:35.616750 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:35.616750 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:35.616752 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 10, lag: 0 entries, state: PROMOTING
+I0818 10:49:35.616753 918282 hot_standby_service.cpp:503] Promotion does not require final OpLog catch-up
+I0818 10:49:35.616755 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:35.616755 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:35.616756 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:35.616757 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:35.616758 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:35.616760 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=10, objects=1, segments=0
+[       OK ] HotStandbyServiceTest.TestPromoteAndExportSnapshot_FinalCatchUp (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithLocalState
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:309: Skipped
+Requires real etcd and pre-populated local metadata to test warm start.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithLocalState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:320: Skipped
+Requires real etcd and snapshot provider configuration.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithSnapshot
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:329: Skipped
+Requires snapshot provider and real etcd to exercise snapshot bootstrap.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyWithSnapshot
+I0818 10:49:35.616781 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616783 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616784 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616786 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616786 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616787 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1, segments=0
+I0818 10:49:35.616788 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=42, expected_sequence_id set to=43
+I0818 10:49:35.616791 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616792 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616793 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0818 10:49:35.616796 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616797 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616798 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyWithSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot
+I0818 10:49:35.616802 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616803 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616804 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616806 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616806 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616808 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1, segments=0
+I0818 10:49:35.616809 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=42, expected_sequence_id set to=43
+I0818 10:49:35.616812 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616813 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616814 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0818 10:49:35.616816 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616817 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616818 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:35.616820 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616820 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616822 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616823 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616824 918282 hot_standby_service.cpp:271] Snapshot-only restart discards local metadata and reloads the latest catalog snapshot
+I0818 10:49:35.616825 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616827 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=20260330_121500_000, snapshot_seq_id=84, keys=1, segments=0
+I0818 10:49:35.616828 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=84, expected_sequence_id set to=85
+I0818 10:49:35.616829 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616830 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616832 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=84, metadata_keys=1
+I0818 10:49:35.616833 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616834 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616835 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyWhenProviderFails
+I0818 10:49:35.616839 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616840 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616842 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616842 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616843 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+E0818 10:49:35.616844 918282 hot_standby_service.cpp:321] Failed to load snapshot baseline for snapshot-only standby bootstrap: PERSISTENT_FAIL
+I0818 10:49:35.616856 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> FAILED (event: FATAL_ERROR)
+I0818 10:49:35.616858 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> FAILED (event: FATAL_ERROR)
+I0818 10:49:35.616859 918282 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0818 10:49:35.616860 918282 hot_standby_service.cpp:36] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0818 10:49:35.616861 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyWhenProviderFails (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetMetadataCount
+[       OK ] HotStandbyServiceTest.TestGetMetadataCount (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportMetadataSnapshot
+[       OK ] HotStandbyServiceTest.TestExportMetadataSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetLatestAppliedSequenceId
+[       OK ] HotStandbyServiceTest.TestGetLatestAppliedSequenceId (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:435: Failure
+Value of: service_->ExportStandbySnapshot(snapshot)
+  Actual: true
+Expected: false
+
+[  FAILED  ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_SnapshotOnly
+I0818 10:49:35.616886 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616888 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616889 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616890 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616892 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616894 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1, segments=0
+I0818 10:49:35.616894 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=42, expected_sequence_id set to=43
+I0818 10:49:35.616896 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616897 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616899 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0818 10:49:35.616900 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616902 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616904 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestExportStandbySnapshot_SnapshotOnly (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_Empty
+I0818 10:49:35.616909 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616912 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.616914 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616915 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.616916 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616917 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=, snapshot_seq_id=0, keys=0, segments=0
+I0818 10:49:35.616918 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.616920 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616921 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.616922 918282 hot_standby_service.cpp:385] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=0, metadata_keys=0
+I0818 10:49:35.616925 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616925 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.616926 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestExportStandbySnapshot_Empty (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:474: Skipped
+Requires real etcd and running replication loop to update metrics.
+
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:486: Skipped
+Requires real etcd and watcher disconnect to exercise disconnect path.
+
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:499: Skipped
+Requires real etcd and running verification loop to observe behavior.
+
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:514: Skipped
+Requires real etcd connection to start service.
+
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled (0 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordStandbyPollsInjectedBackendWithoutNotifier
+I0818 10:49:35.617004 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.617008 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.617009 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.617012 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.617013 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.617017 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.617019 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.617070 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=batch-standby-injected-backend, baseline_seq_id=0, state=WATCHING
+I0818 10:49:35.617197 918284 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:35.627151 918284 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:35.627192 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.627203 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.627206 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordStandbyPollsInjectedBackendWithoutNotifier (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordRetriesTransientBackendFailure
+I0818 10:49:35.627252 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.627254 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.627255 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.627257 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.627259 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.627261 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.627262 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.627300 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=batch-standby-transient-retry, baseline_seq_id=0, state=WATCHING
+I0818 10:49:35.627413 918290 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:35.727594 918290 hot_standby_service.cpp:782] Standby OpLog polling recovered
+I0818 10:49:35.728293 918290 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:35.728466 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.728477 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.728479 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordRetriesTransientBackendFailure (101 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordRetryTimeoutTransitionsToFailed
+I0818 10:49:35.728497 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.728498 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.728499 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.728500 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.728502 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.728504 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.728505 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.728555 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=batch-standby-timeout, baseline_seq_id=0, state=WATCHING
+I0818 10:49:35.728688 918291 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+E0818 10:49:35.828785 918291 hot_standby_service.cpp:757] Standby OpLog polling kept failing for 0s: ETCD_OPERATION_ERROR
+I0818 10:49:35.828796 918291 standby_state_machine.cpp:245] Standby state transition: WATCHING -> FAILED (event: FATAL_ERROR)
+I0818 10:49:35.828799 918291 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> FAILED (event: FATAL_ERROR)
+I0818 10:49:35.828802 918291 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:35.829375 918282 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0818 10:49:35.829385 918282 hot_standby_service.cpp:36] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0818 10:49:35.829388 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordRetryTimeoutTransitionsToFailed (100 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordCanRestartAfterRetryTimeout
+I0818 10:49:35.829403 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.829404 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:35.829406 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.829407 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.829409 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.829411 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.829413 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.829447 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=batch-standby-restart, baseline_seq_id=0, state=WATCHING
+I0818 10:49:35.829566 918292 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+E0818 10:49:35.929693 918292 hot_standby_service.cpp:757] Standby OpLog polling kept failing for 0s: ETCD_OPERATION_ERROR
+I0818 10:49:35.929702 918292 standby_state_machine.cpp:245] Standby state transition: WATCHING -> FAILED (event: FATAL_ERROR)
+I0818 10:49:35.929704 918292 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> FAILED (event: FATAL_ERROR)
+I0818 10:49:35.929708 918292 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:35.930365 918282 standby_state_machine.cpp:245] Standby state transition: FAILED -> CONNECTING (event: START)
+I0818 10:49:35.930375 918282 hot_standby_service.cpp:36] HotStandbyService state changed: FAILED -> CONNECTING (event: START)
+I0818 10:49:35.930379 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.930380 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:35.930383 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:35.930385 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.930387 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:35.930421 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=batch-standby-restart, baseline_seq_id=0, state=WATCHING
+I0818 10:49:35.930497 918293 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:35.930505 918293 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:35.930788 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.930799 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0818 10:49:35.930802 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordCanRestartAfterRetryTimeout (101 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordStandbyPollsDurablePrefixInReplicationLoop
+{"level":"warn","ts":"2026-08-18T10:49:40.932458Z","logger":"etcd-client","caller":"v3@v3.5.21/retry_interceptor.go:63","msg":"retrying of unary invoker failed","target":"etcd-endpoints://0xc00025d860/127.0.0.1:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = \"transport: Error while dialing: dial tcp 127.0.0.1:2379: connect: connection refused\""}
+E0818 10:49:40.932688 918282 etcd_helper.cpp:80] key=/oplog/batch-standby-loop-1388032195788678195-8554606886455457693/durable_prefix, error=context deadline exceeded
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:775: Skipped
+etcd is unavailable: ETCD_OPERATION_ERROR
+
+[  SKIPPED ] HotStandbyServiceTest.BatchRecordStandbyPollsDurablePrefixInReplicationLoop (5001 ms)
+[----------] 35 tests from HotStandbyServiceTest (5316 ms total)
+
+[----------] 8 tests from PromotionCatchUpTest
+[ RUN      ] PromotionCatchUpTest.UsesDurablePrefixLastSeqAsCatchUpTarget
+I0818 10:49:40.932806 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:40.932808 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:40.932811 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:40.932813 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:40.932816 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:40.932819 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:40.932821 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:40.932901 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:40.932904 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:40.932906 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:40.933035 918295 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:40.933063 918295 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:40.933110 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 0, lag: 0 entries, state: PROMOTING
+I0818 10:49:40.933154 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:40.933156 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:40.933158 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:40.933161 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:40.933161 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:40.933162 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=2, objects=2, segments=0
+[       OK ] PromotionCatchUpTest.UsesDurablePrefixLastSeqAsCatchUpTarget (0 ms)
+[ RUN      ] PromotionCatchUpTest.RetriesTransientDurablePrefixReadFailure
+I0818 10:49:40.933185 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:40.933187 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:40.933187 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:40.933188 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:40.933190 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:40.933192 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:40.933192 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:40.933216 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:40.933218 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:40.933219 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:40.933382 918296 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:40.933394 918296 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:40.933422 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 0, lag: 0 entries, state: PROMOTING
+I0818 10:49:41.033601 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.033612 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.033617 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.033619 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.033620 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:41.033622 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=1, objects=1, segments=0
+[       OK ] PromotionCatchUpTest.RetriesTransientDurablePrefixReadFailure (100 ms)
+[ RUN      ] PromotionCatchUpTest.MissingDurablePrefixPromotesAtSequenceZero
+I0818 10:49:41.033643 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.033643 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.033645 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.033648 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.033649 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:41.033653 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.033653 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.033699 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:41.033701 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.033703 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.033870 918297 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:41.033880 918297 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:41.034047 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 0, lag: 0 entries, state: PROMOTING
+I0818 10:49:41.034061 918282 hot_standby_service.cpp:540] No durable prefix published yet; promotion proceeds from an empty OpLog boundary
+I0818 10:49:41.034063 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.034065 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.034068 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.034070 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.034070 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:41.034071 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=0, objects=0, segments=0
+[       OK ] PromotionCatchUpTest.MissingDurablePrefixPromotesAtSequenceZero (0 ms)
+[ RUN      ] PromotionCatchUpTest.MissingDurablePrefixRejectsNonzeroSequence
+I0818 10:49:41.034086 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.034087 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.034089 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.034090 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.034091 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:41.034093 918282 hot_standby_service.cpp:339] Loaded snapshot baseline: snapshot_id=baseline, snapshot_seq_id=1, keys=1, segments=0
+I0818 10:49:41.034096 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=1, expected_sequence_id set to=2
+I0818 10:49:41.034097 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.034098 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.034132 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=1, state=WATCHING
+I0818 10:49:41.034135 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.034137 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.034247 918298 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:41.034260 918298 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:41.034394 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 1, lag: 0 entries, state: PROMOTING
+E0818 10:49:41.034408 918282 hot_standby_service.cpp:535] Durable prefix is missing while the standby has already applied up to 1
+I0818 10:49:41.034410 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0818 10:49:41.034411 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0818 10:49:41.034415 918282 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0818 10:49:41.034416 918282 hot_standby_service.cpp:36] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0818 10:49:41.034418 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] PromotionCatchUpTest.MissingDurablePrefixRejectsNonzeroSequence (0 ms)
+[ RUN      ] PromotionCatchUpTest.CatchesUpPrefixThatAppearsBeforePromotion
+I0818 10:49:41.034432 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.034433 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.034435 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.034437 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.034439 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:41.034442 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.034443 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.034488 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:41.034533 918299 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:41.034548 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.034551 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.034621 918299 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:41.034925 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 1, lag: 0 entries, state: PROMOTING
+I0818 10:49:41.034950 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.034951 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.034955 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.034955 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.034957 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:41.034958 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=1, objects=1, segments=0
+[       OK ] PromotionCatchUpTest.CatchesUpPrefixThatAppearsBeforePromotion (0 ms)
+[ RUN      ] PromotionCatchUpTest.PaginatesBatchRecords
+I0818 10:49:41.043584 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.043589 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.043591 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.043592 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.043594 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:41.043596 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.043597 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.043628 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:41.043630 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.043632 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.043792 918300 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:41.043800 918300 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:41.043957 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 0, lag: 0 entries, state: PROMOTING
+I0818 10:49:41.053622 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.053627 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0818 10:49:41.053728 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.053730 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+I0818 10:49:41.053731 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+I0818 10:49:41.053732 918282 hot_standby_service.cpp:669] Standby promoted to Primary successfully, applied_seq_id=1025, objects=1025, segments=0
+[       OK ] PromotionCatchUpTest.PaginatesBatchRecords (18 ms)
+[ RUN      ] PromotionCatchUpTest.FailsPromotionWhenDurablePrefixUnreadable
+I0818 10:49:41.053845 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.053848 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.053848 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.053849 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.053851 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:41.053853 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.053854 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.053884 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:41.053885 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.053886 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.053995 918301 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:41.054004 918301 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:41.054023 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 0, lag: 0 entries, state: PROMOTING
+E0818 10:49:41.154114 918282 hot_standby_service.cpp:545] Promotion could not read the durable prefix: PERSISTENT_FAIL
+I0818 10:49:41.154124 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0818 10:49:41.154127 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0818 10:49:41.154132 918282 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0818 10:49:41.154134 918282 hot_standby_service.cpp:36] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0818 10:49:41.154135 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] PromotionCatchUpTest.FailsPromotionWhenDurablePrefixUnreadable (100 ms)
+[ RUN      ] PromotionCatchUpTest.FailsPromotionWhenTargetBatchUnreadable
+I0818 10:49:41.154152 918282 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.154153 918282 hot_standby_service.cpp:36] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0818 10:49:41.154155 918282 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.154156 918282 hot_standby_service.cpp:36] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0818 10:49:41.154160 918282 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+I0818 10:49:41.154161 918282 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.154162 918282 hot_standby_service.cpp:36] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0818 10:49:41.154203 918282 hot_standby_service.cpp:376] HotStandbyService started, following batch OpLog for cluster=test_cluster_001, baseline_seq_id=0, state=WATCHING
+I0818 10:49:41.154227 918282 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.154227 918282 hot_standby_service.cpp:36] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0818 10:49:41.154364 918302 hot_standby_service.cpp:724] Replication loop started (batch-record OpLog polling)
+I0818 10:49:41.154374 918302 hot_standby_service.cpp:815] Replication loop stopped
+I0818 10:49:41.154537 918282 hot_standby_service.cpp:651] Promoting Standby to Primary. Applied seq_id: 0, lag: 0 entries, state: PROMOTING
+E0818 10:49:41.154567 918282 hot_standby_service.cpp:567] Promotion catch-up failed to read batches after 0: PERSISTENT_FAIL
+I0818 10:49:41.154569 918282 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0818 10:49:41.154572 918282 hot_standby_service.cpp:36] HotStandbyService state changed: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0818 10:49:41.154574 918282 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0818 10:49:41.154577 918282 hot_standby_service.cpp:36] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0818 10:49:41.154577 918282 hot_standby_service.cpp:444] HotStandbyService stopped, final_state=STOPPED
+[       OK ] PromotionCatchUpTest.FailsPromotionWhenTargetBatchUnreadable (0 ms)
+[----------] 8 tests from PromotionCatchUpTest (221 ms total)
+
+[----------] Global test environment tear-down
+[==========] 43 tests from 2 test suites ran. (5538 ms total)
+[  PASSED  ] 27 tests.
+[  SKIPPED ] 15 tests, listed below:
+[  SKIPPED ] HotStandbyServiceTest.TestStart
+[  SKIPPED ] HotStandbyServiceTest.TestStart_AlreadyRunning
+[  SKIPPED ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_StartToWatching
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_SyncFailed
+[  SKIPPED ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithLocalState
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithSnapshot
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled
+[  SKIPPED ] HotStandbyServiceTest.BatchRecordStandbyPollsDurablePrefixInReplicationLoop
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning
+
+ 1 FAILED TEST

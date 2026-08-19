@@ -1,0 +1,52 @@
+{
+  "tests": 3,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-19T18:53:18Z",
+  "time": "0s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "OpLogTypesTest",
+      "tests": 3,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T18:53:18Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "ChecksumRoundTrips",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_types_test.cpp",
+          "line": 7,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogTypesTest"
+        },
+        {
+          "name": "RejectsOversizedEntry",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_types_test.cpp",
+          "line": 14,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogTypesTest"
+        },
+        {
+          "name": "NormalizesTrailingClusterSlashes",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_types_test.cpp",
+          "line": 20,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T18:53:18Z",
+          "time": "0s",
+          "classname": "OpLogTypesTest"
+        }
+      ]
+    }
+  ]
+}

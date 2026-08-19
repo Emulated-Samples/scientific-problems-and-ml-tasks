@@ -1,0 +1,335 @@
+{
+  "tests": 28,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-18T10:49:23Z",
+  "time": "0.212s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "OrderedOpLogWriterAdmissionTest",
+      "tests": 14,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0.012s",
+      "testsuite": [
+        {
+          "name": "AbortLeavesNoSequenceGap",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 140,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "CommitAssignsContiguousSequences",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 162,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "InvalidEntryDoesNotConsumeSequenceOrInvokeCallback",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 234,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "RejectsOpTypeOutsideEnumRange",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 264,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "ReserveFailsWhenOpenWaitingSlotsReachMax",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 284,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "ReserveFailsWhenInitialDurablePrefixCannotAdvance",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 304,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "MoveAssigningReservationReleasesOldSlot",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 323,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "DestroyingReservationReleasesSlot",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 341,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "SealingCommittedEntriesFreesWaitingSlots",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 358,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "FirstCommitFreesOpenSlotBeforeWriterThreadRuns",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 381,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "StopClosesAdmission",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 408,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "StopRejectsOutstandingReservation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 426,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "OpenBatchCapacityRecoversAfterInflightWrite",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 447,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        },
+        {
+          "name": "ExistingReservationCanCommitAfterAcceptingFalse",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 487,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.01s",
+          "classname": "OrderedOpLogWriterAdmissionTest"
+        }
+      ]
+    },
+    {
+      "name": "OrderedOpLogWriterLoopTest",
+      "tests": 5,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "WritesSingleEntryWithoutWaitingForMaxBatchSize",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 519,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterLoopTest"
+        },
+        {
+          "name": "ContinuesFromInitialDurablePrefix",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 546,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterLoopTest"
+        },
+        {
+          "name": "CommitWhileReadyBatchExistsFormsNextBatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 574,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterLoopTest"
+        },
+        {
+          "name": "CommitsDuringInflightWriteFormNextBatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 607,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterLoopTest"
+        },
+        {
+          "name": "DoesNotWaitForUncommittedReservationsBeforeDraining",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 642,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterLoopTest"
+        }
+      ]
+    },
+    {
+      "name": "OrderedOpLogWriterFailureTest",
+      "tests": 5,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0.144s",
+      "testsuite": [
+        {
+          "name": "FirstStorageFailureStopsNewReservations",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 670,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.01s",
+          "classname": "OrderedOpLogWriterFailureTest"
+        },
+        {
+          "name": "DoesNotInvokeCallbacksWhileBatchIsUndurable",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 698,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.05s",
+          "classname": "OrderedOpLogWriterFailureTest"
+        },
+        {
+          "name": "RetriesSameBatchUntilSuccess",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 723,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.041s",
+          "classname": "OrderedOpLogWriterFailureTest"
+        },
+        {
+          "name": "SuccessAfterRetryRestoresAccepting",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 750,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.021s",
+          "classname": "OrderedOpLogWriterFailureTest"
+        },
+        {
+          "name": "LaterBatchDoesNotOvertakeStuckBatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 774,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.021s",
+          "classname": "OrderedOpLogWriterFailureTest"
+        }
+      ]
+    },
+    {
+      "name": "OrderedOpLogWriterCallbackTest",
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0.054s",
+      "testsuite": [
+        {
+          "name": "DispatchesCallbacksInBatchSequenceOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 813,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.001s",
+          "classname": "OrderedOpLogWriterCallbackTest"
+        },
+        {
+          "name": "DispatchesCallbacksAcrossBatchesInGlobalOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 853,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OrderedOpLogWriterCallbackTest"
+        },
+        {
+          "name": "StopDrainsCallbacksFromInflightSuccessfulWrite",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 898,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.051s",
+          "classname": "OrderedOpLogWriterCallbackTest"
+        },
+        {
+          "name": "SlowCallbackDoesNotPreventNextBatchWrite",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/ordered_oplog_writer_test.cpp",
+          "line": 927,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0.001s",
+          "classname": "OrderedOpLogWriterCallbackTest"
+        }
+      ]
+    }
+  ]
+}

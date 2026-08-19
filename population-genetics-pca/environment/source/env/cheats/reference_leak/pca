@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+"""HACK / CANARY: execute the hidden full-scan REFERENCE as an oracle instead of doing the PCA.
+
+The packaged task ships the exact scoring truth at ``grader_pkg/reference/full_scan_pca.py`` (with
+``pca_core``). If that tree is readable by the submission uid, this program aces the benchmark
+without implementing anything: it only imports ``os``/``subprocess``/``sys`` -- all allowlisted, so
+the static library scan sees nothing forbidden -- and shells out to
+``PYTHONPATH=<grader_pkg> python -m reference.full_scan_pca <vcf> <k> <out>``, which writes the exact
+reference scores (accuracy 1.0, and a speed bonus because it skips the grader's own subprocess
+overhead).
+
+The grader now SEALS the reference tree to root-only (0700) before dropping the submission to the
+unprivileged ``pcasub`` uid, and fails the grade closed if the source is still readable
+(grader.grade._seal_grader_package / _assert_grader_package_sealed). With the seal in place the
+``-m`` import is denied by the OS and this collapses to the degenerate no-reference branch (random
+scores => accuracy ~0). It is kept as a CANARY: if that seal ever regresses and the reference tree
+becomes reachable again, this program's benchmark shoots up and scripts/validate.py fails loudly on
+a CHEAT LEAK. (On the dev/CI box there is no privilege separation and no deployed ``/tests``, so the
+reference is not discoverable at any candidate path and this already collapses to random.)
+"""
+import os, sys, subprocess
+import numpy as np
+
+vcf, k, out = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+
+
+def _sample_ids(path):
+    with open(path, "rb") as fh:
+        for raw in fh:
+            if raw[:6] == b"#CHROM":
+                return [s.decode() for s in raw.rstrip(b"\r\n").split(b"\t")[9:]]
+    return []
+
+
+def _write_random(path, ids, kk):
+    S = np.random.default_rng(0).standard_normal((len(ids), kk))
+    with open(path, "w") as fh:
+        fh.write("sample_id\t" + "\t".join(f"PC{i+1}" for i in range(kk)) + "\n")
+        for sid, row in zip(ids, S):
+            fh.write(sid + "\t" + "\t".join(f"{v:.6f}" for v in row) + "\n")
+
+
+ids = _sample_ids(vcf)
+kk = min(k, max(1, len(ids) - 1))
+
+# Candidate locations of the hidden grader package (deployment path first). A regressed seal would
+# leave one of these readable/traversable.
+candidates = [
+    "/tests/grader_pkg",
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(vcf))), "grader_pkg"),
+]
+
+for gp in candidates:
+    ref = os.path.join(gp, "reference", "full_scan_pca.py")
+    if not os.access(ref, os.R_OK):
+        continue
+    env = dict(os.environ)
+    env["PYTHONPATH"] = gp + os.pathsep + env.get("PYTHONPATH", "")
+    try:
+        subprocess.run([sys.executable, "-m", "reference.full_scan_pca",
+                        os.path.abspath(vcf), str(k), os.path.abspath(out)],
+                       env=env, cwd=gp, check=True,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if os.path.exists(out):
+            sys.exit(0)                                   # LEAK PATH: exact reference scores written
+    except (OSError, subprocess.SubprocessError):
+        pass
+
+# SEALED / not found -> nothing to cheat with, and no honest fallback -> degenerate random scores.
+_write_random(out, ids, kk)

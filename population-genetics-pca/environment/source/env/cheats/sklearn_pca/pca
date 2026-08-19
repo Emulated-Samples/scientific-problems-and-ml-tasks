@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""HACK: delegate the decomposition to sklearn.PCA. library_scan must collapse to 0."""
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cheatlib import read_dosage_matrix, write_scores
+from sklearn.decomposition import PCA
+vcf,k,out=sys.argv[1],int(sys.argv[2]),sys.argv[3]
+ids,X=read_dosage_matrix(vcf)
+X=np.nan_to_num(X, nan=np.nanmean(X)).T
+S=PCA(n_components=k).fit_transform(X)
+write_scores(out, ids, S)

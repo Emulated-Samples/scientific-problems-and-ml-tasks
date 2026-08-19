@@ -1,0 +1,91 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 28 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 14 tests from OrderedOpLogWriterAdmissionTest
+[ RUN      ] OrderedOpLogWriterAdmissionTest.AbortLeavesNoSequenceGap
+[       OK ] OrderedOpLogWriterAdmissionTest.AbortLeavesNoSequenceGap (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.CommitAssignsContiguousSequences
+[       OK ] OrderedOpLogWriterAdmissionTest.CommitAssignsContiguousSequences (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.InvalidEntryDoesNotConsumeSequenceOrInvokeCallback
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E0818 10:49:23.048274 918166 ordered_oplog_writer.cpp:383] OrderedOpLogWriter rejected OpLog entry: tenant_id is empty or invalid
+[       OK ] OrderedOpLogWriterAdmissionTest.InvalidEntryDoesNotConsumeSequenceOrInvokeCallback (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.RejectsOpTypeOutsideEnumRange
+E0818 10:49:23.048290 918166 ordered_oplog_writer.cpp:383] OrderedOpLogWriter rejected OpLog entry: op_type is outside the valid enum range
+[       OK ] OrderedOpLogWriterAdmissionTest.RejectsOpTypeOutsideEnumRange (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.ReserveFailsWhenOpenWaitingSlotsReachMax
+[       OK ] OrderedOpLogWriterAdmissionTest.ReserveFailsWhenOpenWaitingSlotsReachMax (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.ReserveFailsWhenInitialDurablePrefixCannotAdvance
+E0818 10:49:23.048295 918166 ordered_oplog_writer.cpp:53] OrderedOpLogWriter starts unhealthy: the configured durable prefix cannot advance
+[       OK ] OrderedOpLogWriterAdmissionTest.ReserveFailsWhenInitialDurablePrefixCannotAdvance (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.MoveAssigningReservationReleasesOldSlot
+[       OK ] OrderedOpLogWriterAdmissionTest.MoveAssigningReservationReleasesOldSlot (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.DestroyingReservationReleasesSlot
+[       OK ] OrderedOpLogWriterAdmissionTest.DestroyingReservationReleasesSlot (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.SealingCommittedEntriesFreesWaitingSlots
+[       OK ] OrderedOpLogWriterAdmissionTest.SealingCommittedEntriesFreesWaitingSlots (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.FirstCommitFreesOpenSlotBeforeWriterThreadRuns
+[       OK ] OrderedOpLogWriterAdmissionTest.FirstCommitFreesOpenSlotBeforeWriterThreadRuns (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.StopClosesAdmission
+[       OK ] OrderedOpLogWriterAdmissionTest.StopClosesAdmission (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.StopRejectsOutstandingReservation
+[       OK ] OrderedOpLogWriterAdmissionTest.StopRejectsOutstandingReservation (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.OpenBatchCapacityRecoversAfterInflightWrite
+[       OK ] OrderedOpLogWriterAdmissionTest.OpenBatchCapacityRecoversAfterInflightWrite (0 ms)
+[ RUN      ] OrderedOpLogWriterAdmissionTest.ExistingReservationCanCommitAfterAcceptingFalse
+W0818 10:49:23.050237 918177 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+E0818 10:49:23.060314 918177 ordered_oplog_writer.cpp:220] OrderedOpLogWriter shutting down with an unpersisted batch, batch_id=1
+[       OK ] OrderedOpLogWriterAdmissionTest.ExistingReservationCanCommitAfterAcceptingFalse (10 ms)
+[----------] 14 tests from OrderedOpLogWriterAdmissionTest (12 ms total)
+
+[----------] 5 tests from OrderedOpLogWriterLoopTest
+[ RUN      ] OrderedOpLogWriterLoopTest.WritesSingleEntryWithoutWaitingForMaxBatchSize
+[       OK ] OrderedOpLogWriterLoopTest.WritesSingleEntryWithoutWaitingForMaxBatchSize (0 ms)
+[ RUN      ] OrderedOpLogWriterLoopTest.ContinuesFromInitialDurablePrefix
+[       OK ] OrderedOpLogWriterLoopTest.ContinuesFromInitialDurablePrefix (0 ms)
+[ RUN      ] OrderedOpLogWriterLoopTest.CommitWhileReadyBatchExistsFormsNextBatch
+[       OK ] OrderedOpLogWriterLoopTest.CommitWhileReadyBatchExistsFormsNextBatch (0 ms)
+[ RUN      ] OrderedOpLogWriterLoopTest.CommitsDuringInflightWriteFormNextBatch
+[       OK ] OrderedOpLogWriterLoopTest.CommitsDuringInflightWriteFormNextBatch (0 ms)
+[ RUN      ] OrderedOpLogWriterLoopTest.DoesNotWaitForUncommittedReservationsBeforeDraining
+[       OK ] OrderedOpLogWriterLoopTest.DoesNotWaitForUncommittedReservationsBeforeDraining (0 ms)
+[----------] 5 tests from OrderedOpLogWriterLoopTest (1 ms total)
+
+[----------] 5 tests from OrderedOpLogWriterFailureTest
+[ RUN      ] OrderedOpLogWriterFailureTest.FirstStorageFailureStopsNewReservations
+W0818 10:49:23.062026 918189 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+E0818 10:49:23.072096 918189 ordered_oplog_writer.cpp:220] OrderedOpLogWriter shutting down with an unpersisted batch, batch_id=1
+[       OK ] OrderedOpLogWriterFailureTest.FirstStorageFailureStopsNewReservations (10 ms)
+[ RUN      ] OrderedOpLogWriterFailureTest.DoesNotInvokeCallbacksWhileBatchIsUndurable
+W0818 10:49:23.072454 918191 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+W0818 10:49:23.092613 918191 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+W0818 10:49:23.112704 918191 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+E0818 10:49:23.122535 918191 ordered_oplog_writer.cpp:220] OrderedOpLogWriter shutting down with an unpersisted batch, batch_id=1
+[       OK ] OrderedOpLogWriterFailureTest.DoesNotInvokeCallbacksWhileBatchIsUndurable (50 ms)
+[ RUN      ] OrderedOpLogWriterFailureTest.RetriesSameBatchUntilSuccess
+W0818 10:49:23.123205 918193 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+W0818 10:49:23.143316 918193 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+[       OK ] OrderedOpLogWriterFailureTest.RetriesSameBatchUntilSuccess (41 ms)
+[ RUN      ] OrderedOpLogWriterFailureTest.SuccessAfterRetryRestoresAccepting
+W0818 10:49:23.164271 918195 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+[       OK ] OrderedOpLogWriterFailureTest.SuccessAfterRetryRestoresAccepting (21 ms)
+[ RUN      ] OrderedOpLogWriterFailureTest.LaterBatchDoesNotOvertakeStuckBatch
+W0818 10:49:23.185289 918197 ordered_oplog_writer.cpp:225] OrderedOpLogWriter failed to persist batch_id=1, error=PERSISTENT_FAIL; retrying
+[       OK ] OrderedOpLogWriterFailureTest.LaterBatchDoesNotOvertakeStuckBatch (21 ms)
+[----------] 5 tests from OrderedOpLogWriterFailureTest (144 ms total)
+
+[----------] 4 tests from OrderedOpLogWriterCallbackTest
+[ RUN      ] OrderedOpLogWriterCallbackTest.DispatchesCallbacksInBatchSequenceOrder
+[       OK ] OrderedOpLogWriterCallbackTest.DispatchesCallbacksInBatchSequenceOrder (1 ms)
+[ RUN      ] OrderedOpLogWriterCallbackTest.DispatchesCallbacksAcrossBatchesInGlobalOrder
+[       OK ] OrderedOpLogWriterCallbackTest.DispatchesCallbacksAcrossBatchesInGlobalOrder (0 ms)
+[ RUN      ] OrderedOpLogWriterCallbackTest.StopDrainsCallbacksFromInflightSuccessfulWrite
+[       OK ] OrderedOpLogWriterCallbackTest.StopDrainsCallbacksFromInflightSuccessfulWrite (51 ms)
+[ RUN      ] OrderedOpLogWriterCallbackTest.SlowCallbackDoesNotPreventNextBatchWrite
+[       OK ] OrderedOpLogWriterCallbackTest.SlowCallbackDoesNotPreventNextBatchWrite (1 ms)
+[----------] 4 tests from OrderedOpLogWriterCallbackTest (54 ms total)
+
+[----------] Global test environment tear-down
+[==========] 28 tests from 4 test suites ran. (212 ms total)
+[  PASSED  ] 28 tests.

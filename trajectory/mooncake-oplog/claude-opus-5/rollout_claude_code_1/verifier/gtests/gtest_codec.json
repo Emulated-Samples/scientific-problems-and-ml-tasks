@@ -1,0 +1,325 @@
+{
+  "tests": 27,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-18T10:49:23Z",
+  "time": "0s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "OpLogBatchTypesTest",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "RejectsEmptyEntries",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 65,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchTypesTest"
+        },
+        {
+          "name": "RejectsFirstSeqMismatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 76,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchTypesTest"
+        },
+        {
+          "name": "RejectsLastSeqMismatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 85,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchTypesTest"
+        },
+        {
+          "name": "RejectsNonContiguousEntrySequence",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 94,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchTypesTest"
+        },
+        {
+          "name": "RejectsZeroSchemaVersion",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 103,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchTypesTest"
+        },
+        {
+          "name": "AcceptsValidContiguousBatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 112,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchTypesTest"
+        }
+      ]
+    },
+    {
+      "name": "OpLogBatchKeyLayoutTest",
+      "tests": 6,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "BuildsPaddedBatchRecordKey",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 120,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchKeyLayoutTest"
+        },
+        {
+          "name": "BuildsDurablePrefixKey",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 125,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchKeyLayoutTest"
+        },
+        {
+          "name": "BuildsBatchRangeBounds",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 130,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchKeyLayoutTest"
+        },
+        {
+          "name": "MaxBatchRangeIsEmpty",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 136,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchKeyLayoutTest"
+        },
+        {
+          "name": "RejectsInvalidClusterId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 141,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchKeyLayoutTest"
+        },
+        {
+          "name": "NormalizesTrailingSlashClusterId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 152,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchKeyLayoutTest"
+        }
+      ]
+    },
+    {
+      "name": "OpLogDurablePrefixCodecTest",
+      "tests": 5,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "RoundTripsZeroPrefix",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 157,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogDurablePrefixCodecTest"
+        },
+        {
+          "name": "RoundTripsNonZeroPrefix",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 169,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogDurablePrefixCodecTest"
+        },
+        {
+          "name": "RejectsMalformedPayload",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 181,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogDurablePrefixCodecTest"
+        },
+        {
+          "name": "RejectsMalformedTypedFieldsWithoutThrowing",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 188,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogDurablePrefixCodecTest"
+        },
+        {
+          "name": "RejectsUnsupportedSchemaVersion",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 197,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogDurablePrefixCodecTest"
+        }
+      ]
+    },
+    {
+      "name": "OpLogBatchRecordCodecTest",
+      "tests": 10,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-18T10:49:23Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "RoundTripsSingleEntryBatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 205,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "EncodesCompactArraySchema",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 221,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RebuildsNonPersistedEntryFields",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 246,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RoundTripsMultiEntryBatch",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 261,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RejectsCorruptedChecksum",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 278,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RejectsMalformedTypedFieldsWithoutThrowing",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 291,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RejectsWrongElementCount",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 299,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RejectsCorruptedSequenceContinuity",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 306,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RejectsUnsupportedSchemaVersion",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 318,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        },
+        {
+          "name": "RejectsInvalidBase64Payload",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/oplog\/oplog_batch_codec_test.cpp",
+          "line": 330,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-18T10:49:23Z",
+          "time": "0s",
+          "classname": "OpLogBatchRecordCodecTest"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+    "task": {
+        "path": "/home/ubuntu/canon/tasks/mooncake-oplog"
+    },
+    "trial_name": "mooncake-oplog__R4V89aY",
+    "trials_dir": "/home/ubuntu/jobs/wave/sol-mooncake-oplog/2026-08-19__17-13-39",
+    "agent_timeout_multiplier": 0.0833334,
+    "agent": {
+        "name": "codex",
+        "model_name": "gpt-5.6-sol",
+        "extra_allowed_hosts": [
+            "api.openai.com",
+            "chatgpt.com",
+            "auth.openai.com"
+        ]
+    },
+    "job_id": "1cf0e762-5bcc-41f4-be65-97963e8a1893"
+}

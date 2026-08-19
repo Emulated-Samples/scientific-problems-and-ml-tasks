@@ -1,0 +1,110 @@
+{
+  "repo_root": "/workspace/Mooncake",
+  "build_dir": "build",
+  "build_timeout_sec": 2400,
+  "run_timeout_sec": 1200,
+  "binaries": {
+    "writer": {
+      "target": "ordered_oplog_writer_test",
+      "path": "mooncake-store/tests/ordered_oplog_writer_test"
+    },
+    "codec": {
+      "target": "oplog_batch_codec_test",
+      "path": "mooncake-store/tests/oplog_batch_codec_test"
+    },
+    "types": {
+      "target": "oplog_types_test",
+      "path": "mooncake-store/tests/oplog_types_test"
+    },
+    "storage": {
+      "target": "oplog_batch_storage_test",
+      "path": "mooncake-store/tests/oplog_batch_storage_test"
+    },
+    "reader": {
+      "target": "oplog_batch_standby_reader_test",
+      "path": "mooncake-store/tests/oplog_batch_standby_reader_test"
+    },
+    "applier": {
+      "target": "oplog_applier_test",
+      "path": "mooncake-store/tests/oplog_applier_test"
+    },
+    "failpoint": {
+      "target": "oplog_test_failpoint_test",
+      "path": "mooncake-store/tests/oplog_test_failpoint_test"
+    },
+    "ha": {
+      "target": "master_service_ha_test",
+      "path": "mooncake-store/tests/master_service_ha_test"
+    },
+    "standby": {
+      "target": "hot_standby_service_test",
+      "path": "mooncake-store/tests/hot_standby_service_test"
+    },
+    "metrics": {
+      "target": "ha_metric_manager_test",
+      "path": "mooncake-store/tests/ha_metric_manager_test"
+    },
+    "bootstrap": {
+      "target": "hot_standby_snapshot_bootstrap_test",
+      "path": "mooncake-store/tests/hot_standby_snapshot_bootstrap_test"
+    },
+    "config": {
+      "target": "master_service_config_test",
+      "path": "mooncake-store/tests/master_service_config_test"
+    },
+    "snapshot_catalog": {
+      "target": "catalog_backed_snapshot_provider_test",
+      "path": "mooncake-store/tests/catalog_backed_snapshot_provider_test"
+    },
+    "snapshot_child": {
+      "target": "snapshot_child_process_test",
+      "path": "mooncake-store/tests/snapshot_child_process_test"
+    },
+    "regression_master": {
+      "target": "master_service_test",
+      "path": "mooncake-store/tests/master_service_test"
+    },
+    "regression_alloc": {
+      "target": "buffer_allocator_test",
+      "path": "mooncake-store/tests/buffer_allocator_test"
+    }
+  },
+  "manifest": "expected_tests.json",
+  "exclude": [
+    "VerifierIntegrityCanary.AssertionMustFailWhenEnabled",
+    "BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail"
+  ],
+  "restore": [
+    {"from": "golden/tests-CMakeLists.txt", "to": "mooncake-store/tests/CMakeLists.txt"},
+    {"from": "golden/ordered_oplog_writer_test.cpp", "to": "mooncake-store/tests/ha/oplog/ordered_oplog_writer_test.cpp"},
+    {"from": "golden/oplog_batch_codec_test.cpp", "to": "mooncake-store/tests/ha/oplog/oplog_batch_codec_test.cpp"},
+    {"from": "golden/oplog_types_test.cpp", "to": "mooncake-store/tests/ha/oplog/oplog_types_test.cpp"},
+    {"from": "golden/oplog_batch_storage_test.cpp", "to": "mooncake-store/tests/ha/oplog/oplog_batch_storage_test.cpp"},
+    {"from": "golden/oplog_batch_standby_reader_test.cpp", "to": "mooncake-store/tests/ha/oplog/oplog_batch_standby_reader_test.cpp"},
+    {"from": "golden/oplog_applier_test.cpp", "to": "mooncake-store/tests/ha/oplog/oplog_applier_test.cpp"},
+    {"from": "golden/oplog_test_failpoint_test.cpp", "to": "mooncake-store/tests/ha/oplog/oplog_test_failpoint_test.cpp"},
+    {"from": "golden/mock_metadata_store.h", "to": "mooncake-store/tests/ha/oplog/mock_metadata_store.h"},
+    {"from": "golden/mock_snapshot_provider.h", "to": "mooncake-store/tests/ha/oplog/mock_snapshot_provider.h"},
+    {"from": "golden/master_service_ha_test.cpp", "to": "mooncake-store/tests/ha/master_service_ha_test.cpp"},
+    {"from": "golden/hot_standby_service_test.cpp", "to": "mooncake-store/tests/ha/standby/hot_standby_service_test.cpp"},
+    {"from": "golden/ha_metric_manager_test.cpp", "to": "mooncake-store/tests/ha/standby/ha_metric_manager_test.cpp"},
+    {"from": "golden/hot_standby_snapshot_bootstrap_test.cpp", "to": "mooncake-store/tests/ha/standby/hot_standby_snapshot_bootstrap_test.cpp"},
+    {"from": "golden/catalog_backed_snapshot_provider_test.cpp", "to": "mooncake-store/tests/ha/snapshot/catalog_backed_snapshot_provider_test.cpp"},
+    {"from": "golden/snapshot_child_process_test.cpp", "to": "mooncake-store/tests/ha/snapshot/snapshot_child_process_test.cpp"},
+    {"from": "golden/master_service_config_test.cpp", "to": "mooncake-store/tests/master_service_config_test.cpp"},
+    {"from": "golden/master_service_test.cpp", "to": "mooncake-store/tests/master_service_test.cpp"},
+    {"from": "golden/buffer_allocator_test.cpp", "to": "mooncake-store/tests/buffer_allocator_test.cpp"}
+  ],
+  "groups": {
+    "writer": {"weight": 0.16, "binaries": ["writer"]},
+    "codec": {"weight": 0.08, "binaries": ["codec", "types"]},
+    "storage": {"weight": 0.10, "binaries": ["storage"]},
+    "standby_reader": {"weight": 0.12, "binaries": ["reader", "applier"]},
+    "failpoint": {"weight": 0.02, "binaries": ["failpoint"]},
+    "ha_integration": {"weight": 0.22, "binaries": ["ha"]},
+    "standby_service": {"weight": 0.14, "binaries": ["standby", "metrics", "bootstrap"]},
+    "snapshot": {"weight": 0.04, "binaries": ["snapshot_catalog", "snapshot_child"]},
+    "config": {"weight": 0.02, "binaries": ["config"]},
+    "regression": {"weight": 0.10, "binaries": ["regression_master", "regression_alloc"]}
+  }
+}

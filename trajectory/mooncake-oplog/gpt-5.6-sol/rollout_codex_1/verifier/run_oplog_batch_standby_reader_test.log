@@ -1,0 +1,75 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 20 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 20 tests from OpLogBatchStandbyReaderTest
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingPrefixWaitsWithoutLegacyFallback
+[       OK ] OpLogBatchStandbyReaderTest.MissingPrefixWaitsWithoutLegacyFallback (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingPrefixAfterObservationFailsClosed
+[       OK ] OpLogBatchStandbyReaderTest.MissingPrefixAfterObservationFailsClosed (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.PrefixTransportErrorIsRetryable
+[       OK ] OpLogBatchStandbyReaderTest.PrefixTransportErrorIsRetryable (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RangeTransportErrorIsRetryable
+[       OK ] OpLogBatchStandbyReaderTest.RangeTransportErrorIsRetryable (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingTargetBatchIsFatal
+[       OK ] OpLogBatchStandbyReaderTest.MissingTargetBatchIsFatal (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.DurablePrefixRegressionFailsClosed
+[       OK ] OpLogBatchStandbyReaderTest.DurablePrefixRegressionFailsClosed (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.BatchZeroMustHaveZeroSequence
+[       OK ] OpLogBatchStandbyReaderTest.BatchZeroMustHaveZeroSequence (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RangeReadsBatchesWhenDurablePrefixAdvances
+[       OK ] OpLogBatchStandbyReaderTest.RangeReadsBatchesWhenDurablePrefixAdvances (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.DoesNothingWhenDurablePrefixDoesNotAdvance
+[       OK ] OpLogBatchStandbyReaderTest.DoesNothingWhenDurablePrefixDoesNotAdvance (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.FullPageContinuesOnNextPoll
+[       OK ] OpLogBatchStandbyReaderTest.FullPageContinuesOnNextPoll (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RejectsPrefixPointingIntoBatch
+[       OK ] OpLogBatchStandbyReaderTest.RejectsPrefixPointingIntoBatch (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.AppliesExpandedEntriesInSequenceOrder
+[       OK ] OpLogBatchStandbyReaderTest.AppliesExpandedEntriesInSequenceOrder (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.AcceptsFirstBatchAfterSnapshotBaseline
+[       OK ] OpLogBatchStandbyReaderTest.AcceptsFirstBatchAfterSnapshotBaseline (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.FailsWhenLaterBatchHasSequenceGap
+[       OK ] OpLogBatchStandbyReaderTest.FailsWhenLaterBatchHasSequenceGap (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingBatchMarksReaderUnhealthy
+[       OK ] OpLogBatchStandbyReaderTest.MissingBatchMarksReaderUnhealthy (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.StartsFromEarliestExistingBatch
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_standby_reader_test.cpp:395: Failure
+Expected equality of these values:
+  ErrorCode::OK
+    Which is: OK
+  result.error
+    Which is: UNKNOWN_ERROR
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_standby_reader_test.cpp:396: Failure
+Expected equality of these values:
+  2u
+    Which is: 2
+  result.applied_entries
+    Which is: 0
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_standby_reader_test.cpp:397: Failure
+Expected equality of these values:
+  45u
+    Which is: 45
+  applier.GetExpectedSequenceId()
+    Which is: 43
+
+[  FAILED  ] OpLogBatchStandbyReaderTest.StartsFromEarliestExistingBatch (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RejectsSequenceOverlapAcrossBatches
+[       OK ] OpLogBatchStandbyReaderTest.RejectsSequenceOverlapAcrossBatches (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.ChecksumFailureMarksReaderUnhealthy
+[       OK ] OpLogBatchStandbyReaderTest.ChecksumFailureMarksReaderUnhealthy (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RejectsFutureFirstSequence
+[       OK ] OpLogBatchStandbyReaderTest.RejectsFutureFirstSequence (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.AlreadyAppliedEntriesAreSkipped
+[       OK ] OpLogBatchStandbyReaderTest.AlreadyAppliedEntriesAreSkipped (0 ms)
+[----------] 20 tests from OpLogBatchStandbyReaderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 19 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] OpLogBatchStandbyReaderTest.StartsFromEarliestExistingBatch
+
+ 1 FAILED TEST

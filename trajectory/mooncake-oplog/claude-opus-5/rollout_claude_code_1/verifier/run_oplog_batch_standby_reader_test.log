@@ -1,0 +1,84 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 20 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 20 tests from OpLogBatchStandbyReaderTest
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingPrefixWaitsWithoutLegacyFallback
+[       OK ] OpLogBatchStandbyReaderTest.MissingPrefixWaitsWithoutLegacyFallback (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingPrefixAfterObservationFailsClosed
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E0818 10:49:23.285341 918211 oplog_batch_storage.cpp:193] Durable prefix is missing while batch records exist
+[       OK ] OpLogBatchStandbyReaderTest.MissingPrefixAfterObservationFailsClosed (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.PrefixTransportErrorIsRetryable
+[       OK ] OpLogBatchStandbyReaderTest.PrefixTransportErrorIsRetryable (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RangeTransportErrorIsRetryable
+[       OK ] OpLogBatchStandbyReaderTest.RangeTransportErrorIsRetryable (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingTargetBatchIsFatal
+E0818 10:49:23.285394 918211 oplog_batch_standby_reader.cpp:102] Durable prefix references missing batch 1
+[       OK ] OpLogBatchStandbyReaderTest.MissingTargetBatchIsFatal (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.DurablePrefixRegressionFailsClosed
+E0818 10:49:23.285436 918211 oplog_batch_standby_reader.cpp:73] Durable prefix regressed: {0,0} after {1,1}
+[       OK ] OpLogBatchStandbyReaderTest.DurablePrefixRegressionFailsClosed (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.BatchZeroMustHaveZeroSequence
+E0818 10:49:23.285447 918211 oplog_batch_standby_reader.cpp:64] Durable prefix is inconsistent: batch_id=0 with last_seq=42
+[       OK ] OpLogBatchStandbyReaderTest.BatchZeroMustHaveZeroSequence (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RangeReadsBatchesWhenDurablePrefixAdvances
+[       OK ] OpLogBatchStandbyReaderTest.RangeReadsBatchesWhenDurablePrefixAdvances (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.DoesNothingWhenDurablePrefixDoesNotAdvance
+[       OK ] OpLogBatchStandbyReaderTest.DoesNothingWhenDurablePrefixDoesNotAdvance (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.FullPageContinuesOnNextPoll
+[       OK ] OpLogBatchStandbyReaderTest.FullPageContinuesOnNextPoll (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RejectsPrefixPointingIntoBatch
+E0818 10:49:23.285653 918211 oplog_batch_standby_reader.cpp:114] Durable prefix does not land on a batch boundary: batch 1 ends at 3, prefix last_seq=2
+[       OK ] OpLogBatchStandbyReaderTest.RejectsPrefixPointingIntoBatch (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.AppliesExpandedEntriesInSequenceOrder
+[       OK ] OpLogBatchStandbyReaderTest.AppliesExpandedEntriesInSequenceOrder (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.AcceptsFirstBatchAfterSnapshotBaseline
+I0818 10:49:23.285724 918211 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=2, expected_sequence_id set to=3
+[       OK ] OpLogBatchStandbyReaderTest.AcceptsFirstBatchAfterSnapshotBaseline (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.FailsWhenLaterBatchHasSequenceGap
+E0818 10:49:23.285800 918211 oplog_batch_standby_reader.cpp:161] Batch sequence discontinuity at batch 2: first_seq=4, previous last_seq=2
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_standby_reader_test.cpp:359: Failure
+Expected equality of these values:
+  2u
+    Which is: 2
+  result.applied_entries
+    Which is: 0
+
+[  FAILED  ] OpLogBatchStandbyReaderTest.FailsWhenLaterBatchHasSequenceGap (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.MissingBatchMarksReaderUnhealthy
+E0818 10:49:23.285823 918211 oplog_batch_standby_reader.cpp:102] Durable prefix references missing batch 2
+[       OK ] OpLogBatchStandbyReaderTest.MissingBatchMarksReaderUnhealthy (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.StartsFromEarliestExistingBatch
+I0818 10:49:23.285841 918211 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=42, expected_sequence_id set to=43
+[       OK ] OpLogBatchStandbyReaderTest.StartsFromEarliestExistingBatch (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RejectsSequenceOverlapAcrossBatches
+E0818 10:49:23.285923 918211 oplog_batch_standby_reader.cpp:161] Batch sequence discontinuity at batch 2: first_seq=2, previous last_seq=2
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_standby_reader_test.cpp:418: Failure
+Expected equality of these values:
+  2u
+    Which is: 2
+  result.applied_entries
+    Which is: 0
+
+[  FAILED  ] OpLogBatchStandbyReaderTest.RejectsSequenceOverlapAcrossBatches (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.ChecksumFailureMarksReaderUnhealthy
+E0818 10:49:23.285954 918211 oplog_batch_storage.cpp:319] Failed to decode batch record 1: * Line 1, Column 45
+  Missing ',' or ']' in array declaration
+[       OK ] OpLogBatchStandbyReaderTest.ChecksumFailureMarksReaderUnhealthy (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.RejectsFutureFirstSequence
+E0818 10:49:23.285988 918211 oplog_batch_standby_reader.cpp:144] Batch record gap: first available batch starts at 2, expected 1
+[       OK ] OpLogBatchStandbyReaderTest.RejectsFutureFirstSequence (0 ms)
+[ RUN      ] OpLogBatchStandbyReaderTest.AlreadyAppliedEntriesAreSkipped
+I0818 10:49:23.286007 918211 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=2, expected_sequence_id set to=3
+[       OK ] OpLogBatchStandbyReaderTest.AlreadyAppliedEntriesAreSkipped (0 ms)
+[----------] 20 tests from OpLogBatchStandbyReaderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 18 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] OpLogBatchStandbyReaderTest.FailsWhenLaterBatchHasSequenceGap
+[  FAILED  ] OpLogBatchStandbyReaderTest.RejectsSequenceOverlapAcrossBatches
+
+ 2 FAILED TESTS

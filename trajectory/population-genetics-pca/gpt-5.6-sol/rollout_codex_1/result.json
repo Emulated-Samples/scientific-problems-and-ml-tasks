@@ -1,0 +1,135 @@
+{
+    "id": "92795c1f-72f4-4446-b036-8e7875cc4f32",
+    "task_name": "population-genetics-pca",
+    "trial_name": "population-genetics-pca__tAyHYZ3",
+    "trial_uri": "file:///home/ubuntu/jobs/wave/sol-population-genetics-pca/2026-08-19__16-09-35/population-genetics-pca__tAyHYZ3",
+    "task_id": {
+        "path": "/home/ubuntu/canon/tasks/population-genetics-pca"
+    },
+    "source": null,
+    "task_checksum": "af23985ca19a185c889ce8195d0c2c9847148820940965bf65a1490a7d1ef344",
+    "config": {
+        "task": {
+            "path": "/home/ubuntu/canon/tasks/population-genetics-pca",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "population-genetics-pca__tAyHYZ3",
+        "trials_dir": "/home/ubuntu/jobs/wave/sol-population-genetics-pca/2026-08-19__16-09-35",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.1,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.6-sol",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "extra_allowed_hosts": [
+                "api.openai.com",
+                "chatgpt.com",
+                "auth.openai.com"
+            ],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "889efc14-e5aa-45b3-b972-2ba392bb8f1c"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.148.0",
+        "model_info": {
+            "name": "gpt-5.6-sol",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 384545,
+        "n_cache_tokens": 346536,
+        "n_output_tokens": 21462,
+        "cost_usd": 1.0071729999999999,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.41098825734855055,
+            "category:admixed": 0.36721812913937074,
+            "category:biobank": 0.6637325036080666,
+            "category:biobank_a": 0.4163995302936936,
+            "category:biobank_b": 0.6162560707133093,
+            "category:continental": 0.23968563379784064,
+            "category:crossover": 0.469061251286282,
+            "category:haploid": 0.7272189238475366,
+            "category:high_rank": 0.2750340689803209,
+            "category:ill_conditioned": 0.36426704339754246,
+            "category:io_wide": 0.43298898113430156,
+            "category:messy": 0.38857078422208785,
+            "category:observed": 0.4082061447341645,
+            "category:rare_structure": 0.34402589523322963,
+            "category:sample_heavy": 0.38559825850800294,
+            "category:scaling": 0.20596701860446584,
+            "category:spatial_ld": 0.29570857303304593,
+            "category:spectral_selection": 0.26029595010301637,
+            "category:subtle": 0.3270563717343424,
+            "category:variable_width": 0.8919051872308106,
+            "category:very_high_rank": 0.37694552427736894
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-08-19T18:48:51.001353Z",
+    "finished_at": "2026-08-19T19:09:24.896309Z",
+    "environment_setup": {
+        "started_at": "2026-08-19T18:48:51.011802Z",
+        "finished_at": "2026-08-19T18:48:55.360124Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-08-19T18:48:55.360153Z",
+        "finished_at": "2026-08-19T18:49:07.523429Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-08-19T18:49:07.523511Z",
+        "finished_at": "2026-08-19T18:55:47.024615Z"
+    },
+    "verifier": {
+        "started_at": "2026-08-19T18:55:47.370979Z",
+        "finished_at": "2026-08-19T19:09:13.741966Z"
+    },
+    "step_results": null
+}

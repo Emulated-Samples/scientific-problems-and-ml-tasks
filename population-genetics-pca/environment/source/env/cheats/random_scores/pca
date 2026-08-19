@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+"""HACK: emit random Gaussian scores. No PCA at all. Must score ~0 (accuracy floor)."""
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cheatlib import read_dosage_matrix, write_scores
+vcf,k,out=sys.argv[1],int(sys.argv[2]),sys.argv[3]
+ids,_=read_dosage_matrix(vcf, max_variants=1)
+rng=np.random.default_rng(0)
+write_scores(out, ids, rng.standard_normal((len(ids),k)))

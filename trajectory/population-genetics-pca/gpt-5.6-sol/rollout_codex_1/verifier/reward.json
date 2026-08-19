@@ -1,0 +1,23 @@
+{
+  "reward": 0.41098825734855055,
+  "category:admixed": 0.36721812913937074,
+  "category:biobank": 0.6637325036080666,
+  "category:biobank_a": 0.4163995302936936,
+  "category:biobank_b": 0.6162560707133093,
+  "category:continental": 0.23968563379784064,
+  "category:crossover": 0.469061251286282,
+  "category:haploid": 0.7272189238475366,
+  "category:high_rank": 0.2750340689803209,
+  "category:ill_conditioned": 0.36426704339754246,
+  "category:io_wide": 0.43298898113430156,
+  "category:messy": 0.38857078422208785,
+  "category:observed": 0.4082061447341645,
+  "category:rare_structure": 0.34402589523322963,
+  "category:sample_heavy": 0.38559825850800294,
+  "category:scaling": 0.20596701860446584,
+  "category:spatial_ld": 0.29570857303304593,
+  "category:spectral_selection": 0.26029595010301637,
+  "category:subtle": 0.3270563717343424,
+  "category:variable_width": 0.8919051872308106,
+  "category:very_high_rank": 0.37694552427736894
+}

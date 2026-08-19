@@ -1,0 +1,33 @@
+CMAKE_BUILD_TYPE: Release
+-- [limit_jobs] Available memory: 243661 MB, CPU cores: 64
+-- [limit_jobs] Compile jobs: 64 (1500 MB/job), Link jobs: 60 (4000 MB/job)
+-- [limit_jobs] Hint: use -G Ninja for automatic compile/link parallelism separation
+-- [limit_jobs] With Make, recommend: cmake --build . -j60
+-- Event-driven completion is disabled
+-- Http as metadata server support is enabled
+-- metrics is enabled
+YLT is imported by find_package
+-- -------------YLT CONFIG SETTING-------------
+-- YLT_ENABLE_DL: ON
+-- YLT_ENABLE_SSL: OFF
+-- YLT_ENABLE_NTLS: OFF
+-- YLT_ENABLE_PMR: OFF
+-- YLT_ENABLE_IO_URING: OFF
+-- YLT_ENABLE_STRUCT_PACK_UNPORTABLE_TYPE: OFF
+-- YLT_ENABLE_STRUCT_PACK_OPTIMIZE: OFF
+-- --------------------------------------------
+-- pybind11 v2.13.6 
+-- USE_NOF=OFF, NoF SSD pool support is disabled
+-- Found ASIO at: /usr/local/include
+-- CUDA: Disabled
+-- ROCm/HIP: Disabled
+-- Sunrise/Tang: Disabled
+-- Mooncake Store will be built
+-- AWS SDK not found, S3 functionality will be disabled
+-- Found xxHash: include=/usr/include lib=/usr/lib/x86_64-linux-gnu/libxxhash.so
+-- io_uring: Enabled for mooncake_store
+/usr/local/lib/python3.10/dist-packages
+/usr/local/lib/python3.10/dist-packages
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspace/Mooncake/build

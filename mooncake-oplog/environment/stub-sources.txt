@@ -1,0 +1,9 @@
+mooncake-store/src/ha/kv/etcd_ha_kv_backend.cpp
+mooncake-store/src/ha/oplog/oplog_types.cpp
+mooncake-store/src/ha/oplog/oplog_batch_types.cpp
+mooncake-store/src/ha/oplog/oplog_batch_codec.cpp
+mooncake-store/src/ha/oplog/oplog_batch_storage.cpp
+mooncake-store/src/ha/oplog/oplog_batch_standby_reader.cpp
+mooncake-store/src/ha/oplog/ordered_oplog_writer.cpp
+mooncake-store/src/ha/oplog/oplog_test_failpoint.cpp
+mooncake-store/src/metadata_store.cpp

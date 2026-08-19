@@ -1,0 +1,275 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 43 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 35 tests from HotStandbyServiceTest
+[ RUN      ] HotStandbyServiceTest.TestStart
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:120: Skipped
+Requires real etcd connection, run in integration environment.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_AlreadyRunning
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:132: Skipped
+Requires real etcd connection to verify double start semantics.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart_AlreadyRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:148: Skipped
+Requires real etcd to simulate invalid endpoints.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStop
+[       OK ] HotStandbyServiceTest.TestStop (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStop_WhenNotRunning
+[       OK ] HotStandbyServiceTest.TestStop_WhenNotRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_StartToWatching
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:174: Skipped
+Requires real etcd to drive full state transition to WATCHING.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_StartToWatching (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:189: Skipped
+Connection failure requires real etcd and invalid endpoints.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_SyncFailed
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:202: Skipped
+Sync failure requires real etcd and OpLog watcher behavior.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_SyncFailed (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus_InitialState
+[       OK ] HotStandbyServiceTest.TestGetSyncStatus_InitialState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:227: Skipped
+Requires real etcd and OpLog activity to change sync status.
+
+[  SKIPPED ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus
+[       OK ] HotStandbyServiceTest.TestGetSyncStatus (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromote_WhenNotReady
+[       OK ] HotStandbyServiceTest.TestPromote_WhenNotReady (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromote_WhenReady
+I0819 18:53:18.891583 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891667 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891674 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891678 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:18.891680 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:18.891681 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestPromote_WhenReady (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromoteAndExportSnapshot_FinalCatchUp
+I0819 18:53:18.891688 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891690 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891691 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891697 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:18.891698 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:18.891700 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestPromoteAndExportSnapshot_FinalCatchUp (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithLocalState
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:309: Skipped
+Requires real etcd and pre-populated local metadata to test warm start.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithLocalState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:320: Skipped
+Requires real etcd and snapshot provider configuration.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithSnapshot
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:329: Skipped
+Requires snapshot provider and real etcd to exercise snapshot bootstrap.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyWithSnapshot
+I0819 18:53:18.891731 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891741 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891747 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891750 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyWithSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot
+I0819 18:53:18.891757 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891757 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891759 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891762 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 18:53:18.891763 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891764 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891767 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891769 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyWhenProviderFails
+I0819 18:53:18.891775 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891777 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891779 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> FAILED (event: FATAL_ERROR)
+I0819 18:53:18.891781 459955 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyWhenProviderFails (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetMetadataCount
+[       OK ] HotStandbyServiceTest.TestGetMetadataCount (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportMetadataSnapshot
+[       OK ] HotStandbyServiceTest.TestExportMetadataSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetLatestAppliedSequenceId
+[       OK ] HotStandbyServiceTest.TestGetLatestAppliedSequenceId (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:435: Failure
+Value of: service_->ExportStandbySnapshot(snapshot)
+  Actual: true
+Expected: false
+
+[  FAILED  ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_SnapshotOnly
+I0819 18:53:18.891804 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891806 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891808 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891810 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestExportStandbySnapshot_SnapshotOnly (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_Empty
+I0819 18:53:18.891816 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891819 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891821 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.891824 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestExportStandbySnapshot_Empty (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:474: Skipped
+Requires real etcd and running replication loop to update metrics.
+
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:486: Skipped
+Requires real etcd and watcher disconnect to exercise disconnect path.
+
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:499: Skipped
+Requires real etcd and running verification loop to observe behavior.
+
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:514: Skipped
+Requires real etcd connection to start service.
+
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled (0 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordStandbyPollsInjectedBackendWithoutNotifier
+I0819 18:53:18.891904 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.891908 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.891969 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.892010 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.BatchRecordStandbyPollsInjectedBackendWithoutNotifier (0 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordRetriesTransientBackendFailure
+I0819 18:53:18.892272 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.892275 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.892278 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.902406 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.BatchRecordRetriesTransientBackendFailure (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordRetryTimeoutTransitionsToFailed
+I0819 18:53:18.902448 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.902450 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.902454 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.902681 459964 standby_state_machine.cpp:245] Standby state transition: WATCHING -> FAILED (event: FATAL_ERROR)
+I0819 18:53:18.912654 459955 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.BatchRecordRetryTimeoutTransitionsToFailed (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordCanRestartAfterRetryTimeout
+I0819 18:53:18.912681 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:18.912683 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.912688 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.912830 459965 standby_state_machine.cpp:245] Standby state transition: WATCHING -> FAILED (event: FATAL_ERROR)
+I0819 18:53:18.922833 459955 standby_state_machine.cpp:245] Standby state transition: FAILED -> CONNECTING (event: START)
+I0819 18:53:18.922845 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:18.922852 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:18.922890 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.BatchRecordCanRestartAfterRetryTimeout (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordStandbyPollsDurablePrefixInReplicationLoop
+{"level":"warn","ts":"2026-08-19T18:53:28.924896Z","logger":"etcd-client","caller":"v3@v3.5.21/retry_interceptor.go:63","msg":"retrying of unary invoker failed","target":"etcd-endpoints://0xc00025d860/127.0.0.1:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = \"transport: Error while dialing: dial tcp 127.0.0.1:2379: connect: connection refused\""}
+E0819 18:53:28.925241 459955 etcd_helper.cpp:339] start_key=/oplog/batch-standby-loop-5857826174455026070-5467795092259446960/, end_key=/oplog/batch-standby-loop-5857826174455026070-54677950922594469600, error=context deadline exceeded
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:775: Skipped
+etcd is unavailable: ETCD_OPERATION_ERROR
+
+[  SKIPPED ] HotStandbyServiceTest.BatchRecordStandbyPollsDurablePrefixInReplicationLoop (10002 ms)
+[----------] 35 tests from HotStandbyServiceTest (10033 ms total)
+
+[----------] 8 tests from PromotionCatchUpTest
+[ RUN      ] PromotionCatchUpTest.UsesDurablePrefixLastSeqAsCatchUpTarget
+I0819 18:53:28.925374 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.925379 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.925470 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.925812 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.925820 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:28.925825 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.UsesDurablePrefixLastSeqAsCatchUpTarget (0 ms)
+[ RUN      ] PromotionCatchUpTest.RetriesTransientDurablePrefixReadFailure
+I0819 18:53:28.925853 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.925854 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.925882 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.926030 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.946120 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:28.946132 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.RetriesTransientDurablePrefixReadFailure (20 ms)
+[ RUN      ] PromotionCatchUpTest.MissingDurablePrefixPromotesAtSequenceZero
+I0819 18:53:28.946147 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.946148 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.946153 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.946460 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.946476 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:28.946478 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.MissingDurablePrefixPromotesAtSequenceZero (0 ms)
+[ RUN      ] PromotionCatchUpTest.MissingDurablePrefixRejectsNonzeroSequence
+I0819 18:53:28.946493 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.946496 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.946501 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.946869 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.946887 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0819 18:53:28.946889 459955 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.MissingDurablePrefixRejectsNonzeroSequence (0 ms)
+[ RUN      ] PromotionCatchUpTest.CatchesUpPrefixThatAppearsBeforePromotion
+I0819 18:53:28.946902 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.946903 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.946907 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.947217 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.947288 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:28.947290 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.CatchesUpPrefixThatAppearsBeforePromotion (0 ms)
+[ RUN      ] PromotionCatchUpTest.PaginatesBatchRecords
+I0819 18:53:28.954875 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.954879 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.965026 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.965124 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.965143 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 18:53:28.965472 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.PaginatesBatchRecords (18 ms)
+[ RUN      ] PromotionCatchUpTest.FailsPromotionWhenDurablePrefixUnreadable
+I0819 18:53:28.965596 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.965598 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.965602 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.965818 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.985893 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0819 18:53:28.985908 459955 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.FailsPromotionWhenDurablePrefixUnreadable (20 ms)
+[ RUN      ] PromotionCatchUpTest.FailsPromotionWhenTargetBatchUnreadable
+I0819 18:53:28.985921 459955 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 18:53:28.985924 459955 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 18:53:28.985929 459955 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 18:53:28.986085 459955 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 18:53:28.986104 459955 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> FAILED (event: PROMOTION_FAILED)
+I0819 18:53:28.986106 459955 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+[       OK ] PromotionCatchUpTest.FailsPromotionWhenTargetBatchUnreadable (0 ms)
+[----------] 8 tests from PromotionCatchUpTest (60 ms total)
+
+[----------] Global test environment tear-down
+[==========] 43 tests from 2 test suites ran. (10094 ms total)
+[  PASSED  ] 27 tests.
+[  SKIPPED ] 15 tests, listed below:
+[  SKIPPED ] HotStandbyServiceTest.TestStart
+[  SKIPPED ] HotStandbyServiceTest.TestStart_AlreadyRunning
+[  SKIPPED ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_StartToWatching
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_SyncFailed
+[  SKIPPED ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithLocalState
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithSnapshot
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled
+[  SKIPPED ] HotStandbyServiceTest.BatchRecordStandbyPollsDurablePrefixInReplicationLoop
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning
+
+ 1 FAILED TEST

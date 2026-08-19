@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""HACK: a genuine Patterson PCA, but on only the first 200 variants. Fast, and fine on
+strong continental structure, but cannot resolve subtle structure -- the coverage gate
+(and accuracy on subtle datasets) must catch the missing effective markers."""
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cheatlib import read_dosage_matrix, write_scores
+vcf,k,out=sys.argv[1],int(sys.argv[2]),sys.argv[3]
+ids,X=read_dosage_matrix(vcf, max_variants=200)
+p=np.nanmean(X,axis=1,keepdims=True)/2.0
+keep=((p>1e-6)&(p<1-1e-6)).ravel()
+X=X[keep]; p=p[keep]
+s=np.sqrt(2*p*(1-p))
+X=np.where(np.isnan(X),2*p,X)
+Z=(X-2*p)/s
+G=(Z.T@Z)/max(Z.shape[0],1)
+ev,V=np.linalg.eigh(G); idx=np.argsort(ev)[::-1][:k]
+S=V[:,idx]*np.sqrt(np.clip(ev[idx],0,None))[None,:]
+write_scores(out, ids, S)

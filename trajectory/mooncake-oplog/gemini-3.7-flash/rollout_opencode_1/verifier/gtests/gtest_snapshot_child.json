@@ -1,0 +1,277 @@
+{
+  "tests": 25,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-19T16:36:17Z",
+  "time": "35.335s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "SnapshotChildProcessTest",
+      "tests": 25,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T16:36:17Z",
+      "time": "35.335s",
+      "testsuite": [
+        {
+          "name": "FormatTimestamp_MatchesExpectedFormat",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 322,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:17Z",
+          "time": "1.02s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "HandleChildExit_NormalSuccess",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 333,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:18Z",
+          "time": "1.015s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "HandleChildExit_NormalFailure",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 347,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:19Z",
+          "time": "1.015s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "HandleChildExit_Signaled",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 361,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:20Z",
+          "time": "1.017s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "HandleChildTimeout_KillsSleepingChild",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 381,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:21Z",
+          "time": "6.019s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "CleanupOldSnapshot_KeepsRecentDeletesOld",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 404,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:27Z",
+          "time": "1.009s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "UploadSnapshotPayloadFile_Success",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 452,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:28Z",
+          "time": "1.009s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "DestructorInterruptsSnapshotThreadSleep",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 470,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:29Z",
+          "time": "1.011s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "AutoSnapshot_GeneratesFiles",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 497,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:30Z",
+          "time": "5.022s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "PersistState_PublishesSnapshotDescriptor",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 526,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:35Z",
+          "time": "1.009s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "PersistState_UsesFrozenSnapshotDescriptor",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 559,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:36Z",
+          "time": "1.008s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "RestoreRebuildsGroupedObjectRouting",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 589,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:37Z",
+          "time": "1.019s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "DeserializeLegacyMetadataWithoutGroupIdRestoresUngroupedObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 643,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:38Z",
+          "time": "1.008s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "DeserializeMetadataSkipsInvalidClientId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 696,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:39Z",
+          "time": "1.008s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "LegacyEtcdConnstringFallbackIsPreserved",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 747,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:40Z",
+          "time": "0s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "PersistState_UsesBatchDurablePrefixBoundaryInSnapshotDescriptor",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 764,
+          "status": "RUN",
+          "result": "SKIPPED",
+          "timestamp": "2026-08-19T16:36:40Z",
+          "time": "5.002s",
+          "classname": "SnapshotChildProcessTest",
+          "skipped": [
+            {
+              "message": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp:783\nfailed to initialize batch durable prefix: ETCD_OPERATION_ERROR\n"
+            }
+          ]
+        },
+        {
+          "name": "RestoreWithBackupDir_CreatesBackupFiles",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 811,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:45Z",
+          "time": "1.028s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "RestoreWithoutBackupDir_NoBackupFiles",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 849,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:46Z",
+          "time": "1.018s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "RestoreFallsBackToPreviousHealthySnapshotWhenLatestIsCorrupted",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 888,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:47Z",
+          "time": "1.019s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "EnableSnapshotWithoutEnvVar_Throws",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 972,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:48Z",
+          "time": "0.007s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "DisableSnapshotWithoutEnvVar_NoThrow",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 990,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:48Z",
+          "time": "0.007s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "RestoreCleansNonCompleteReplica",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 1009,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:48Z",
+          "time": "1.018s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "RestoreCleansExpiredLease",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 1083,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:49Z",
+          "time": "1.017s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "PersistState_FailFast_StopsOnFirstError",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 1166,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:50Z",
+          "time": "1.008s",
+          "classname": "SnapshotChildProcessTest"
+        },
+        {
+          "name": "UploadFail_WithBackupDir_SavesAllFiles",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/ha\/snapshot\/snapshot_child_process_test.cpp",
+          "line": 1234,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:51Z",
+          "time": "1.008s",
+          "classname": "SnapshotChildProcessTest"
+        }
+      ]
+    }
+  ]
+}

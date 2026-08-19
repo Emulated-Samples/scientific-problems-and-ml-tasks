@@ -1,0 +1,1 @@
+{"reward": 0.4941, "group_writer": 0.0, "group_codec": 1.0, "group_storage": 0.9583, "group_standby_reader": 0.8723, "group_failpoint": 1.0, "group_ha_integration": 0.0, "group_standby_service": 0.2576, "group_snapshot": 1.0, "group_config": 1.0, "group_regression": 0.9752}

@@ -1,0 +1,46 @@
+name: validate
+
+# Enforces the two standing guarantees on every push, plus the task-mirror drift check.
+# Uses the small dev suite so it runs in ~a minute.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  guarantees:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Sync deps
+        run: uv sync
+      - name: Generate dev datasets
+        run: |
+          install -m 0600 grader/private/release-v3.math-key /tmp/pcabench-ci-math.key
+          head -c 32 /dev/urandom > /tmp/pcabench-ci-representation.key
+          uv run python -m data.generate --suite dev --out-dir data/generated \
+            --math-key-file /tmp/pcabench-ci-math.key \
+            --representation-key-file /tmp/pcabench-ci-representation.key
+          sudo chown root:root /tmp/pcabench-ci-math.key
+          sudo chmod 0400 /tmp/pcabench-ci-math.key
+      - name: Task mirror is up to date
+        run: uv run python scripts/build_task.py --check
+      - name: Unit and contract tests
+        run: |
+          uv run pytest -q
+          node --test environment/test/*.test.mjs
+      - name: FN-resistance never rejected + every cheat crushed
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends bubblewrap
+          sudo useradd --system --no-create-home --shell /usr/sbin/nologin pcasub
+          sudo mkdir -p /opt/hyperfocal
+          sudo /usr/bin/python3 -m venv /opt/hyperfocal/pcabench
+          sudo /opt/hyperfocal/pcabench/bin/pip install --only-binary=:all: \
+            numpy==2.2.6 scipy==1.15.3
+          sudo /opt/hyperfocal/pcabench/bin/python scripts/validate.py \
+            --data-dir data/generated \
+            --math-key-file /tmp/pcabench-ci-math.key

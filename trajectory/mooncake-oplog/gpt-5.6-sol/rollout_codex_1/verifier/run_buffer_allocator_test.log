@@ -1,0 +1,62 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 16 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 12 tests from BufferAllocatorTest
+[ RUN      ] BufferAllocatorTest.AllocateAndDeallocate
+[       OK ] BufferAllocatorTest.AllocateAndDeallocate (0 ms)
+[ RUN      ] BufferAllocatorTest.AllocateMultiple
+I0819 18:59:27.863008 511345 buffer_allocator_test.cpp:110] Cleaned up handles in AllocateMultiple test
+I0819 18:59:27.863070 511345 buffer_allocator_test.cpp:110] Cleaned up handles in AllocateMultiple test
+[       OK ] BufferAllocatorTest.AllocateMultiple (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoredOffsetHandleReleasesItsExactAddress
+[       OK ] BufferAllocatorTest.RestoredOffsetHandleReleasesItsExactAddress (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsHasNoArbitraryGapLimit
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsHasNoArbitraryGapLimit (37 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses
+[       OK ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses (4 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts
+[       OK ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts (1 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors
+[       OK ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors (4 ms)
+[ RUN      ] BufferAllocatorTest.AllocateTooLarge
+E0819 18:59:27.911864 511345 allocator.cpp:151] allocation_exception error=Invalid size for alloc 16777217 
+[       OK ] BufferAllocatorTest.AllocateTooLarge (1 ms)
+[ RUN      ] BufferAllocatorTest.RepeatAllocateAndDeallocate
+[       OK ] BufferAllocatorTest.RepeatAllocateAndDeallocate (13 ms)
+[ RUN      ] BufferAllocatorTest.ParallelAllocation
+I0819 18:59:28.926005 511345 buffer_allocator_test.cpp:465] Completed parallel allocation/deallocation test for CACHELIB
+I0819 18:59:29.926403 511345 buffer_allocator_test.cpp:465] Completed parallel allocation/deallocation test for OFFSET
+[       OK ] BufferAllocatorTest.ParallelAllocation (2001 ms)
+[----------] 12 tests from BufferAllocatorTest (2064 ms total)
+
+[----------] 4 tests from SimpleAllocatorTest
+[ RUN      ] SimpleAllocatorTest.BasicAllocationAndDeallocation
+I0819 18:59:29.926477 511345 allocator.cpp:491] initializing_simple_allocator size=16777216
+I0819 18:59:29.926509 511345 allocator.cpp:530] simple_allocator_initialized pool_id=0
+I0819 18:59:29.926522 511345 allocator.cpp:552] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.BasicAllocationAndDeallocation (0 ms)
+[ RUN      ] SimpleAllocatorTest.MultipleAllocations
+I0819 18:59:29.926527 511345 allocator.cpp:491] initializing_simple_allocator size=16777216
+I0819 18:59:29.926537 511345 allocator.cpp:530] simple_allocator_initialized pool_id=0
+I0819 18:59:29.926545 511345 allocator.cpp:552] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.MultipleAllocations (0 ms)
+[ RUN      ] SimpleAllocatorTest.AllocationTooLarge
+I0819 18:59:29.926549 511345 allocator.cpp:491] initializing_simple_allocator size=16777216
+I0819 18:59:29.926558 511345 allocator.cpp:530] simple_allocator_initialized pool_id=0
+E0819 18:59:29.926616 511345 allocator.cpp:578] allocation_exception error=Invalid size for alloc 16777217 
+I0819 18:59:29.926625 511345 allocator.cpp:552] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.AllocationTooLarge (0 ms)
+[ RUN      ] SimpleAllocatorTest.StressTest
+I0819 18:59:29.926630 511345 allocator.cpp:491] initializing_simple_allocator size=268435456
+I0819 18:59:29.926648 511345 allocator.cpp:530] simple_allocator_initialized pool_id=0
+I0819 18:59:29.926803 511345 allocator.cpp:552] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.StressTest (0 ms)
+[----------] 4 tests from SimpleAllocatorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 2 test suites ran. (2064 ms total)
+[  PASSED  ] 16 tests.

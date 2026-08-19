@@ -1,0 +1,33 @@
+Skipping image OS validation for hb__dc622928f4b8f8096419d27a0b829a54: docker inspect returned 1
+Running command: command -v curl >/dev/null 2>&1 || (apt-get update && apt-get install -y curl) || (dnf install -y curl) || (yum install -y curl)
+Command outputs captured
+Running command: set -euo pipefail; curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash && export NVM_DIR="$HOME/.nvm" && \. "$NVM_DIR/nvm.sh" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && npm -v && npm i -g opencode-ai@latest && opencode --version
+Command outputs captured
+Running command: mkdir -p ~/.config/opencode && echo '{
+  "provider": {
+    "openrouter": {
+      "models": {
+        "google/gemini-3.7-flash": {}
+      },
+      "options": {
+        "extraBody": {
+          "provider": {
+            "order": [
+              "google-vertex"
+            ],
+            "allow_fallbacks": false
+          }
+        }
+      }
+    }
+  }
+}' > ~/.config/opencode/opencode.json
+Command outputs captured
+Running command: . ~/.nvm/nvm.sh; opencode --model=openrouter/google/gemini-3.7-flash run --format=json --thinking --dangerously-skip-permissions -- 'lat builds attribution graphs for transformer prompts (`lat.attribute_linear` / `lat.attribute_from_linearized`). The attribution step is slower than it should be, profiling on long prompts and deep models shows the backward sweep dominating end-to-end time. Make attribution substantially faster. Hard constraints: attribution outputs must not change on any input (the full test suite must stay green), and the public API is unchanged. `bench/attribution.py` profiles the sweep on synthetic IRs on this machine (`python -m bench.attribution --help`). A Python environment with the dev dependencies and this package installed editable is at `/hyperfocal/solver-venv/`, use `/hyperfocal/solver-venv/bin/python` to run code and `/hyperfocal/solver-venv/bin/python -m pytest tests/` for the suite.
+' 2>&1 </dev/null | stdbuf -oL tee /logs/agent/opencode.txt
+Command failed
+Fatal provider error in opencode output on attempt 1/4; continuing session ses_fe4d92b05ffeHwfSTNgP2xt2lA in 60s: {"code":400,"message":"Gemini blocked the request: PROHIBITED_CONTENT","metadata":{"error_type":"invalid_request"}}
+Running command: echo '{"type": "harbor_retry", "attempt": 1, "max_retries": 3, "timestamp": "2026-08-19T18:16:23.198637+00:00", "session_id": "ses_fe4d92b05ffeHwfSTNgP2xt2lA", "backoff_sec": 60, "reason": "{\"code\":400,\"message\":\"Gemini blocked the request: PROHIBITED_CONTENT\",\"metadata\":{\"error_type\":\"invalid_request\"}}"}' >> /logs/agent/opencode.txt; . ~/.nvm/nvm.sh; opencode --model=openrouter/google/gemini-3.7-flash run --format=json --thinking --dangerously-skip-permissions --session ses_fe4d92b05ffeHwfSTNgP2xt2lA -- 'The previous request was aborted by a transient provider error. Continue working on the original task from where you left off.' 2>&1 </dev/null | stdbuf -oL tee -a /logs/agent/opencode.txt
+Command outputs captured
+Wrote opencode trajectory to /home/ubuntu/jobs/wave/gemini-attribution-speedup/run-1787156167/attribution-speedup__4FWk6gk/agent/trajectory.json
+Collecting main service artifacts

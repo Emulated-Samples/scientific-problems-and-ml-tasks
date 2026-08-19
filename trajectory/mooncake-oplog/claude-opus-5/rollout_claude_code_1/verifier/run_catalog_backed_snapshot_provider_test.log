@@ -1,0 +1,44 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotReturnsEmptyWhenCatalogMissing/Embedded
+I0818 10:49:41.275617 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_4AnlmO"
+I0818 10:49:41.275638 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_4AnlmO"
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotReturnsEmptyWhenCatalogMissing/Embedded (0 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotRoundTrip/Embedded
+I0818 10:49:41.275738 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_X7GUSB"
+I0818 10:49:41.275993 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_X7GUSB"
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotRoundTrip/Embedded (1 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithDataTypeField/Embedded
+I0818 10:49:41.276814 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_XTfhLm"
+I0818 10:49:41.277024 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_XTfhLm"
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithDataTypeField/Embedded (0 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithHardPinnedField/Embedded
+I0818 10:49:41.277309 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_zCKji2"
+I0818 10:49:41.277496 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_zCKji2"
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithHardPinnedField/Embedded (0 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithDataTypeAndHardPinned/Embedded
+I0818 10:49:41.277781 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_kcqJgZ"
+I0818 10:49:41.277958 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_kcqJgZ"
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithDataTypeAndHardPinned/Embedded (0 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithGroupId/Embedded
+I0818 10:49:41.278225 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_kXFAFz"
+I0818 10:49:41.278406 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_kXFAFz"
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.LoadLatestSnapshotWithGroupId/Embedded (0 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.RejectsOverflowingReplicaCount/Embedded
+I0818 10:49:41.278721 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_vA63UH"
+I0818 10:49:41.278894 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_vA63UH"
+E0818 10:49:41.278967 918315 catalog_backed_snapshot_provider.cpp:153] Snapshot metadata entry replica count mismatch, replicas=4294967295, total_fields=7
+E0818 10:49:41.278971 918315 catalog_backed_snapshot_provider.cpp:462] Failed to deserialize snapshot metadata payload, snapshot_id=20240330_120000_001, error=DESERIALIZE_FAIL
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.RejectsOverflowingReplicaCount/Embedded (0 ms)
+[ RUN      ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.RejectsClusterMismatch/Embedded
+I0818 10:49:41.279177 918315 local_file_snapshot_object_store.cpp:78] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_V6BNTW"
+I0818 10:49:41.279357 918315 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/catalog_backed_snapshot_provider_V6BNTW"
+E0818 10:49:41.279362 918315 catalog_backed_snapshot_provider.cpp:378] Snapshot provider cluster mismatch, requested=snapshot-provider-test-16952543294247203172-4231826635146624956-other, configured=snapshot-provider-test-16952543294247203172-4231826635146624956
+[       OK ] SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest.RejectsClusterMismatch/Embedded (0 ms)
+[----------] 8 tests from SnapshotCatalogBackends/CatalogBackedSnapshotProviderTest (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (4 ms total)
+[  PASSED  ] 8 tests.

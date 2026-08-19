@@ -1,0 +1,28 @@
+# Hyperfocal Environment Configuration
+# This file configures the env-orchestrator for rollouts and local testing.
+
+version: "1.0"
+
+environment:
+  name: lat-bench
+  description: "Build a linearized attribution tracer for transformer interpretability"
+
+# Path configuration for EC2 instances
+# These paths are relative to paths.root
+paths:
+  root: /hyperfocal/env
+  environmentDist: environment/dist
+  workspace: workspace
+
+compute:
+  cloud: aws
+  cpus: 4
+  memoryMb: 16384
+
+# Agent configuration
+agent:
+  # Whether the agent should have AWS access
+  # Set to true if your environment needs to deploy AWS resources
+  awsAccess: false
+  # Model is configured by env-orchestrator defaults
+  # Uncomment to override: defaultModel: claude-sonnet-4-20250514

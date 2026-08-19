@@ -1,0 +1,67 @@
+version: "1.0"
+
+environment:
+  name: sc-pcabench
+  description: >
+    Build a fast Patterson-Price-Reich population-genetics PCA over raw,
+    unindexed multi-sample VCF text using only Python, NumPy, and SciPy.
+
+paths:
+  root: /hyperfocal/env
+  environmentDist: environment/dist
+  workspace: workspace
+
+compute:
+  cloud: aws
+  gpus: 0
+  # NON-BURSTABLE, and that is the whole point. 70% of every dataset's score is a wall-clock
+  # comparison, so the instance's CPU consistency IS part of the metric.
+  #
+  # t3 is burstable. Measured here, the gold reference -- identical code, identical fold, identical
+  # box -- scored ill_conditioned time_quality 0.912 / 0.910 / 1.000 across three runs, a 9% swing
+  # worth 0.066 of reward that no submission caused. Worse, it moved a PASS predicate: the naive
+  # arm mastered 2 of 18 categories on one run and 3 of 18 on the next, from nothing but CPU jitter.
+  # A threshold decided by its own measurement noise is not a threshold.
+  #
+  # It is also biased, not merely noisy: the anchors are measured once and cached, then submissions
+  # run later, so any drift across a grade (credit depletion, a noisy neighbour) is charged to the
+  # submission instead of cancelling against its own anchor.
+  #
+  # r5.2xlarge keeps the 8 vCPUs the prompt promises as 8 threads, is not burstable, and its 64 GiB
+  # leaves real headroom over the declared 14 GiB aggregate RSS cap -- unlike c5.2xlarge's 16 GiB,
+  # which would put the grader, both reference anchors and the submission in one 16 GiB box.
+  instanceType: r5.2xlarge
+  cpus: 8                 # portable requirement -> task.toml
+  memoryMb: 65536          # portable requirement -> task.toml
+
+agent:
+  env:
+    # Solve-phase wall clock: 24 hours.
+    HYPERFOCAL_AGENT_TIMEOUT_MS: "86400000"
+  type: claude-code
+  defaultModel: claude-opus-4-8
+  awsAccess: false
+  permissionsMode: linux-user
+
+packaging:
+  # The grade regenerates the hidden suite (~1h) then grades it under a 8400s
+  # (2h20m) budget; give the verifier phase the same 3h outer window the env's
+  # own reviewed verifier entrypoint uses (tests/test.sh
+  # VERIFIER_OUTER_TIMEOUT_SECONDS=10800). The task.toml default would kill a
+  # legal grade mid-flight.
+  verifierTimeoutSec: 10800
+  # ZERO-CONFIG DEFAULT: nothing here selects the sandbox mode. The grader defaults
+  # to verifier-container (index.ts ISOLATION), because harbor's task container is
+  # not granted CAP_SYS_ADMIN and bwrap cannot create its namespaces there, so the
+  # bwrap grade fails closed. verifier-container chroots (needs only CAP_SYS_CHROOT,
+  # which harbor grants) into the /opt/hyperfocal/pcabench-sandbox-root provision.sh
+  # builds. What ships must grade with nothing set, so the native bubblewrap jail is
+  # an opt-in (PCABENCH_ISOLATION=bwrap) for EC2 rollouts. Read-protection is the
+  # same sealPrivateBenchmarkState 0700 root seal (asserted unreadable as pcasub);
+  # the verifier-container network assertion is advisory by default (decision 15 —
+  # harbor verifiers legitimately have egress; a reachable network is not a path to
+  # the root-sealed labels). network.verifier no-network below stays as an advisory
+  # declaration; the agent phase keeps egress for api.anthropic.com.
+  network:
+    verifier:
+      mode: no-network

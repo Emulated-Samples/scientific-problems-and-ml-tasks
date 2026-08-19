@@ -1,0 +1,94 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 16 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 12 tests from BufferAllocatorTest
+[ RUN      ] BufferAllocatorTest.AllocateAndDeallocate
+[       OK ] BufferAllocatorTest.AllocateAndDeallocate (0 ms)
+[ RUN      ] BufferAllocatorTest.AllocateMultiple
+I0818 10:55:36.512939 969609 buffer_allocator_test.cpp:110] Cleaned up handles in AllocateMultiple test
+I0818 10:55:36.513000 969609 buffer_allocator_test.cpp:110] Cleaned up handles in AllocateMultiple test
+[       OK ] BufferAllocatorTest.AllocateMultiple (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses
+E0818 10:55:36.513116 969609 allocator.cpp:257] restore_allocator_endpoint_mismatch expected=restore-endpoint actual=other-endpoint
+E0818 10:55:36.513129 969609 allocator.cpp:298] restore_allocator_duplicate_or_overlapping_range
+E0818 10:55:36.513139 969609 allocator.cpp:282] restore_allocator_address_out_of_range
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder
+E0818 10:55:36.513171 969609 allocator.cpp:298] restore_allocator_duplicate_or_overlapping_range
+E0818 10:55:36.513177 969609 allocator.cpp:282] restore_allocator_address_out_of_range
+/workspace/Mooncake/mooncake-store/tests/buffer_allocator_test.cpp:202: Failure
+Value of: RestoreOffsetBufferAllocator( segment, std::numeric_limits<size_t>::max() - 100, 200, endpoint, {}) .has_value()
+  Actual: true
+Expected: false
+
+E0818 10:55:36.513195 969609 allocator.cpp:278] restore_allocator_address_overflow
+[  FAILED  ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoredOffsetHandleReleasesItsExactAddress
+[       OK ] BufferAllocatorTest.RestoredOffsetHandleReleasesItsExactAddress (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsHasNoArbitraryGapLimit
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsHasNoArbitraryGapLimit (36 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses
+[       OK ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses (4 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts
+E0818 10:55:36.555573 969609 allocator.cpp:298] restore_allocator_duplicate_or_overlapping_range
+E0818 10:55:36.555589 969609 allocator.cpp:371] restore_cachelib_allocator_import_failed segment=cachelib-invalid
+E0818 10:55:36.555598 969609 allocator.cpp:298] restore_allocator_duplicate_or_overlapping_range
+E0818 10:55:36.555605 969609 allocator.cpp:257] restore_allocator_endpoint_mismatch expected=cachelib-invalid-endpoint actual=wrong
+E0818 10:55:36.555611 969609 allocator.cpp:282] restore_allocator_address_out_of_range
+E0818 10:55:36.555614 969609 allocator.cpp:321] restore_cachelib_allocator_misaligned base=7784628225 size=67108864
+E0818 10:55:36.555615 969609 allocator.cpp:321] restore_cachelib_allocator_misaligned base=18446744073692774399 size=33554432
+[       OK ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts (1 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors
+E0818 10:55:36.555702 969609 allocator.cpp:316] restore_cachelib_allocator_rejects_nof_replicas
+E0818 10:55:36.555703 969609 allocator.cpp:327] restore_cachelib_allocator_rejects_cxl_descriptor
+/workspace/Mooncake/mooncake-store/tests/buffer_allocator_test.cpp:374: Failure
+Expected equality of these values:
+  restored.protocol_
+    Which is: "tcp"
+  descriptors[0].protocol_
+    Which is: "rdma"
+
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors (4 ms)
+[ RUN      ] BufferAllocatorTest.AllocateTooLarge
+E0818 10:55:36.561337 969609 allocator.cpp:183] allocation_exception error=Invalid size for alloc 16777217 
+[       OK ] BufferAllocatorTest.AllocateTooLarge (1 ms)
+[ RUN      ] BufferAllocatorTest.RepeatAllocateAndDeallocate
+[       OK ] BufferAllocatorTest.RepeatAllocateAndDeallocate (13 ms)
+[ RUN      ] BufferAllocatorTest.ParallelAllocation
+I0818 10:55:37.575335 969609 buffer_allocator_test.cpp:465] Completed parallel allocation/deallocation test for CACHELIB
+I0818 10:55:38.575850 969609 buffer_allocator_test.cpp:465] Completed parallel allocation/deallocation test for OFFSET
+[       OK ] BufferAllocatorTest.ParallelAllocation (2000 ms)
+[----------] 12 tests from BufferAllocatorTest (2063 ms total)
+
+[----------] 4 tests from SimpleAllocatorTest
+[ RUN      ] SimpleAllocatorTest.BasicAllocationAndDeallocation
+I0818 10:55:38.575896 969609 allocator.cpp:664] initializing_simple_allocator size=16777216
+I0818 10:55:38.575925 969609 allocator.cpp:703] simple_allocator_initialized pool_id=0
+I0818 10:55:38.575937 969609 allocator.cpp:725] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.BasicAllocationAndDeallocation (0 ms)
+[ RUN      ] SimpleAllocatorTest.MultipleAllocations
+I0818 10:55:38.575943 969609 allocator.cpp:664] initializing_simple_allocator size=16777216
+I0818 10:55:38.575953 969609 allocator.cpp:703] simple_allocator_initialized pool_id=0
+I0818 10:55:38.575961 969609 allocator.cpp:725] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.MultipleAllocations (0 ms)
+[ RUN      ] SimpleAllocatorTest.AllocationTooLarge
+I0818 10:55:38.575965 969609 allocator.cpp:664] initializing_simple_allocator size=16777216
+I0818 10:55:38.575974 969609 allocator.cpp:703] simple_allocator_initialized pool_id=0
+E0818 10:55:38.576036 969609 allocator.cpp:751] allocation_exception error=Invalid size for alloc 16777217 
+I0818 10:55:38.576042 969609 allocator.cpp:725] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.AllocationTooLarge (0 ms)
+[ RUN      ] SimpleAllocatorTest.StressTest
+I0818 10:55:38.576045 969609 allocator.cpp:664] initializing_simple_allocator size=268435456
+I0818 10:55:38.576061 969609 allocator.cpp:703] simple_allocator_initialized pool_id=0
+I0818 10:55:38.576104 969609 allocator.cpp:725] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.StressTest (0 ms)
+[----------] 4 tests from SimpleAllocatorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 2 test suites ran. (2063 ms total)
+[  PASSED  ] 14 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors
+
+ 2 FAILED TESTS

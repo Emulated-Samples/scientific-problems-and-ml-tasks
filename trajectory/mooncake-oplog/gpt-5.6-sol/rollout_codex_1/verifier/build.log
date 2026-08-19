@@ -1,0 +1,281 @@
+Consolidate compiler generated dependencies of target gtest
+Consolidate compiler generated dependencies of target base
+Consolidate compiler generated dependencies of target mooncake_common
+Consolidate compiler generated dependencies of target asio_shared
+Consolidate compiler generated dependencies of target cachelib_memory_allocator
+Consolidate compiler generated dependencies of target tcp_transport
+Consolidate compiler generated dependencies of target rpc_communicator
+Consolidate compiler generated dependencies of target rdma_transport
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  0%] Built target gtest
+[  3%] Built target mooncake_common
+[ 10%] Built target asio_shared
+[ 13%] Built target cachelib_memory_allocator
+[ 13%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 20%] Built target rpc_communicator
+Consolidate compiler generated dependencies of target gtest_main
+Consolidate compiler generated dependencies of target transport
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+Consolidate compiler generated dependencies of target transfer_engine
+[ 33%] Built target transfer_engine
+Consolidate compiler generated dependencies of target mooncake_store
+[100%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/ordered_oplog_writer_test.dir/ha/oplog/ordered_oplog_writer_test.cpp.o
+[100%] Linking CXX executable ordered_oplog_writer_test
+[100%] Built target ordered_oplog_writer_test
+[  0%] Built target gtest
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  6%] Built target cachelib_memory_allocator
+[  9%] Built target mooncake_common
+[ 12%] Built target asio_shared
+[ 16%] Built target rdma_transport
+[ 16%] Built target tcp_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[ 96%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_batch_codec_test.dir/ha/oplog/oplog_batch_codec_test.cpp.o
+[100%] Linking CXX executable oplog_batch_codec_test
+[100%] Built target oplog_batch_codec_test
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  6%] Built target cachelib_memory_allocator
+[  6%] Built target gtest
+[  9%] Built target mooncake_common
+[ 12%] Built target asio_shared
+[ 12%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_types_test.dir/ha/oplog/oplog_types_test.cpp.o
+[100%] Linking CXX executable oplog_types_test
+[100%] Built target oplog_types_test
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  0%] Built target gtest
+[  6%] Built target cachelib_memory_allocator
+[  9%] Built target mooncake_common
+[ 12%] Built target asio_shared
+[ 16%] Built target rdma_transport
+[ 16%] Built target tcp_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[ 96%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_batch_storage_test.dir/ha/oplog/oplog_batch_storage_test.cpp.o
+[100%] Linking CXX executable oplog_batch_storage_test
+[100%] Built target oplog_batch_storage_test
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target gtest
+[  0%] Built target base
+[  3%] Built target mooncake_common
+[ 10%] Built target cachelib_memory_allocator
+[ 13%] Built target asio_shared
+[ 16%] Built target rdma_transport
+[ 16%] Built target tcp_transport
+[ 20%] Built target rpc_communicator
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+[ 33%] Built target transfer_engine
+[100%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_batch_standby_reader_test.dir/ha/oplog/oplog_batch_standby_reader_test.cpp.o
+[100%] Linking CXX executable oplog_batch_standby_reader_test
+[100%] Built target oplog_batch_standby_reader_test
+[  0%] Built target build_etcd_wrapper
+[  3%] Built target mooncake_common
+[  3%] Built target gtest
+[ 10%] Built target cachelib_memory_allocator
+[ 10%] Built target base
+[ 13%] Built target asio_shared
+[ 13%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 20%] Built target rpc_communicator
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+[ 33%] Built target transfer_engine
+[100%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_applier_test.dir/ha/oplog/oplog_applier_test.cpp.o
+[100%] Linking CXX executable oplog_applier_test
+[100%] Built target oplog_applier_test
+[  0%] Built target gtest
+[100%] Built target gtest_main
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_test_failpoint_test.dir/ha/oplog/oplog_test_failpoint_test.cpp.o
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/oplog_test_failpoint_test.dir/__/src/ha/oplog/oplog_test_failpoint.cpp.o
+/workspace/Mooncake/mooncake-store/src/ha/oplog/oplog_test_failpoint.cpp: In static member function ‘static bool mooncake::TestFailPoint::Wait(std::string_view)’:
+/workspace/Mooncake/mooncake-store/src/ha/oplog/oplog_test_failpoint.cpp:61:18: warning: ignoring return value of ‘ssize_t write(int, const void*, size_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   61 |     (void)::write(fd, marker, sizeof(marker) - 1);
+      |           ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[100%] Linking CXX executable oplog_test_failpoint_test
+[100%] Built target oplog_test_failpoint_test
+[  0%] Built target gtest
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  6%] Built target mooncake_common
+[  9%] Built target cachelib_memory_allocator
+[ 12%] Built target asio_shared
+[ 12%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[ 96%] Building CXX object mooncake-store/tests/CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o
+[100%] Linking CXX executable master_service_ha_test
+/usr/bin/ld: CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o: in function `mooncake::test::MasterServiceHATest_DiscardExpiredProcessingReplicasWritesBatchRecordOpLog_Test::TestBody()':
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:3593: undefined reference to `mooncake::MasterService::RunBatchEvictForTesting(double, double)'
+/usr/bin/ld: CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o: in function `mooncake::test::MasterServiceBatchRecordE2ETest_EvictAllReadableReplicasReturnsObjectNotFound_Test::TestBody()':
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:2012: undefined reference to `mooncake::MasterService::RunBatchEvictForTesting(double, double)'
+/usr/bin/ld: CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o: in function `mooncake::test::MasterServiceHATest_BatchEvictReleasesMemoryAfterDurable_Test::TestBody()':
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:3281: undefined reference to `mooncake::MasterService::RunBatchEvictForTesting(double, double)'
+/usr/bin/ld: CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o: in function `mooncake::test::MasterServiceHATest_BatchEvictWritesBatchRecordOpLog_Test::TestBody()':
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:3240: undefined reference to `mooncake::MasterService::RunBatchEvictForTesting(double, double)'
+/usr/bin/ld: CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o: in function `mooncake::test::MasterServiceHATest_DiscardExpiredReplicationTaskWritesBatchRecordOpLog_Test::TestBody()':
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:3643: undefined reference to `mooncake::MasterService::RunBatchEvictForTesting(double, double)'
+/usr/bin/ld: CMakeFiles/master_service_ha_test.dir/ha/master_service_ha_test.cpp.o:/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:1973: more undefined references to `mooncake::MasterService::RunBatchEvictForTesting(double, double)' follow
+collect2: error: ld returned 1 exit status
+make[3]: *** [mooncake-store/tests/CMakeFiles/master_service_ha_test.dir/build.make:120: mooncake-store/tests/master_service_ha_test] Error 1
+make[3]: Target 'mooncake-store/tests/CMakeFiles/master_service_ha_test.dir/build' not remade because of errors.
+make[2]: *** [CMakeFiles/Makefile2:4751: mooncake-store/tests/CMakeFiles/master_service_ha_test.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:4758: mooncake-store/tests/CMakeFiles/master_service_ha_test.dir/rule] Error 2
+make[1]: Target 'master_service_ha_test' not remade because of errors.
+make: *** [Makefile:1700: master_service_ha_test] Error 2
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  0%] Built target gtest
+[  3%] Built target mooncake_common
+[  9%] Built target cachelib_memory_allocator
+[ 12%] Built target asio_shared
+[ 16%] Built target rdma_transport
+[ 16%] Built target tcp_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/hot_standby_service_test.dir/ha/standby/hot_standby_service_test.cpp.o
+[100%] Linking CXX executable hot_standby_service_test
+[100%] Built target hot_standby_service_test
+[  0%] Built target gtest
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  3%] Built target mooncake_common
+[  9%] Built target cachelib_memory_allocator
+[ 12%] Built target asio_shared
+[ 16%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/ha_metric_manager_test.dir/ha/standby/ha_metric_manager_test.cpp.o
+[100%] Linking CXX executable ha_metric_manager_test
+[100%] Built target ha_metric_manager_test
+[  0%] Built target build_etcd_wrapper
+[  6%] Built target cachelib_memory_allocator
+[  6%] Built target gtest
+[ 10%] Built target mooncake_common
+[ 10%] Built target base
+[ 13%] Built target asio_shared
+[ 13%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 20%] Built target rpc_communicator
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+[ 33%] Built target transfer_engine
+[100%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/hot_standby_snapshot_bootstrap_test.dir/ha/standby/hot_standby_snapshot_bootstrap_test.cpp.o
+[100%] Linking CXX executable hot_standby_snapshot_bootstrap_test
+[100%] Built target hot_standby_snapshot_bootstrap_test
+[  0%] Built target gtest
+[  3%] Built target mooncake_common
+[  3%] Built target build_etcd_wrapper
+[  3%] Built target base
+[ 10%] Built target cachelib_memory_allocator
+[ 13%] Built target asio_shared
+[ 13%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 20%] Built target rpc_communicator
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+[ 33%] Built target transfer_engine
+[100%] Built target mooncake_store
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/master_service_config_test.dir/master_service_config_test.cpp.o
+[100%] Linking CXX executable master_service_config_test
+[100%] Built target master_service_config_test
+[  0%] Built target gtest
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[  6%] Built target cachelib_memory_allocator
+[  9%] Built target mooncake_common
+[ 12%] Built target asio_shared
+[ 12%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[ 96%] Building CXX object mooncake-store/tests/CMakeFiles/catalog_backed_snapshot_provider_test.dir/ha/snapshot/catalog_backed_snapshot_provider_test.cpp.o
+[100%] Linking CXX executable catalog_backed_snapshot_provider_test
+[100%] Built target catalog_backed_snapshot_provider_test
+[  0%] Built target base
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target gtest
+[  6%] Built target cachelib_memory_allocator
+[  9%] Built target mooncake_common
+[ 12%] Built target asio_shared
+[ 16%] Built target tcp_transport
+[ 16%] Built target rdma_transport
+[ 19%] Built target rpc_communicator
+[ 22%] Built target gtest_main
+[ 22%] Built target transport
+[ 32%] Built target transfer_engine
+[ 96%] Built target mooncake_store
+[ 96%] Building CXX object mooncake-store/tests/CMakeFiles/snapshot_child_process_test.dir/ha/snapshot/snapshot_child_process_test.cpp.o
+[100%] Linking CXX executable snapshot_child_process_test
+[100%] Built target snapshot_child_process_test
+[  0%] Built target gtest
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target base
+[ 10%] Built target cachelib_memory_allocator
+[ 10%] Built target mooncake_common
+[ 13%] Built target asio_shared
+[ 16%] Built target rdma_transport
+[ 16%] Built target tcp_transport
+[ 20%] Built target rpc_communicator
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+[ 33%] Built target transfer_engine
+[100%] Built target mooncake_store
+Consolidate compiler generated dependencies of target master_service_test
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/master_service_test.dir/master_service_test.cpp.o
+[100%] Linking CXX executable master_service_test
+[100%] Built target master_service_test
+[  0%] Built target base
+[  0%] Built target build_etcd_wrapper
+[  0%] Built target gtest
+[  3%] Built target mooncake_common
+[ 10%] Built target cachelib_memory_allocator
+[ 13%] Built target asio_shared
+[ 16%] Built target rdma_transport
+[ 16%] Built target tcp_transport
+[ 20%] Built target rpc_communicator
+[ 23%] Built target gtest_main
+[ 23%] Built target transport
+[ 33%] Built target transfer_engine
+[100%] Built target mooncake_store
+Consolidate compiler generated dependencies of target buffer_allocator_test
+[100%] Building CXX object mooncake-store/tests/CMakeFiles/buffer_allocator_test.dir/buffer_allocator_test.cpp.o
+[100%] Linking CXX executable buffer_allocator_test
+[100%] Built target buffer_allocator_test

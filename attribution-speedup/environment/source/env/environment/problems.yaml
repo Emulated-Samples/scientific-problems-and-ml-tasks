@@ -1,0 +1,34 @@
+# Problem definitions for lat-bench.
+# The pilot is the additive base family: every problem rides the naive
+# lat-base workspace on a problem/{id} branch of this repo, graded by the
+# hidden environment/behavioral-tests/ suite (grading definitions:
+# environment/src/problems/p-{id}.ts). The optimized gold library lives on
+# main as the calibration ceiling and mechanism oracle. Earlier gold-family
+# problems (dag-ranker, bug-norm-mean, circuit-query-api,
+# causal-backward-restore) were retired 2026-07-16 — dossiers in
+# .claude/problems/, configs in git history.
+#
+# Overlay (harbor-release): reduced to the single task-list problem
+# base-speedup. Contract v2 — problemStateRef removed; the state branch
+# now rides ProblemGrading.stateBranch (src/problems/p-base-speedup.ts)
+# and setupProblem materializes it (src/engine/provisioning.ts).
+
+- id: base-speedup
+  default: true
+  # Additive problem on the naive lat-base workspace: no perturbation — the
+  # naive state IS the problem state, and grading measures speedup against a
+  # grader-owned pristine copy (plus the causality-asymmetry classifiers).
+  prompt: |
+    lat builds attribution graphs for transformer prompts
+    (`lat.attribute_linear` / `lat.attribute_from_linearized`). The
+    attribution step is slower than it should be — profiling on long
+    prompts and deep models shows the backward sweep dominating end-to-end
+    time. Make attribution substantially faster. Hard constraints:
+    attribution outputs must not change on any input (the full test suite
+    must stay green), and the public API is unchanged.
+    `bench/attribution.py` profiles the sweep on synthetic IRs on this
+    machine (`python -m bench.attribution --help`). A Python environment
+    with the dev dependencies and this package installed editable is at
+    `/hyperfocal/solver-venv/` — use `/hyperfocal/solver-venv/bin/python`
+    to run code and `/hyperfocal/solver-venv/bin/python -m pytest tests/`
+    for the suite.

@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Genuine, correct Patterson PCA that differs from the reference in three legitimate ways, none
+of which may be penalised:
+
+  * it splits its code across a LOCAL helper module (``_vcfio.py``) it imports -- a completely
+    ordinary submission layout. Importing it materialises ``__pycache__/_vcfio*.pyc``, so this
+    also stands guard over the library-scan fix that must NOT flag auto-generated local bytecode
+    as a "native payload";
+  * it decodes phased ("|"), CRLF, and multi-field (GT:DP:GQ) records via its own FORMAT-aware
+    reader;
+  * it takes the top-k eigenpairs with ``scipy.sparse.linalg.eigsh`` (Lanczos) instead of a
+    dense ``eigh``.
+
+It reads the whole file (full coverage), so it must score reward ~1 -- accuracy AND every
+identity gate >= 0.9 -- in every category. A false rejection here is a grader bug."""
+import os
+import sys
+import numpy as np
+from scipy.sparse.linalg import eigsh
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _vcfio import read_standardized  # local helper module (see docstring)
+
+
+def main():
+    vcf, k, out = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+    sample_ids, Z = read_standardized(vcf)          # Z: (n_variants x n_samples), Patterson z
+    m, n = Z.shape[0], Z.shape[1]
+    mm = max(m, 1)
+    kk = min(k, n - 1)
+    if n <= m:
+        G = (Z.T @ Z) / mm
+        if 0 < kk < n - 1:
+            ev, V = eigsh(G, k=kk, which="LA")
+            order = np.argsort(ev)[::-1]
+            ev, V = ev[order], V[:, order]
+        else:
+            ev, V = np.linalg.eigh(G)
+            idx = np.argsort(ev)[::-1][:kk]
+            ev, V = ev[idx], V[:, idx]
+        scores = V * np.sqrt(np.clip(ev, 0, None))[None, :]
+    else:
+        # More samples than markers: the n x n sample Gram cannot even be allocated at biobank
+        # scale. Decompose the small m x m marker Gram, whose nonzero spectrum is identical, and
+        # map back. H u = mu * u  =>  Z^T u is a sample eigenvector of eigenvalue mu with norm
+        # sqrt(m * mu), so the sqrt(mu)-scaled PC score is exactly Z^T u / sqrt(m).
+        H = (Z @ Z.T) / mm
+        if 0 < kk < m - 1:
+            ev, U = eigsh(H, k=kk, which="LA")
+            order = np.argsort(ev)[::-1]
+            ev, U = ev[order], U[:, order]
+        else:
+            ev, U = np.linalg.eigh(H)
+            idx = np.argsort(ev)[::-1][:kk]
+            ev, U = ev[idx], U[:, idx]
+        scores = (Z.T @ U) / np.sqrt(mm)
+    for c in range(scores.shape[1]):
+        col = scores[:, c]
+        if col[np.argmax(np.abs(col))] < 0:
+            scores[:, c] = -col
+    with open(out, "w") as fh:
+        fh.write("sample_id\t" + "\t".join(f"PC{i+1}" for i in range(kk)) + "\n")
+        for sid, row in zip(sample_ids, scores):
+            fh.write(sid + "\t" + "\t".join(f"{v:.6f}" for v in row) + "\n")
+
+
+if __name__ == "__main__":
+    main()

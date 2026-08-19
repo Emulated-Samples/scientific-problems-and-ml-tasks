@@ -1,0 +1,278 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 43 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 35 tests from HotStandbyServiceTest
+[ RUN      ] HotStandbyServiceTest.TestStart
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:120: Skipped
+Requires real etcd connection, run in integration environment.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_AlreadyRunning
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:132: Skipped
+Requires real etcd connection to verify double start semantics.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart_AlreadyRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:148: Skipped
+Requires real etcd to simulate invalid endpoints.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStart_InvalidEtcdEndpoints (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStop
+[       OK ] HotStandbyServiceTest.TestStop (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStop_WhenNotRunning
+[       OK ] HotStandbyServiceTest.TestStop_WhenNotRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_StartToWatching
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:174: Skipped
+Requires real etcd to drive full state transition to WATCHING.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_StartToWatching (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:189: Skipped
+Connection failure requires real etcd and invalid endpoints.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_ConnectionFailed (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStateTransition_SyncFailed
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:202: Skipped
+Sync failure requires real etcd and OpLog watcher behavior.
+
+[  SKIPPED ] HotStandbyServiceTest.TestStateTransition_SyncFailed (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus_InitialState
+[       OK ] HotStandbyServiceTest.TestGetSyncStatus_InitialState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:227: Skipped
+Requires real etcd and OpLog activity to change sync status.
+
+[  SKIPPED ] HotStandbyServiceTest.TestGetSyncStatus_AfterSync (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetSyncStatus
+[       OK ] HotStandbyServiceTest.TestGetSyncStatus (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromote_WhenNotReady
+E0819 16:36:16.892331 335489 hot_standby_service.cpp:471] Standby is not ready for promotion, state=STOPPED
+[       OK ] HotStandbyServiceTest.TestPromote_WhenNotReady (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromote_WhenReady
+I0819 16:36:16.892352 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892355 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892457 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892462 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892464 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1
+I0819 16:36:16.892468 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892472 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892473 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0819 16:36:16.892475 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 16:36:16.892477 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 16:36:16.892478 335489 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 16:36:16.892479 335489 hot_standby_service.cpp:25] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 16:36:16.892480 335489 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0819 16:36:16.892483 335489 hot_standby_service.cpp:25] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestPromote_WhenReady (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestPromoteAndExportSnapshot_FinalCatchUp
+I0819 16:36:16.892491 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892493 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892494 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892495 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892498 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=snap-001, snapshot_seq_id=10, keys=1
+I0819 16:36:16.892498 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892501 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892503 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=10, metadata_keys=1
+I0819 16:36:16.892505 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 16:36:16.892508 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> PROMOTING (event: PROMOTE)
+I0819 16:36:16.892508 335489 standby_state_machine.cpp:245] Standby state transition: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 16:36:16.892509 335489 hot_standby_service.cpp:25] HotStandbyService state changed: PROMOTING -> PROMOTED (event: PROMOTION_SUCCESS)
+I0819 16:36:16.892511 335489 standby_state_machine.cpp:245] Standby state transition: PROMOTED -> STOPPED (event: STOP)
+I0819 16:36:16.892513 335489 hot_standby_service.cpp:25] HotStandbyService state changed: PROMOTED -> STOPPED (event: STOP)
+[       OK ] HotStandbyServiceTest.TestPromoteAndExportSnapshot_FinalCatchUp (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithLocalState
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:309: Skipped
+Requires real etcd and pre-populated local metadata to test warm start.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithLocalState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:320: Skipped
+Requires real etcd and snapshot provider configuration.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithoutLocalState (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestWarmStart_WithSnapshot
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:329: Skipped
+Requires snapshot provider and real etcd to exercise snapshot bootstrap.
+
+[  SKIPPED ] HotStandbyServiceTest.TestWarmStart_WithSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyWithSnapshot
+I0819 16:36:16.892542 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892544 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892545 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892546 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892547 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1
+I0819 16:36:16.892549 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892550 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892551 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0819 16:36:16.892554 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892556 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892557 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyWithSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot
+I0819 16:36:16.892566 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892567 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892568 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892570 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892571 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1
+I0819 16:36:16.892572 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892575 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892576 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0819 16:36:16.892578 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892580 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892580 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+I0819 16:36:16.892582 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892583 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892585 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892586 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892587 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=20260330_121500_000, snapshot_seq_id=84, keys=1
+I0819 16:36:16.892588 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892590 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892591 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=84, metadata_keys=1
+I0819 16:36:16.892593 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892594 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892596 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyRestartRefreshesNewerCatalogSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestStart_SnapshotOnlyWhenProviderFails
+I0819 16:36:16.892599 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892601 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892602 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892603 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+E0819 16:36:16.892606 335489 hot_standby_service.cpp:259] Failed to load snapshot baseline for snapshot-only standby bootstrap: PERSISTENT_FAIL
+I0819 16:36:16.892618 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> FAILED (event: FATAL_ERROR)
+I0819 16:36:16.892620 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> FAILED (event: FATAL_ERROR)
+I0819 16:36:16.892621 335489 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0819 16:36:16.892622 335489 hot_standby_service.cpp:25] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0819 16:36:16.892624 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestStart_SnapshotOnlyWhenProviderFails (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetMetadataCount
+[       OK ] HotStandbyServiceTest.TestGetMetadataCount (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportMetadataSnapshot
+[       OK ] HotStandbyServiceTest.TestExportMetadataSnapshot (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestGetLatestAppliedSequenceId
+[       OK ] HotStandbyServiceTest.TestGetLatestAppliedSequenceId (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:435: Failure
+Value of: service_->ExportStandbySnapshot(snapshot)
+  Actual: true
+Expected: false
+
+[  FAILED  ] HotStandbyServiceTest.TestExportStandbySnapshot_NotRunning (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_SnapshotOnly
+I0819 16:36:16.892647 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892648 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892649 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892652 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892652 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=20260330_120000_000, snapshot_seq_id=42, keys=1
+I0819 16:36:16.892654 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892655 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892656 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=42, metadata_keys=1
+I0819 16:36:16.892658 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892660 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892661 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestExportStandbySnapshot_SnapshotOnly (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestExportStandbySnapshot_Empty
+I0819 16:36:16.892665 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892668 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892668 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892669 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892671 335489 hot_standby_service.cpp:270] Loaded snapshot baseline: snapshot_id=, snapshot_seq_id=0, keys=0
+I0819 16:36:16.892673 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892673 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892674 335489 hot_standby_service.cpp:306] HotStandbyService started in snapshot-only mode, cluster=test_cluster_001, state=WATCHING, applied_seq_id=0, metadata_keys=0
+I0819 16:36:16.892676 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892678 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.892678 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.TestExportStandbySnapshot_Empty (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:474: Skipped
+Requires real etcd and running replication loop to update metrics.
+
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_UpdatesMetrics (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:486: Skipped
+Requires real etcd and watcher disconnect to exercise disconnect path.
+
+[  SKIPPED ] HotStandbyServiceTest.TestReplicationLoop_HandlesDisconnect (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:499: Skipped
+Requires real etcd and running verification loop to observe behavior.
+
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenEnabled (0 ms)
+[ RUN      ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_service_test.cpp:514: Skipped
+Requires real etcd connection to start service.
+
+[  SKIPPED ] HotStandbyServiceTest.TestVerificationLoop_WhenDisabled (0 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordStandbyPollsInjectedBackendWithoutNotifier
+I0819 16:36:16.892745 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892746 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.892748 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892750 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.892752 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892755 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.892804 335489 hot_standby_service.cpp:298] HotStandbyService started, watching OpLog for cluster: batch-standby-injected-backend, state=WATCHING
+I0819 16:36:16.892947 335491 hot_standby_service.cpp:570] Replication loop started (Batch OpLog sync)
+I0819 16:36:16.902885 335491 hot_standby_service.cpp:643] Replication loop stopped
+I0819 16:36:16.902925 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.902936 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.902940 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordStandbyPollsInjectedBackendWithoutNotifier (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordRetriesTransientBackendFailure
+I0819 16:36:16.902982 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.902983 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.902985 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.902987 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.902988 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.902989 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.903025 335489 hot_standby_service.cpp:298] HotStandbyService started, watching OpLog for cluster: batch-standby-transient-retry, state=WATCHING
+I0819 16:36:16.903180 335497 hot_standby_service.cpp:570] Replication loop started (Batch OpLog sync)
+I0819 16:36:16.903201 335497 standby_state_machine.cpp:245] Standby state transition: WATCHING -> RECONNECTING (event: WATCH_BROKEN)
+I0819 16:36:16.903205 335497 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> RECONNECTING (event: WATCH_BROKEN)
+I0819 16:36:16.905341 335497 standby_state_machine.cpp:245] Standby state transition: RECONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.905350 335497 hot_standby_service.cpp:25] HotStandbyService state changed: RECONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.905352 335497 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.905354 335497 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.913116 335497 hot_standby_service.cpp:643] Replication loop stopped
+I0819 16:36:16.913303 335489 standby_state_machine.cpp:245] Standby state transition: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.913316 335489 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> STOPPED (event: STOP)
+I0819 16:36:16.913319 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordRetriesTransientBackendFailure (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordRetryTimeoutTransitionsToFailed
+I0819 16:36:16.913338 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.913339 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.913341 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.913342 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.913345 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.913347 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.913381 335489 hot_standby_service.cpp:298] HotStandbyService started, watching OpLog for cluster: batch-standby-timeout, state=WATCHING
+I0819 16:36:16.913399 335498 hot_standby_service.cpp:570] Replication loop started (Batch OpLog sync)
+I0819 16:36:16.913415 335498 standby_state_machine.cpp:245] Standby state transition: WATCHING -> RECONNECTING (event: WATCH_BROKEN)
+I0819 16:36:16.913419 335498 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> RECONNECTING (event: WATCH_BROKEN)
+I0819 16:36:16.913434 335498 standby_state_machine.cpp:245] Standby state transition: RECONNECTING -> FAILED (event: FATAL_ERROR)
+I0819 16:36:16.913436 335498 hot_standby_service.cpp:25] HotStandbyService state changed: RECONNECTING -> FAILED (event: FATAL_ERROR)
+I0819 16:36:16.913437 335498 hot_standby_service.cpp:643] Replication loop stopped
+I0819 16:36:16.923498 335489 standby_state_machine.cpp:245] Standby state transition: FAILED -> STOPPED (event: STOP)
+I0819 16:36:16.923508 335489 hot_standby_service.cpp:25] HotStandbyService state changed: FAILED -> STOPPED (event: STOP)
+I0819 16:36:16.923511 335489 hot_standby_service.cpp:353] HotStandbyService stopped, final_state=STOPPED
+[       OK ] HotStandbyServiceTest.BatchRecordRetryTimeoutTransitionsToFailed (10 ms)
+[ RUN      ] HotStandbyServiceTest.BatchRecordCanRestartAfterRetryTimeout
+I0819 16:36:16.923525 335489 standby_state_machine.cpp:245] Standby state transition: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.923527 335489 hot_standby_service.cpp:25] HotStandbyService state changed: STOPPED -> CONNECTING (event: START)
+I0819 16:36:16.923528 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.923529 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.923532 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.923533 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.923568 335489 hot_standby_service.cpp:298] HotStandbyService started, watching OpLog for cluster: batch-standby-restart, state=WATCHING
+I0819 16:36:16.923713 335499 hot_standby_service.cpp:570] Replication loop started (Batch OpLog sync)
+I0819 16:36:16.923727 335499 standby_state_machine.cpp:245] Standby state transition: WATCHING -> RECONNECTING (event: WATCH_BROKEN)
+I0819 16:36:16.923729 335499 hot_standby_service.cpp:25] HotStandbyService state changed: WATCHING -> RECONNECTING (event: WATCH_BROKEN)
+I0819 16:36:16.923744 335499 standby_state_machine.cpp:245] Standby state transition: RECONNECTING -> FAILED (event: FATAL_ERROR)
+I0819 16:36:16.923748 335499 hot_standby_service.cpp:25] HotStandbyService state changed: RECONNECTING -> FAILED (event: FATAL_ERROR)
+I0819 16:36:16.923748 335499 hot_standby_service.cpp:643] Replication loop stopped
+I0819 16:36:16.933670 335489 standby_state_machine.cpp:245] Standby state transition: FAILED -> CONNECTING (event: START)
+I0819 16:36:16.933681 335489 hot_standby_service.cpp:25] HotStandbyService state changed: FAILED -> CONNECTING (event: START)
+I0819 16:36:16.933684 335489 standby_state_machine.cpp:245] Standby state transition: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.933686 335489 hot_standby_service.cpp:25] HotStandbyService state changed: CONNECTING -> SYNCING (event: CONNECTED)
+I0819 16:36:16.933689 335489 standby_state_machine.cpp:245] Standby state transition: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+I0819 16:36:16.933691 335489 hot_standby_service.cpp:25] HotStandbyService state changed: SYNCING -> WATCHING (event: SYNC_COMPLETE)
+terminate called without an active exception

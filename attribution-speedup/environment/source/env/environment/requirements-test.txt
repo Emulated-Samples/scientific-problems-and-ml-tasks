@@ -1,0 +1,11 @@
+# Pinned closure for the grade-time venv (see src/index.ts ensureGradeVenv).
+# lat itself is imported from PYTHONPATH=workspace/src, not pip-installed.
+# circuit-tracer is the oracle for the dual-run parity tests; it is not on
+# PyPI, so it is pinned to the upstream commit lat develops against. Without
+# it the conftest model fixture importorskips and every f2p test skips.
+torch>=2.0
+transformer-lens>=2.0
+tqdm>=4.60
+safetensors>=0.4
+pytest>=8.0
+circuit-tracer @ git+https://github.com/decoderesearch/circuit-tracer.git@80ca62b5fb68f724f085689285992a3f6d920dfc

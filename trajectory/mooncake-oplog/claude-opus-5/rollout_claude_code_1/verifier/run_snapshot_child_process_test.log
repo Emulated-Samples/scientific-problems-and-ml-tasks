@@ -1,0 +1,305 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 25 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 25 tests from SnapshotChildProcessTest
+[ RUN      ] SnapshotChildProcessTest.FormatTimestamp_MatchesExpectedFormat
+I0818 10:49:41.302564 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_yE3v3x"
+I0818 10:49:41.302593 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_yE3v3x
+W0818 10:49:41.302631 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:41.302665 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:41.302865 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:41.302946 918325 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:41.302959 918325 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.FormatTimestamp_MatchesExpectedFormat (1021 ms)
+[ RUN      ] SnapshotChildProcessTest.HandleChildExit_NormalSuccess
+I0818 10:49:42.315112 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_1ZpLHE"
+I0818 10:49:42.315128 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_1ZpLHE
+W0818 10:49:42.315156 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:42.315171 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:42.315284 918329 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:42.318065 918316 master_snapshot_manager.cpp:354] [Snapshot] Child process successfully persisted state, snapshot_id=test_snapshot_success, child_pid=918331
+I0818 10:49:42.318080 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:42.318243 918329 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.HandleChildExit_NormalSuccess (1016 ms)
+[ RUN      ] SnapshotChildProcessTest.HandleChildExit_NormalFailure
+I0818 10:49:43.330961 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_FfeTxh"
+I0818 10:49:43.330978 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_FfeTxh
+W0818 10:49:43.331009 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:43.331025 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:43.331267 918334 master_service.cpp:1660] Task cleanup thread started
+E0818 10:49:43.333364 918316 master_snapshot_manager.cpp:349] [Snapshot] Child process exited with error code: 1, snapshot_id=test_snapshot_failure, child_pid=918336
+I0818 10:49:43.333379 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:43.333544 918334 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.HandleChildExit_NormalFailure (1018 ms)
+[ RUN      ] SnapshotChildProcessTest.HandleChildExit_Signaled
+I0818 10:49:44.349225 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_Y4AJQC"
+I0818 10:49:44.349241 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_Y4AJQC
+W0818 10:49:44.349268 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:44.349283 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:44.349591 918339 master_service.cpp:1660] Task cleanup thread started
+E0818 10:49:44.351544 918316 master_snapshot_manager.cpp:361] [Snapshot] Child process terminated by signal: 9, snapshot_id=test_snapshot_signaled, child_pid=918341
+I0818 10:49:44.351554 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:44.351914 918339 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.HandleChildExit_Signaled (1018 ms)
+[ RUN      ] SnapshotChildProcessTest.HandleChildTimeout_KillsSleepingChild
+I0818 10:49:45.367556 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_gXClaN"
+I0818 10:49:45.367573 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_gXClaN
+W0818 10:49:45.367606 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:45.367623 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:45.367904 918344 master_service.cpp:1660] Task cleanup thread started
+W0818 10:49:45.368886 918316 master_snapshot_manager.cpp:308] [Snapshot] Child process timeout, snapshot_id=test_snapshot_timeout, child_pid=918346, killing child process
+I0818 10:49:50.369009 918316 master_snapshot_manager.cpp:332] [Snapshot] Child process terminated gracefully after SIGTERM, snapshot_id=test_snapshot_timeout, child_pid=918346
+I0818 10:49:50.369027 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:50.369213 918344 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.HandleChildTimeout_KillsSleepingChild (6018 ms)
+[ RUN      ] SnapshotChildProcessTest.CleanupOldSnapshot_KeepsRecentDeletesOld
+I0818 10:49:51.386344 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_0s2UKk"
+I0818 10:49:51.386359 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_0s2UKk
+W0818 10:49:51.386389 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:51.386405 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:51.386794 918349 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:51.390373 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:51.390532 918349 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.CleanupOldSnapshot_KeepsRecentDeletesOld (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.UploadSnapshotPayloadFile_Success
+I0818 10:49:52.397987 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_P0f4iW"
+I0818 10:49:52.398001 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_P0f4iW
+W0818 10:49:52.398030 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:52.398046 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:52.398272 918353 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:52.400343 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:52.400581 918353 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.UploadSnapshotPayloadFile_Success (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.DestructorInterruptsSnapshotThreadSleep
+I0818 10:49:53.409400 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_0o1YHO"
+I0818 10:49:53.409601 918316 master_snapshot_manager.cpp:70] [MasterSnapshotManager] Started
+I0818 10:49:53.409643 918357 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:53.409760 918359 master_snapshot_manager.cpp:102] [Snapshot] snapshot_thread started
+I0818 10:49:53.509704 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:53.509819 918359 master_snapshot_manager.cpp:203] [Snapshot] snapshot_thread stopped
+I0818 10:49:53.509879 918357 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:49:54.409842 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+[       OK ] SnapshotChildProcessTest.DestructorInterruptsSnapshotThreadSleep (1014 ms)
+[ RUN      ] SnapshotChildProcessTest.AutoSnapshot_GeneratesFiles
+I0818 10:49:54.423478 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_nsk21x"
+I0818 10:49:54.423671 918316 master_snapshot_manager.cpp:70] [MasterSnapshotManager] Started
+I0818 10:49:54.423732 918362 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:54.423842 918364 master_snapshot_manager.cpp:102] [Snapshot] snapshot_thread started
+I0818 10:49:56.423967 918364 master_snapshot_manager.cpp:126] [Snapshot] Preparing to fork child process, snapshot_id=20260818_104956_423
+I0818 10:49:56.424000 918364 master_snapshot_manager.cpp:158] [Snapshot] Locking snapshot mutex, snapshot_id=20260818_104956_423
+I0818 10:49:56.425231 918364 master_snapshot_manager.cpp:212] [Snapshot] waiting for child process to complete, snapshot_id=20260818_104956_423, child_pid=918365, timeout=60s
+I0818 10:49:58.425352 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Child process started, snapshot_id=20260818_104956_423
+I0818 10:49:58.425370 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] action=persisting_state start, snapshot_id=20260818_104956_423, serializer_type=messagepack, version=1.0.0
+I0818 10:49:58.425371 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] state encoding successful, snapshot_id=20260818_104956_423
+I0818 10:49:58.425372 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_nsk21x
+I0818 10:49:58.425374 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Uploading metadata to: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/metadata, snapshot_id=20260818_104956_423
+I0818 10:49:58.425375 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Upload metadata success: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/metadata, snapshot_id=20260818_104956_423
+I0818 10:49:58.425376 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Uploading segments to: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/segments, snapshot_id=20260818_104956_423
+I0818 10:49:58.425377 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Upload segments success: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/segments, snapshot_id=20260818_104956_423
+I0818 10:49:58.425379 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Uploading task_manager to: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/task_manager, snapshot_id=20260818_104956_423
+I0818 10:49:58.425379 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Upload task_manager success: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/task_manager, snapshot_id=20260818_104956_423
+I0818 10:49:58.425380 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Uploading manifest.txt to: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/manifest.txt, snapshot_id=20260818_104956_423
+I0818 10:49:58.425381 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Upload manifest.txt success: mooncake_master_snapshot/mooncake_cluster/20260818_104956_423/manifest.txt, snapshot_id=20260818_104956_423
+I0818 10:49:58.425382 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Upload latest success: mooncake_master_snapshot/mooncake_cluster/latest.txt, snapshot_id=20260818_104956_423, content=20260818_104956_423
+I0818 10:49:58.425384 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] action=persisting_state end, snapshot_id=20260818_104956_423
+I0818 10:49:58.425385 918364 master_snapshot_manager.cpp:241] [Snapshot:Child] [INFO] [Snapshot] Child process successfully persisted state, snapshot_id=20260818_104956_423
+I0818 10:49:58.425396 918364 master_snapshot_manager.cpp:354] [Snapshot] Child process successfully persisted state, snapshot_id=20260818_104956_423, child_pid=918365
+I0818 10:49:59.423817 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:59.423923 918364 master_snapshot_manager.cpp:203] [Snapshot] snapshot_thread stopped
+I0818 10:49:59.423993 918362 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:49:59.426153 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+[       OK ] SnapshotChildProcessTest.AutoSnapshot_GeneratesFiles (5020 ms)
+[ RUN      ] SnapshotChildProcessTest.PersistState_PublishesSnapshotDescriptor
+I0818 10:49:59.444026 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_DF59Qk"
+I0818 10:49:59.444036 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_DF59Qk
+W0818 10:49:59.444064 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:49:59.444080 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:49:59.444350 918368 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:59.447444 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:49:59.447628 918368 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.PersistState_PublishesSnapshotDescriptor (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.PersistState_UsesFrozenSnapshotDescriptor
+I0818 10:50:00.455770 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_5bUBDb"
+I0818 10:50:00.455785 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_5bUBDb
+W0818 10:50:00.455814 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:00.455829 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:00.456046 918372 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:00.459372 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:00.459546 918372 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.PersistState_UsesFrozenSnapshotDescriptor (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.RestoreRebuildsGroupedObjectRouting
+I0818 10:50:01.467461 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_ZKGAaB"
+I0818 10:50:01.467476 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_ZKGAaB
+W0818 10:50:01.467504 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:01.467532 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:01.467648 918316 master_service.cpp:781] client_id=10682916331079094038-6521373234027473832, action=mount_segment, segment_name=grouped_snapshot_segment
+I0818 10:50:01.467767 918376 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:01.472061 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:01.472232 918376 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:50:02.477742 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_ZKGAaB"
+I0818 10:50:02.477762 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_ZKGAaB
+I0818 10:50:02.480609 918316 master_service.cpp:8101] Restored Replica::next_id_ to 2
+I0818 10:50:02.480676 918316 master_service.cpp:6599] [Restore] Total allocated size after restore: 1024
+I0818 10:50:02.480681 918316 master_service.cpp:6632] [Restore] Total capacity size after restore: 16777216
+I0818 10:50:02.480682 918316 master_service.cpp:6474] [Restore] Successfully restored state from snapshot: 20240701_130000_000
+I0818 10:50:02.480921 918380 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:02.480937 918380 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.RestoreRebuildsGroupedObjectRouting (1021 ms)
+[ RUN      ] SnapshotChildProcessTest.DeserializeLegacyMetadataWithoutGroupIdRestoresUngroupedObject
+I0818 10:50:02.489169 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_pwEYo8"
+I0818 10:50:02.489178 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_pwEYo8
+W0818 10:50:02.489202 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:02.489216 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:02.489415 918384 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:02.491604 918316 master_service.cpp:8101] Restored Replica::next_id_ to 10
+I0818 10:50:02.491786 918384 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.DeserializeLegacyMetadataWithoutGroupIdRestoresUngroupedObject (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.DeserializeMetadataSkipsInvalidClientId
+I0818 10:50:03.500666 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_xGlcr7"
+I0818 10:50:03.500681 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_xGlcr7
+W0818 10:50:03.500710 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:03.500725 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:03.500967 918388 master_service.cpp:1660] Task cleanup thread started
+E0818 10:50:03.503423 918316 master_service.cpp:8238] Failed to deserialize metadata for key: invalid_client_id_snapshot_key: deserialize ObjectMetadata invalid client_id UUID: not-a-uuid
+I0818 10:50:03.503430 918316 master_service.cpp:8101] Restored Replica::next_id_ to 10
+I0818 10:50:03.503628 918388 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.DeserializeMetadataSkipsInvalidClientId (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.LegacyEtcdConnstringFallbackIsPreserved
+W0818 10:50:04.506956 918316 master_config.h:596] Unrecognized allocation_strategy value: ''. Defaulting to 'random'. Valid options are: random, free_ratio_first, cxl, ssd_free_ratio_first, local_first (case-sensitive)
+[       OK ] SnapshotChildProcessTest.LegacyEtcdConnstringFallbackIsPreserved (0 ms)
+[ RUN      ] SnapshotChildProcessTest.PersistState_UsesBatchDurablePrefixBoundaryInSnapshotDescriptor
+{"level":"warn","ts":"2026-08-18T10:50:09.511035Z","logger":"etcd-client","caller":"v3@v3.5.21/retry_interceptor.go:63","msg":"retrying of unary invoker failed","target":"etcd-endpoints://0xc00025d860/127.0.0.1:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = \"transport: Error while dialing: dial tcp 127.0.0.1:2379: connect: connection refused\""}
+E0818 10:50:09.511364 918316 etcd_helper.cpp:80] key=/oplog/snapshot-batch-boundary-4704753516493148940-4551600917586503590/durable_prefix, error=context deadline exceeded
+/workspace/Mooncake/mooncake-store/tests/ha/snapshot/snapshot_child_process_test.cpp:783: Skipped
+failed to initialize batch durable prefix: ETCD_OPERATION_ERROR
+
+[  SKIPPED ] SnapshotChildProcessTest.PersistState_UsesBatchDurablePrefixBoundaryInSnapshotDescriptor (5004 ms)
+[ RUN      ] SnapshotChildProcessTest.RestoreWithBackupDir_CreatesBackupFiles
+I0818 10:50:09.517800 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_GOdlgc"
+I0818 10:50:09.517814 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_GOdlgc
+W0818 10:50:09.517844 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:09.517860 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:09.517969 918393 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:09.524117 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:09.524145 918393 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:50:10.529378 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_GOdlgc"
+I0818 10:50:10.529398 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_GOdlgc
+I0818 10:50:10.532938 918316 master_service.cpp:8101] Restored Replica::next_id_ to 10
+I0818 10:50:10.532997 918316 master_service.cpp:6599] [Restore] Total allocated size after restore: 0
+I0818 10:50:10.532999 918316 master_service.cpp:6632] [Restore] Total capacity size after restore: 0
+I0818 10:50:10.533001 918316 master_service.cpp:6474] [Restore] Successfully restored state from snapshot: 20240601_120000_000
+I0818 10:50:10.533239 918397 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:10.533249 918397 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.RestoreWithBackupDir_CreatesBackupFiles (1024 ms)
+[ RUN      ] SnapshotChildProcessTest.RestoreWithoutBackupDir_NoBackupFiles
+I0818 10:50:10.541610 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_E2wP2y"
+I0818 10:50:10.541620 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_E2wP2y
+W0818 10:50:10.541644 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:10.541658 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:10.541848 918401 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:10.544840 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:10.545007 918401 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:50:11.551779 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_E2wP2y"
+I0818 10:50:11.551800 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_E2wP2y
+I0818 10:50:11.554160 918316 master_service.cpp:8101] Restored Replica::next_id_ to 10
+I0818 10:50:11.554232 918316 master_service.cpp:6599] [Restore] Total allocated size after restore: 0
+I0818 10:50:11.554235 918316 master_service.cpp:6632] [Restore] Total capacity size after restore: 0
+I0818 10:50:11.554237 918316 master_service.cpp:6474] [Restore] Successfully restored state from snapshot: 20240601_120000_001
+I0818 10:50:11.554447 918405 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:11.554472 918405 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.RestoreWithoutBackupDir_NoBackupFiles (1021 ms)
+[ RUN      ] SnapshotChildProcessTest.RestoreFallsBackToPreviousHealthySnapshotWhenLatestIsCorrupted
+I0818 10:50:11.563040 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_QCdUGz"
+I0818 10:50:11.563050 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_QCdUGz
+W0818 10:50:11.563074 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:11.563088 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:11.563175 918316 master_service.cpp:781] client_id=15009106331387191040-14527491682913557940, action=mount_segment, segment_name=restore_fallback_segment
+I0818 10:50:11.563280 918409 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:11.566969 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:11.567687 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:11.567852 918409 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:50:12.573678 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_QCdUGz"
+I0818 10:50:12.573698 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_QCdUGz
+W0818 10:50:12.576609 918316 master_service.cpp:6458] [Restore] Snapshot candidate 20240702_120500_000 is unusable: Invalid MessagePack format: expected map
+I0818 10:50:12.577212 918316 master_service.cpp:8101] Restored Replica::next_id_ to 11
+I0818 10:50:12.577272 918316 master_service.cpp:6599] [Restore] Total allocated size after restore: 1024
+I0818 10:50:12.577277 918316 master_service.cpp:6632] [Restore] Total capacity size after restore: 16777216
+I0818 10:50:12.577278 918316 master_service.cpp:6474] [Restore] Successfully restored state from snapshot: 20240702_120000_000
+I0818 10:50:12.577528 918413 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:12.577543 918413 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.RestoreFallsBackToPreviousHealthySnapshotWhenLatestIsCorrupted (1023 ms)
+[ RUN      ] SnapshotChildProcessTest.EnableSnapshotWithoutEnvVar_Throws
+E0818 10:50:12.586252 918316 master_service.cpp:238] Failed to create snapshot stores: MOONCAKE_SNAPSHOT_LOCAL_PATH environment variable is not set. Please set it to a persistent directory path for snapshot storage. Example: export MOONCAKE_SNAPSHOT_LOCAL_PATH=/data/mooncake_snapshots
+[       OK ] SnapshotChildProcessTest.EnableSnapshotWithoutEnvVar_Throws (10 ms)
+[ RUN      ] SnapshotChildProcessTest.DisableSnapshotWithoutEnvVar_NoThrow
+I0818 10:50:12.596262 918417 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:12.596272 918417 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.DisableSnapshotWithoutEnvVar_NoThrow (9 ms)
+[ RUN      ] SnapshotChildProcessTest.RestoreCleansNonCompleteReplica
+I0818 10:50:12.605921 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_NkBKL7"
+I0818 10:50:12.605930 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_NkBKL7
+W0818 10:50:12.605957 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:12.605971 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:12.606055 918316 master_service.cpp:781] client_id=17817865366258391181-11453530642604199867, action=mount_segment, segment_name=test_segment
+I0818 10:50:12.606163 918421 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:12.609851 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:12.610016 918421 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:50:13.616189 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_NkBKL7"
+I0818 10:50:13.616204 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_NkBKL7
+I0818 10:50:13.619024 918316 master_service.cpp:8101] Restored Replica::next_id_ to 13
+I0818 10:50:13.619091 918316 master_service.cpp:6599] [Restore] Total allocated size after restore: 1024
+I0818 10:50:13.619096 918316 master_service.cpp:6632] [Restore] Total capacity size after restore: 16777216
+I0818 10:50:13.619097 918316 master_service.cpp:6474] [Restore] Successfully restored state from snapshot: 20240701_120000_000
+I0818 10:50:13.619326 918425 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:13.619335 918425 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.RestoreCleansNonCompleteReplica (1022 ms)
+[ RUN      ] SnapshotChildProcessTest.RestoreCleansExpiredLease
+I0818 10:50:13.628015 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_QxIuKl"
+I0818 10:50:13.628026 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_QxIuKl
+W0818 10:50:13.628049 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:13.628063 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:13.628153 918316 master_service.cpp:781] client_id=11984046705874616267-11151252515730132630, action=mount_segment, segment_name=test_segment
+I0818 10:50:13.628263 918429 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:13.631956 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:13.632088 918429 master_service.cpp:1679] Task cleanup thread stopped
+I0818 10:50:14.639724 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_QxIuKl"
+I0818 10:50:14.639740 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_QxIuKl
+I0818 10:50:14.643503 918316 master_service.cpp:8101] Restored Replica::next_id_ to 15
+I0818 10:50:14.643584 918316 master_service.cpp:6599] [Restore] Total allocated size after restore: 1024
+I0818 10:50:14.643589 918316 master_service.cpp:6632] [Restore] Total capacity size after restore: 16777216
+I0818 10:50:14.643590 918316 master_service.cpp:6474] [Restore] Successfully restored state from snapshot: 20240701_120000_001
+I0818 10:50:14.643847 918433 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:14.643864 918433 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.RestoreCleansExpiredLease (1024 ms)
+[ RUN      ] SnapshotChildProcessTest.PersistState_FailFast_StopsOnFirstError
+I0818 10:50:14.652038 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_KG8EAX"
+I0818 10:50:14.652048 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_KG8EAX
+W0818 10:50:14.652072 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:14.652086 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:14.652181 918316 master_service.cpp:781] client_id=13136734327183997658-15551699199966340516, action=mount_segment, segment_name=test_segment
+I0818 10:50:14.652288 918437 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:14.655742 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:14.655766 918316 snapshot_child_process_test.cpp:1210] PersistState error: metadata upload mooncake_master_snapshot/mooncake_cluster/20240701_failfast_000/metadata failed; 
+I0818 10:50:14.655908 918437 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.PersistState_FailFast_StopsOnFirstError (1011 ms)
+[ RUN      ] SnapshotChildProcessTest.UploadFail_WithBackupDir_SavesAllFiles
+I0818 10:50:15.663921 918316 local_file_snapshot_object_store.cpp:47] LocalFileSnapshotObjectStore initialized with path: "/logs/verifier/tmp/snap_child_test_8zScJQ"
+I0818 10:50:15.663934 918316 master_service.cpp:6416] [Restore] Backend info: LocalFileSnapshotObjectStore: base_path=/logs/verifier/tmp/snap_child_test_8zScJQ
+W0818 10:50:15.663962 918316 master_service.cpp:6423] [Restore] Failed to load latest snapshot marker: OBJECT_NOT_FOUND, falling back to published snapshot listing
+E0818 10:50:15.663977 918316 master_service.cpp:6433] [Restore] No previous snapshot found, starting fresh
+I0818 10:50:15.664098 918316 master_service.cpp:781] client_id=14142948157059452825-5173422763495379388, action=mount_segment, segment_name=test_segment
+I0818 10:50:15.664207 918441 master_service.cpp:1660] Task cleanup thread started
+I0818 10:50:15.668205 918316 master_snapshot_manager.cpp:79] [MasterSnapshotManager] Stop signaled
+I0818 10:50:15.668211 918316 snapshot_child_process_test.cpp:1271] PersistState error: metadata upload mooncake_master_snapshot/mooncake_cluster/20240701_backup_all_000/metadata failed; 
+segments upload mooncake_master_snapshot/mooncake_cluster/20240701_backup_all_000/segments failed; 
+task_manager upload mooncake_master_snapshot/mooncake_cluster/20240701_backup_all_000/task_manager failed; 
+manifest.txt upload mooncake_master_snapshot/mooncake_cluster/20240701_backup_all_000/manifest.txt failed; 
+I0818 10:50:15.668375 918441 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] SnapshotChildProcessTest.UploadFail_WithBackupDir_SavesAllFiles (1012 ms)
+[----------] 25 tests from SnapshotChildProcessTest (35383 ms total)
+
+[----------] Global test environment tear-down
+[==========] 25 tests from 1 test suite ran. (35383 ms total)
+[  PASSED  ] 24 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] SnapshotChildProcessTest.PersistState_UsesBatchDurablePrefixBoundaryInSnapshotDescriptor

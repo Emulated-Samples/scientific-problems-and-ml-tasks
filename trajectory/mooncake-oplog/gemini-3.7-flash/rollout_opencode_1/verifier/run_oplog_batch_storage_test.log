@@ -1,0 +1,72 @@
+Running main() from /workspace/Mooncake/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 24 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 21 tests from OpLogBatchStorageTest
+[ RUN      ] OpLogBatchStorageTest.InitializesEmptyNamespaceAtZero
+[       OK ] OpLogBatchStorageTest.InitializesEmptyNamespaceAtZero (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsLegacyLatest
+[       OK ] OpLogBatchStorageTest.RejectsLegacyLatest (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsLegacyEntry
+[       OK ] OpLogBatchStorageTest.RejectsLegacyEntry (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsLegacySnapshotSidecar
+[       OK ] OpLogBatchStorageTest.RejectsLegacySnapshotSidecar (0 ms)
+[ RUN      ] OpLogBatchStorageTest.InitDurablePrefixFailsClosedWhenBatchesExist
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_batch_storage_test.cpp:196: Failure
+Expected equality of these values:
+  ErrorCode::INTERNAL_ERROR
+    Which is: INTERNAL_ERROR
+  storage.InitDurablePrefix(prefix)
+    Which is: OK
+
+[  FAILED  ] OpLogBatchStorageTest.InitDurablePrefixFailsClosedWhenBatchesExist (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsInvalidClusterId
+[       OK ] OpLogBatchStorageTest.RejectsInvalidClusterId (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RereadsDurablePrefixWhenCreateIfAbsentLosesRace
+[       OK ] OpLogBatchStorageTest.RereadsDurablePrefixWhenCreateIfAbsentLosesRace (0 ms)
+[ RUN      ] OpLogBatchStorageTest.UsesExistingDurablePrefixWithoutReadingLatest
+[       OK ] OpLogBatchStorageTest.UsesExistingDurablePrefixWithoutReadingLatest (0 ms)
+[ RUN      ] OpLogBatchStorageTest.WriteBatchAndAdvancePrefixCommitsAtomically
+[       OK ] OpLogBatchStorageTest.WriteBatchAndAdvancePrefixCommitsAtomically (0 ms)
+[ RUN      ] OpLogBatchStorageTest.CompareFailureDoesNotWriteBatchOrAdvancePrefix
+[       OK ] OpLogBatchStorageTest.CompareFailureDoesNotWriteBatchOrAdvancePrefix (0 ms)
+[ RUN      ] OpLogBatchStorageTest.CompareFailureIsOkWhenTargetBatchAlreadyDurable
+[       OK ] OpLogBatchStorageTest.CompareFailureIsOkWhenTargetBatchAlreadyDurable (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsSkippedBatchId
+[       OK ] OpLogBatchStorageTest.RejectsSkippedBatchId (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsSkippedSequenceRange
+[       OK ] OpLogBatchStorageTest.RejectsSkippedSequenceRange (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsRegressedSequenceRange
+[       OK ] OpLogBatchStorageTest.RejectsRegressedSequenceRange (0 ms)
+[ RUN      ] OpLogBatchStorageTest.RejectsMaxDurablePrefixAdvance
+[       OK ] OpLogBatchStorageTest.RejectsMaxDurablePrefixAdvance (0 ms)
+[ RUN      ] OpLogBatchStorageTest.NonTxnBackendRejectsWriteBatchAndAdvancePrefix
+[       OK ] OpLogBatchStorageTest.NonTxnBackendRejectsWriteBatchAndAdvancePrefix (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchRejectsCorruptedRecord
+[       OK ] OpLogBatchStorageTest.ReadBatchRejectsCorruptedRecord (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterReturnsOrderedBatches
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterReturnsOrderedBatches (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterSkipsNonBatchKeysInRange
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterSkipsNonBatchKeysInRange (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterLimitCountsOnlyBatchKeys
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterLimitCountsOnlyBatchKeys (0 ms)
+[ RUN      ] OpLogBatchStorageTest.ReadBatchesAfterHonorsLimit
+[       OK ] OpLogBatchStorageTest.ReadBatchesAfterHonorsLimit (0 ms)
+[----------] 21 tests from OpLogBatchStorageTest (0 ms total)
+
+[----------] 3 tests from OpLogBatchStorageBackendErrorTest
+[ RUN      ] OpLogBatchStorageBackendErrorTest.PropagatesReadDurablePrefixError
+[       OK ] OpLogBatchStorageBackendErrorTest.PropagatesReadDurablePrefixError (0 ms)
+[ RUN      ] OpLogBatchStorageBackendErrorTest.PropagatesRangeError
+[       OK ] OpLogBatchStorageBackendErrorTest.PropagatesRangeError (0 ms)
+[ RUN      ] OpLogBatchStorageBackendErrorTest.TxnErrorDoesNotAdvanceDurablePrefix
+[       OK ] OpLogBatchStorageBackendErrorTest.TxnErrorDoesNotAdvanceDurablePrefix (0 ms)
+[----------] 3 tests from OpLogBatchStorageBackendErrorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 24 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 23 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] OpLogBatchStorageTest.InitDurablePrefixFailsClosedWhenBatchesExist
+
+ 1 FAILED TEST

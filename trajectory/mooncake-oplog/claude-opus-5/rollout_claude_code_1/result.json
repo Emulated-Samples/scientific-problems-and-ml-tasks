@@ -1,0 +1,125 @@
+{
+    "id": "5ad4cde4-4eb7-4701-8003-0b26ac9c3068",
+    "task_name": "emulated/mooncake-oplog",
+    "trial_name": "mooncake-oplog__jDNrzKL",
+    "trial_uri": "file:///home/ubuntu/jobs/x86/mooncake-oplog/2026-08-18__09-03-34/mooncake-oplog__jDNrzKL",
+    "task_id": {
+        "path": "tasks/benchmark-task-samples/mooncake-oplog"
+    },
+    "source": null,
+    "task_checksum": "ef1549b3af5fb65a2e9de429c2ab74619eb8c4fb36da391c2e3d5f2e96e4c15c",
+    "config": {
+        "task": {
+            "path": "tasks/benchmark-task-samples/mooncake-oplog",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "mooncake-oplog__jDNrzKL",
+        "trials_dir": "/home/ubuntu/jobs/x86/mooncake-oplog/2026-08-18__09-03-34",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "claude-opus-5",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "extra_allowed_hosts": [
+                "api.anthropic.com",
+                "statsig.anthropic.com",
+                "sentry.io"
+            ],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "436c87d3-a62a-4f34-b36f-4e71e014d412"
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.234",
+        "model_info": {
+            "name": "claude-opus-5",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 122825685,
+        "n_cache_tokens": 122207606,
+        "n_output_tokens": 257680,
+        "cost_usd": 73.72344300000003,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.7444,
+            "group_writer": 1.0,
+            "group_codec": 1.0,
+            "group_storage": 0.9583,
+            "group_standby_reader": 0.8723,
+            "group_failpoint": 1.0,
+            "group_ha_integration": 0.0,
+            "group_standby_service": 0.8939,
+            "group_snapshot": 1.0,
+            "group_config": 1.0,
+            "group_regression": 0.9876
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-08-18T09:03:34.676926Z",
+    "finished_at": "2026-08-18T10:55:50.901243Z",
+    "environment_setup": {
+        "started_at": "2026-08-18T09:03:34.722084Z",
+        "finished_at": "2026-08-18T09:03:45.597858Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-08-18T09:03:45.597914Z",
+        "finished_at": "2026-08-18T09:04:01.227631Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-08-18T09:04:01.227743Z",
+        "finished_at": "2026-08-18T10:45:54.918235Z"
+    },
+    "verifier": {
+        "started_at": "2026-08-18T10:45:55.427055Z",
+        "finished_at": "2026-08-18T10:55:38.704760Z"
+    },
+    "step_results": null
+}

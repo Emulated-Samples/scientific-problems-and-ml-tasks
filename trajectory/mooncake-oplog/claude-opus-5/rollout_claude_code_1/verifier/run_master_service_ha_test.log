@@ -1,0 +1,137 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 67 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 49 tests from MasterServiceHATest
+[ RUN      ] MasterServiceHATest.RestoreFromStandbyPreservesMemoryBufferDescriptor
+I0818 10:49:23.331552 918224 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:23.332193 918215 master_service.cpp:10067] Restored promoted-primary state: objects=1, segments=1, oplog_sequence_id=7
+I0818 10:49:23.332237 918224 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] MasterServiceHATest.RestoreFromStandbyPreservesMemoryBufferDescriptor (1017 ms)
+[ RUN      ] MasterServiceHATest.RemountMakesRestoredMemoryReplicaReady
+I0818 10:49:24.341490 918215 master_service.cpp:10067] Restored promoted-primary state: objects=2, segments=1, oplog_sequence_id=7
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:656: Failure
+Value of: before.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:24.341573 918228 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:24.341585 918228 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RemountMakesRestoredMemoryReplicaReady (1009 ms)
+[ RUN      ] MasterServiceHATest.RemountRestoresCachelibMemoryReplica
+I0818 10:49:25.352524 918215 master_service.cpp:10067] Restored promoted-primary state: objects=1, segments=1, oplog_sequence_id=7
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:750: Failure
+Value of: single_before.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:25.352560 918232 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:25.352572 918232 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RemountRestoresCachelibMemoryReplica (1011 ms)
+[ RUN      ] MasterServiceHATest.FailedRemountKeepsReplicaInvalidAndCanBeRetried
+I0818 10:49:26.363859 918215 master_service.cpp:10067] Restored promoted-primary state: objects=2, segments=1, oplog_sequence_id=7
+I0818 10:49:26.363921 918236 master_service.cpp:1660] Task cleanup thread started
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:801: Failure
+Value of: failed.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:26.365403 918236 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.FailedRemountKeepsReplicaInvalidAndCanBeRetried (1011 ms)
+[ RUN      ] MasterServiceHATest.MultiSegmentRemountFailurePublishesNeitherSegment
+I0818 10:49:27.375293 918215 master_service.cpp:10067] Restored promoted-primary state: objects=3, segments=2, oplog_sequence_id=7
+I0818 10:49:27.375327 918240 master_service.cpp:1660] Task cleanup thread started
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:857: Failure
+Value of: remount.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:27.377351 918240 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.MultiSegmentRemountFailurePublishesNeitherSegment (1011 ms)
+[ RUN      ] MasterServiceHATest.EmptyStandbySegmentCanRemount
+I0818 10:49:28.386960 918215 master_service.cpp:10067] Restored promoted-primary state: objects=0, segments=1, oplog_sequence_id=7
+I0818 10:49:28.387037 918244 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:28.389317 918244 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] MasterServiceHATest.EmptyStandbySegmentCanRemount (1011 ms)
+[ RUN      ] MasterServiceHATest.RemountRejectsStandbySegmentNameMismatch
+I0818 10:49:29.403209 918215 master_service.cpp:10067] Restored promoted-primary state: objects=0, segments=1, oplog_sequence_id=7
+I0818 10:49:29.403277 918248 master_service.cpp:1660] Task cleanup thread started
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:905: Failure
+Value of: failed.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:29.408334 918248 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RemountRejectsStandbySegmentNameMismatch (1016 ms)
+[ RUN      ] MasterServiceHATest.RemountRejectsStandbySegmentEndpointMismatch
+I0818 10:49:30.414125 918215 master_service.cpp:10067] Restored promoted-primary state: objects=0, segments=1, oplog_sequence_id=7
+E0818 10:49:30.414141 918215 master_service.cpp:9920] Standby remount endpoint mismatch, segment=standby_endpoint_name, restored=standby_endpoint_value, incoming=wrong_endpoint
+I0818 10:49:30.414180 918252 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:30.420857 918252 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] MasterServiceHATest.RemountRejectsStandbySegmentEndpointMismatch (1010 ms)
+[ RUN      ] MasterServiceHATest.RemountRejectsCxlForStandbyMemorySegment
+I0818 10:49:31.425091 918215 master_service.cpp:10067] Restored promoted-primary state: objects=0, segments=1, oplog_sequence_id=7
+E0818 10:49:31.425107 918215 master_service.cpp:9915] Restored cxl segment cannot be remounted, name=standby_protocol_segment
+I0818 10:49:31.425133 918256 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:31.431658 918256 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] MasterServiceHATest.RemountRejectsCxlForStandbyMemorySegment (1010 ms)
+[ RUN      ] MasterServiceHATest.RestoreFromStandbyPreservesCxlBufferDescriptor
+I0818 10:49:32.436088 918215 master_service.cpp:10067] Restored promoted-primary state: objects=1, segments=1, oplog_sequence_id=7
+I0818 10:49:32.436131 918260 master_service.cpp:1660] Task cleanup thread started
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:985: Failure
+Expected equality of these values:
+  public_replicas.error()
+    Which is: OBJECT_NOT_FOUND
+  ErrorCode::REPLICA_IS_NOT_READY
+    Which is: REPLICA_IS_NOT_READY
+
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:990: Failure
+Value of: remount_result.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:32.443583 918260 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RestoreFromStandbyPreservesCxlBufferDescriptor (1010 ms)
+[ RUN      ] MasterServiceHATest.RemountRejectsExistingSegmentFromDifferentClient
+I0818 10:49:33.445206 918215 master_service.cpp:781] client_id=16447493000838394988-12421886790182576262, action=mount_segment, segment_name=remount_owner_segment
+I0818 10:49:33.445291 918264 master_service.cpp:1660] Task cleanup thread started
+W0818 10:49:33.451967 918215 segment.cpp:166] segment_name=remount_owner_segment, warn=segment_already_exists
+W0818 10:49:33.451975 918215 segment.cpp:359] segment_name=remount_owner_segment, warn=segment_already_exists
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:1011: Failure
+Value of: result.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:33.452786 918264 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RemountRejectsExistingSegmentFromDifferentClient (1009 ms)
+[ RUN      ] MasterServiceHATest.RemountRejectsMismatchedExistingSegmentIdentity
+I0818 10:49:34.455024 918215 master_service.cpp:781] client_id=8090582637436741466-14553252816228876718, action=mount_segment, segment_name=remount_identity_segment
+I0818 10:49:34.455191 918268 master_service.cpp:1660] Task cleanup thread started
+W0818 10:49:34.461571 918215 segment.cpp:166] segment_name=remount_identity_segment, warn=segment_already_exists
+W0818 10:49:34.461577 918215 segment.cpp:359] segment_name=remount_identity_segment, warn=segment_already_exists
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:1026: Failure
+Value of: result.has_value()
+  Actual: true
+Expected: false
+
+I0818 10:49:34.461735 918268 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RemountRejectsMismatchedExistingSegmentIdentity (1009 ms)
+[ RUN      ] MasterServiceHATest.RestoreFromStandbyPreservesNoFBufferDescriptor
+I0818 10:49:35.465723 918215 master_service.cpp:10067] Restored promoted-primary state: objects=1, segments=0, oplog_sequence_id=7
+/workspace/Mooncake/mooncake-store/tests/ha/master_service_ha_test.cpp:1068: Failure
+Value of: public_replicas.has_value()
+  Actual: false
+Expected: true
+
+I0818 10:49:35.465797 918272 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:35.465807 918272 master_service.cpp:1679] Task cleanup thread stopped
+[  FAILED  ] MasterServiceHATest.RestoreFromStandbyPreservesNoFBufferDescriptor (20 ms)
+[ RUN      ] MasterServiceHATest.OplogDisabledByDefaultDoesNotCreateWriter
+I0818 10:49:35.490185 918276 master_service.cpp:1660] Task cleanup thread started
+I0818 10:49:35.490195 918276 master_service.cpp:1679] Task cleanup thread stopped
+[       OK ] MasterServiceHATest.OplogDisabledByDefaultDoesNotCreateWriter (14 ms)
+[ RUN      ] MasterServiceHATest.OplogExplicitEnableCreatesWriter
+I0818 10:49:35.512378 918280 master_service.cpp:1660] Task cleanup thread started
+E0818 10:49:35.512800 918215 etcd_helper.cpp:80] key=/oplog/oplog_explicit_enable/durable_prefix, error=etcd client not initialized
+E0818 10:49:35.512809 918215 master_service.cpp:9469] Failed to initialize the batch OpLog durable prefix: ETCD_OPERATION_ERROR
+E0818 10:49:35.512811 918215 master_service.cpp:495] Failed to initialize the batch OpLog writer: ETCD_OPERATION_ERROR
+terminate called without an active exception

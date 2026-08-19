@@ -1,0 +1,22 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 6 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from StandbyControllerTest
+[ RUN      ] StandbyControllerTest.PromoteStandbyReturnsStartFailure
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E0819 18:53:29.002869 459984 catalog_backed_snapshot_provider.cpp:484] Invalid snapshot provider configuration: unknown snapshot catalog store type: invalid
+E0819 18:53:29.002887 459984 standby_controller.cpp:120] Failed to initialize standby snapshot provider, backend=etcd, error=INVALID_PARAMS
+[       OK ] StandbyControllerTest.PromoteStandbyReturnsStartFailure (0 ms)
+[ RUN      ] StandbyControllerTest.OplogEnablementControlsReaderController
+I0819 18:53:29.002911 459984 standby_controller.cpp:336] HA standby controller falls back to noop, backend_type=etcd
+I0819 18:53:29.002914 459984 standby_controller.cpp:336] HA standby controller falls back to noop, backend_type=redis
+[       OK ] StandbyControllerTest.OplogEnablementControlsReaderController (0 ms)
+[ RUN      ] StandbyControllerTest.PromoteStandbyAndExport_ReturnsErrorWhenNotStarted
+E0819 18:53:29.002930 459984 catalog_backed_snapshot_provider.cpp:484] Invalid snapshot provider configuration: unknown snapshot catalog store type: invalid
+E0819 18:53:29.002933 459984 standby_controller.cpp:120] Failed to initialize standby snapshot provider, backend=unknown, error=INVALID_PARAMS
+/workspace/Mooncake/mooncake-store/tests/ha/standby/hot_standby_snapshot_bootstrap_test.cpp:210: Failure
+Value of: result.has_value()
+  Actual: true
+Expected: false
+
+hot_standby_snapshot_bootstrap_test: /usr/local/include/ylt/util/tl/expected.hpp:2046: constexpr E& tl::expected<T, E>::error() & [with T = mooncake::ha::PromotionContext; E = mooncake::ErrorCode]: Assertion `!has_value()' failed.

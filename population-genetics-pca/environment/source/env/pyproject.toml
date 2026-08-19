@@ -1,0 +1,18 @@
+[project]
+name = "pcabench"
+version = "0.1.0"
+description = "From-scratch population-genetics PCA benchmark and private grader"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+]
+
+[dependency-groups]
+dev = [
+    # Installed only so the adversarial numba submission really would execute if
+    # the library gate regressed; the production task image deliberately omits it.
+    "numba>=0.61",
+    "pytest>=8.3,<10",
+]

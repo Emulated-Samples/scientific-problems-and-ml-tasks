@@ -1,0 +1,17 @@
+mooncake-store/tests/ha/oplog/etcd_oplog_store_test.cpp
+mooncake-store/tests/ha/oplog/ha_recovery_test.cpp
+mooncake-store/tests/ha/oplog/localfs_hot_standby_integration_test.cpp
+mooncake-store/tests/ha/oplog/localfs_oplog_store_test.cpp
+mooncake-store/tests/ha/oplog/mock_oplog_store.h
+mooncake-store/tests/ha/oplog/oplog_manager_test.cpp
+mooncake-store/tests/ha/oplog/oplog_replicator_test.cpp
+mooncake-store/tests/ha/oplog/oplog_serializer_test.cpp
+mooncake-store/tests/localfs_hot_standby_integration_test.cpp
+mooncake-store/tests/ha/oplog/mock_metadata_store.h
+mooncake-store/tests/ha/oplog/mock_snapshot_provider.h
+mooncake-store/tests/ha/oplog/oplog_applier_test.cpp
+mooncake-store/tests/ha/standby/ha_metric_manager_test.cpp
+mooncake-store/tests/ha/standby/hot_standby_service_test.cpp
+mooncake-store/tests/ha/standby/hot_standby_snapshot_bootstrap_test.cpp
+mooncake-store/tests/ha/snapshot/catalog_backed_snapshot_provider_test.cpp
+mooncake-store/tests/ha/snapshot/snapshot_child_process_test.cpp

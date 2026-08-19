@@ -1,0 +1,1483 @@
+{
+  "tests": 145,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-08-19T16:36:52Z",
+  "time": "314.635s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "TenantScopedStorageKeyTest",
+      "tests": 1,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T16:36:52Z",
+      "time": "0s",
+      "testsuite": [
+        {
+          "name": "RoundTripsAndParsesLegacyKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 328,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:52Z",
+          "time": "0s",
+          "classname": "TenantScopedStorageKeyTest"
+        }
+      ]
+    },
+    {
+      "name": "MasterServiceTest",
+      "tests": 144,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-08-19T16:36:52Z",
+      "time": "314.635s",
+      "testsuite": [
+        {
+          "name": "MountUnmountSegmentWithCachelibAllocator",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 398,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:52Z",
+          "time": "1.015s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "MountUnmountSegmentWithOffsetAllocator",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 471,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:53Z",
+          "time": "0.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RandomMountUnmountSegment",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 529,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:53Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentMountUnmount",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 558,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:54Z",
+          "time": "1.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "PutStartInvalidParams",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 594,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:55Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "PutStartGroupIdsValidation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 720,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:56Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GroupedObjectRoutesKeyLevelLookupAndRemove",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 753,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:57Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GroupRoutingIsTenantScopedForSameUserKey",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 778,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:58Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "StandbySnapshotRestorePreservesTenantScopedKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 823,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:59Z",
+          "time": "0.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchGetReplicaListPreservesOrderWithGroupedKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 845,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:36:59Z",
+          "time": "1.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchGetReplicaListKeepsTenantIsolation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 894,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:00Z",
+          "time": "1.014s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GetAllKeysListsOnlyRequestedTenant",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 934,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:01Z",
+          "time": "1.012s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentGroupedAndUngroupedFirstCreateDoesNotDuplicateMetadata",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1000,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:02Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentDifferentGroupedFirstCreateDoesNotDuplicateMetadata",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1061,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:03Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ExpiredGroupedPutCanBeReplacedByUngroupedPut",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1130,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:04Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchRemoveUnregistersGroupedRoute",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1163,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:05Z",
+          "time": "1.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveByRegexUnregistersGroupedRoute",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1186,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:06Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GroupedLeaseRefreshNearExpiryProtectsCurrentMembers",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1210,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:07Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GroupedLeaseRefreshAfterMembershipChangeDoesNotWaitForTriggerExpiry",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1249,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:08Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveGroupedMemberPreservesOtherMembers",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1286,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:09Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertPreservesGroupMembership",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1317,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:10Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "IncompleteGroupedUpsertCanBecomeUngrouped",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1360,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:11Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertRejectsExistingUngroupedToGrouped",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1389,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:12Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GroupedEvictionExpandsSafeMembersAndSkipsLeasedGroup",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1411,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:13Z",
+          "time": "2.018s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GroupedEvictionSkipsUnsafeMembersAndEvictsSafePeers",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1493,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:15Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchUpsertStartMixedGroupIdsPreservesOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1536,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:16Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "WrappedBatchPutStartMixedGroupIdsPreservesOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1584,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:17Z",
+          "time": "1.006s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "PutStartEndFlow",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1644,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:18Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "TenantPutGetRemoveIsolatesSameUserKey",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1698,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:19Z",
+          "time": "0.019s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RegexOperationsAreTenantScoped",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1735,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:19Z",
+          "time": "1.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "TenantBatchUpsertAndRevokeAreScoped",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1786,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:20Z",
+          "time": "0.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "TenantBatchRemoveAndRemoveAllAreScoped",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1841,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:20Z",
+          "time": "1.012s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "LegacyRemoveAllRemovesAllTenants",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1889,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:21Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "PutWithPreferredSegment",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1923,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:22Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "PutWithPreferredSegments",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 1963,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:23Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ResolveMooncakeHostIdUsesLocalHostnameAndRejectsLoopback",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2007,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:24Z",
+          "time": "0s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "MasterConfigParsesLocalFirstStrategy",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2024,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:24Z",
+          "time": "0s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "LocalFirstPutPrefersWriterHost",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2034,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:24Z",
+          "time": "1.006s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "LocalFirstPutFallsBackToNextOrderedHost",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2061,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:25Z",
+          "time": "1.012s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "LocalFirstPutFallsBackWhenLocalSegmentIsFull",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2088,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:26Z",
+          "time": "1.013s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ExplicitPreferredSegmentOverridesLocalFirst",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2129,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:27Z",
+          "time": "1.007s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ExplicitPreferredSegmentFallsBackToLocalFirst",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2158,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:28Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RandomPutStartEndFlow",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2200,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:29Z",
+          "time": "1.012s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GetReplicaListByRegex",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2249,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:30Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GetReplicaListByRegexComplex",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2309,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:31Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GetReplicaList",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2435,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:32Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2464,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:33Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RandomRemoveObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2495,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:34Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveByRegex",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2526,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:35Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CopyStart",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2563,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:36Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CopyEnd",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2711,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:37Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CopyRevoke",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2826,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:39Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "MoveStart",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 2917,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:40Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "MoveEnd",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3064,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:41Z",
+          "time": "1.007s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "MoveRevoke",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3147,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:42Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ProtectCopyMoveSourceFromEviction",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3240,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:37:43Z",
+          "time": "69.018s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "DiscardTimeoutCopyMove",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3322,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:38:52Z",
+          "time": "70.025s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveByRegexComplex",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3410,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:02Z",
+          "time": "4.24s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveAll",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3594,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:06Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "SingleSliceMultiReplicaFlow",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3629,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:07Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CleanupStaleHandlesTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3697,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:08Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentWriteAndRemoveAll",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3767,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:09Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentReadAndRemoveAll",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3842,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:10Z",
+          "time": "3.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentRemoveAllOperations",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3929,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:13Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UnmountSegmentImmediateCleanup",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 3983,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:14Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ReadableAfterPartialUnmountWithReplication",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4039,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:15Z",
+          "time": "1.007s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UnmountSegmentPerformance",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4095,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:16Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveLeasedObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4155,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:17Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveAllLeasedObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4245,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:18Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "EvictObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4285,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:19Z",
+          "time": "3.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "TryEvictLeasedObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4327,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:22Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "RemoveSoftPinObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4379,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:23Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "SoftPinObjectsNotEvictedBeforeOtherObjects",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4427,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:24Z",
+          "time": "8.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "SoftPinObjectsCanBeEvicted",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4507,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:32Z",
+          "time": "2.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "SoftPinExtendedOnGet",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4555,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:34Z",
+          "time": "5.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "SoftPinObjectsNotAllowEvict",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4649,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:39Z",
+          "time": "3.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ReplicaSegmentsAreUnique",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4704,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:42Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ReplicationFactorTwoWithSingleSegment",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4746,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:43Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchExistKeyTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4778,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:44Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchExistKeyGroupedAndIncompletePreservesOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4820,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:45Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchExistKeyTenantAwarePreservesOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4868,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:46Z",
+          "time": "1.013s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "WrappedBatchExistKeyUsesTenantAwareBatchPath",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4913,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:47Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "WrappedWriteBoundaryRejectsInvalidTenantIds",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4976,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:48Z",
+          "time": "0.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "WrappedRequestBoundaryRejectsInvalidTenantIds",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 4995,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:48Z",
+          "time": "0.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "WrappedRequestBoundaryPreservesTenantNormalization",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5029,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:48Z",
+          "time": "1.016s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5047,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:49Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpMultipleSegmentsTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5094,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:50Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpEmptyClientIdTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5138,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:51Z",
+          "time": "0.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpMultipleSegmentsEmptyTeEndpointTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5151,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:51Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpBracketedIpv6Test",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5189,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:52Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpLinkLocalIpv6WithScopeTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5214,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:53Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpIpv6NoPortTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5239,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:54Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchQueryIpMixedIpv4AndIpv6Test",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5264,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:55Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "PutStartExpiringTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5300,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:40:56Z",
+          "time": "14.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ConcurrentMountLocalDiskSegment",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5448,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:10Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "OffloadObjectHeartbeat",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5477,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:11Z",
+          "time": "1.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearAllSegments",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5542,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:12Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearSpecificSegment",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5594,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:13Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearWithLeaseActive",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5665,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:14Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearWithDifferentClientId",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5706,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:15Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearWithNonExistentKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5747,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:16Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearWithEmptyKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5767,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:17Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearWithEmptyStringKeys",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5783,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:18Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchReplicaClearMixedScenario",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5818,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:19Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CreateCopyTaskTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5890,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:20Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CreateMoveTaskTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 5956,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:21Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "QueryTaskTest",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6035,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:22Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "FetchTasksEmptyWhenNoTasks",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6088,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:23Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "FetchTasksReturnsAssignedTasksOnlyAndDrainsQueue",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6098,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:24Z",
+          "time": "1.007s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "TenantTasksCarryTenantInPayload",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6163,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:25Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "LegacyTaskPayloadDefaultsTenant",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6218,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:26Z",
+          "time": "0s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "FetchTasksRespectsBatchSize",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6239,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:26Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpdateTaskSuccessFlow",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6290,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:27Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpdateTaskRejectsWrongClient",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6352,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:28Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpdateTaskNotFound",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6398,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:29Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CreateDrainJobMarksSegmentDrainingAndSkipsAllocation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6413,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:30Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "DrainJobSchedulesMoveTaskAndConvergesToDrained",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6455,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:31Z",
+          "time": "2.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CancelDrainJobRestoresSegmentStatus",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6506,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:33Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "CancelDrainJobRejectsActiveMoveTasks",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6538,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:34Z",
+          "time": "1.007s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "DrainJobFailsAfterRetryBudgetExhausted",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6569,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:35Z",
+          "time": "3.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ForceRemoveLeasedObject",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6611,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:38Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ForceRemoveByRegexLeasedObjects",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6655,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:39Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "ForceRemoveAllLeasedObjects",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6714,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:40Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertNewKey",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6766,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:41Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertSameSize",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6801,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:42Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertSameSizeRefreshesMetadata",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6849,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:43Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertDifferentSize",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6886,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:44Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertConflictReplicationTask",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6934,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:45Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertPreemptsInProgressPut",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 6974,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:46Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertRevoke",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7016,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:47Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertInPlaceThenRevoke",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7043,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:48Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "BatchUpsertStart",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7079,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:50Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertPreemptsInProgressUpsert",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7114,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:51Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "UpsertDifferentSizeThenRevoke",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7171,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:52Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "HardPinObjectNotEvicted",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7217,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:53Z",
+          "time": "1.008s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "HardPinWithSoftPinEvictionOrder",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7280,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:54Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "HardPinDefaultIsFalse",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7357,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:55Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_SetsCorrectStatus",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7405,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:56Z",
+          "time": "2.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_RejectWrongClient",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7434,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:41:58Z",
+          "time": "2.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_Idempotent",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7456,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:42:00Z",
+          "time": "2.011s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_TimerExpiresAndUnmounts",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7477,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:42:02Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_QueryStatusByIdWithReusedName",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7508,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:42:03Z",
+          "time": "1.01s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_EarlierTimerPreemptsWait",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7540,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:42:04Z",
+          "time": "1.009s",
+          "classname": "MasterServiceTest"
+        },
+        {
+          "name": "GracefulUnmountSegment_PreventAllocation",
+          "file": "\/workspace\/Mooncake\/mooncake-store\/tests\/master_service_test.cpp",
+          "line": 7571,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-08-19T16:42:05Z",
+          "time": "2.011s",
+          "classname": "MasterServiceTest"
+        }
+      ]
+    }
+  ]
+}

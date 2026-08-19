@@ -1,0 +1,125 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 27 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 27 tests from OpLogApplierTest
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd
+[       OK ] OpLogApplierTest.TestApplyPutEnd (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutRevoke
+[       OK ] OpLogApplierTest.TestApplyPutRevoke (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyRemove
+[       OK ] OpLogApplierTest.TestApplyRemove (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_InvalidOpType
+[       OK ] OpLogApplierTest.TestApplyOpLogEntry_InvalidOpType (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyInOrder
+[       OK ] OpLogApplierTest.TestApplyInOrder (0 ms)
+[ RUN      ] OpLogApplierTest.FutureSequenceFailsWithoutBuffering
+E0818 10:49:23.291891 918212 oplog_applier.cpp:65] OpLogApplier: out-of-order entry, sequence_id=3, expected=2
+[       OK ] OpLogApplierTest.FutureSequenceFailsWithoutBuffering (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyDuplicateSequenceId
+[       OK ] OpLogApplierTest.TestApplyDuplicateSequenceId (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_ValidChecksum
+[       OK ] OpLogApplierTest.TestApplyOpLogEntry_ValidChecksum (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_InvalidChecksum
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:202: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:203: Failure
+Expected equality of these values:
+  1u
+    Which is: 1
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:204: Failure
+Value of: mock_metadata_store_->Exists("key1")
+  Actual: true
+Expected: false
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidChecksum (0 ms)
+[ RUN      ] OpLogApplierTest.TestChecksumFailureMetric
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:214: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+[  FAILED  ] OpLogApplierTest.TestChecksumFailureMetric (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_ValidSize
+[       OK ] OpLogApplierTest.TestApplyOpLogEntry_ValidSize (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_InvalidSize
+W0818 10:49:23.291944 918212 oplog_applier.cpp:198] OpLogApplier: PUT_END without payload, key=kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, sequence_id=1
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:235: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:236: Failure
+Expected equality of these values:
+  1u
+    Which is: 1
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidSize (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntry_PayloadTooLarge
+E0818 10:49:23.295653 918212 oplog_applier.cpp:215] OpLogApplier: failed to deserialize payload for key=key1, sequence_id=1, payload_size=10485761, error_code=1
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:247: Failure
+Value of: applier_->ApplyOpLogEntry(entry)
+  Actual: true
+Expected: false
+
+/workspace/Mooncake/mooncake-store/tests/ha/oplog/oplog_applier_test.cpp:248: Failure
+Expected equality of these values:
+  1u
+    Which is: 1
+  applier_->GetExpectedSequenceId()
+    Which is: 2
+
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_PayloadTooLarge (4 ms)
+[ RUN      ] OpLogApplierTest.TestRecover
+I0818 10:49:23.296005 918212 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=10, expected_sequence_id set to=11
+[       OK ] OpLogApplierTest.TestRecover (0 ms)
+[ RUN      ] OpLogApplierTest.TestRecover_ZeroSequenceId
+I0818 10:49:23.296011 918212 oplog_applier.cpp:123] OpLogApplier: recovered from sequence_id=0, expected_sequence_id set to=1
+[       OK ] OpLogApplierTest.TestRecover_ZeroSequenceId (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd_ValidPayload
+[       OK ] OpLogApplierTest.TestApplyPutEnd_ValidPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd_InvalidPayload
+E0818 10:49:23.296018 918212 oplog_applier.cpp:215] OpLogApplier: failed to deserialize payload for key=key1, sequence_id=1, payload_size=14, error_code=1
+[       OK ] OpLogApplierTest.TestApplyPutEnd_InvalidPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyPutEnd_EmptyPayload
+W0818 10:49:23.296023 918212 oplog_applier.cpp:198] OpLogApplier: PUT_END without payload, key=key1, sequence_id=1
+[       OK ] OpLogApplierTest.TestApplyPutEnd_EmptyPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntries_Batch
+[       OK ] OpLogApplierTest.TestApplyOpLogEntries_Batch (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplyOpLogEntries_WithGaps
+E0818 10:49:23.296034 918212 oplog_applier.cpp:65] OpLogApplier: out-of-order entry, sequence_id=3, expected=2
+[       OK ] OpLogApplierTest.TestApplyOpLogEntries_WithGaps (0 ms)
+[ RUN      ] OpLogApplierTest.TestGetExpectedSequenceId
+[       OK ] OpLogApplierTest.TestGetExpectedSequenceId (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentMount
+[       OK ] OpLogApplierTest.TestApplySegmentMount (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentUnmount
+[       OK ] OpLogApplierTest.TestApplySegmentUnmount (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentUpdate
+[       OK ] OpLogApplierTest.TestApplySegmentUpdate (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentMount_InvalidPayload
+E0818 10:49:23.296065 918212 oplog_applier.cpp:144] OpLogApplier: failed to deserialize SEGMENT_MOUNT payload, sequence_id=1
+[       OK ] OpLogApplierTest.TestApplySegmentMount_InvalidPayload (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentUnmount_NonExistent
+[       OK ] OpLogApplierTest.TestApplySegmentUnmount_NonExistent (0 ms)
+[ RUN      ] OpLogApplierTest.TestApplySegmentOperations_Mixed
+[       OK ] OpLogApplierTest.TestApplySegmentOperations_Mixed (0 ms)
+[----------] 27 tests from OpLogApplierTest (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 27 tests from 1 test suite ran. (4 ms total)
+[  PASSED  ] 23 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidChecksum
+[  FAILED  ] OpLogApplierTest.TestChecksumFailureMetric
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_InvalidSize
+[  FAILED  ] OpLogApplierTest.TestApplyOpLogEntry_PayloadTooLarge
+
+ 4 FAILED TESTS

@@ -1,0 +1,89 @@
+Note: Google Test filter = -BufferAllocatorTest.CachelibImportRejectsChunkInSlabTail:VerifierIntegrityCanary.AssertionMustFailWhenEnabled
+[==========] Running 16 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 12 tests from BufferAllocatorTest
+[ RUN      ] BufferAllocatorTest.AllocateAndDeallocate
+[       OK ] BufferAllocatorTest.AllocateAndDeallocate (0 ms)
+[ RUN      ] BufferAllocatorTest.AllocateMultiple
+I0819 16:42:07.154875 386838 buffer_allocator_test.cpp:110] Cleaned up handles in AllocateMultiple test
+I0819 16:42:07.154932 386838 buffer_allocator_test.cpp:110] Cleaned up handles in AllocateMultiple test
+[       OK ] BufferAllocatorTest.AllocateMultiple (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses
+/workspace/Mooncake/mooncake-store/tests/buffer_allocator_test.cpp:135: Failure
+Value of: restored.has_value()
+  Actual: false
+Expected: true
+
+[  FAILED  ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsValidatesRangesAndOrder (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoredOffsetHandleReleasesItsExactAddress
+[       OK ] BufferAllocatorTest.RestoredOffsetHandleReleasesItsExactAddress (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreOffsetAllocationsHasNoArbitraryGapLimit
+[       OK ] BufferAllocatorTest.RestoreOffsetAllocationsHasNoArbitraryGapLimit (43 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses
+/workspace/Mooncake/mooncake-store/tests/buffer_allocator_test.cpp:277: Failure
+Value of: restored.has_value()
+  Actual: false
+Expected: true
+
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts
+/workspace/Mooncake/mooncake-store/tests/buffer_allocator_test.cpp:331: Failure
+Value of: valid_after_fail.has_value()
+  Actual: false
+Expected: true
+
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts (0 ms)
+[ RUN      ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors
+/workspace/Mooncake/mooncake-store/tests/buffer_allocator_test.cpp:372: Failure
+Value of: rdma.has_value()
+  Actual: false
+Expected: true
+
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors (0 ms)
+[ RUN      ] BufferAllocatorTest.AllocateTooLarge
+E0819 16:42:07.198695 386838 allocator.cpp:146] allocation_exception error=Invalid size for alloc 16777217 
+[       OK ] BufferAllocatorTest.AllocateTooLarge (0 ms)
+[ RUN      ] BufferAllocatorTest.RepeatAllocateAndDeallocate
+[       OK ] BufferAllocatorTest.RepeatAllocateAndDeallocate (13 ms)
+[ RUN      ] BufferAllocatorTest.ParallelAllocation
+I0819 16:42:08.212944 386838 buffer_allocator_test.cpp:465] Completed parallel allocation/deallocation test for CACHELIB
+I0819 16:42:09.213527 386838 buffer_allocator_test.cpp:465] Completed parallel allocation/deallocation test for OFFSET
+[       OK ] BufferAllocatorTest.ParallelAllocation (2001 ms)
+[----------] 12 tests from BufferAllocatorTest (2059 ms total)
+
+[----------] 4 tests from SimpleAllocatorTest
+[ RUN      ] SimpleAllocatorTest.BasicAllocationAndDeallocation
+I0819 16:42:09.213569 386838 allocator.cpp:333] initializing_simple_allocator size=16777216
+I0819 16:42:09.213595 386838 allocator.cpp:372] simple_allocator_initialized pool_id=0
+I0819 16:42:09.213606 386838 allocator.cpp:394] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.BasicAllocationAndDeallocation (0 ms)
+[ RUN      ] SimpleAllocatorTest.MultipleAllocations
+I0819 16:42:09.213610 386838 allocator.cpp:333] initializing_simple_allocator size=16777216
+I0819 16:42:09.213618 386838 allocator.cpp:372] simple_allocator_initialized pool_id=0
+I0819 16:42:09.213627 386838 allocator.cpp:394] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.MultipleAllocations (0 ms)
+[ RUN      ] SimpleAllocatorTest.AllocationTooLarge
+I0819 16:42:09.213631 386838 allocator.cpp:333] initializing_simple_allocator size=16777216
+I0819 16:42:09.213639 386838 allocator.cpp:372] simple_allocator_initialized pool_id=0
+E0819 16:42:09.213690 386838 allocator.cpp:420] allocation_exception error=Invalid size for alloc 16777217 
+I0819 16:42:09.213696 386838 allocator.cpp:394] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.AllocationTooLarge (0 ms)
+[ RUN      ] SimpleAllocatorTest.StressTest
+I0819 16:42:09.213699 386838 allocator.cpp:333] initializing_simple_allocator size=268435456
+I0819 16:42:09.213716 386838 allocator.cpp:372] simple_allocator_initialized pool_id=0
+I0819 16:42:09.213843 386838 allocator.cpp:394] simple_allocator_destroyed status=success
+[       OK ] SimpleAllocatorTest.StressTest (0 ms)
+[----------] 4 tests from SimpleAllocatorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 2 test suites ran. (2059 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] BufferAllocatorTest.RestoreOffsetAllocationsAtOriginalAddresses
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibAllocationsAtOriginalAddresses
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibAllocationsRejectsInvalidLayouts
+[  FAILED  ] BufferAllocatorTest.RestoreCachelibRejectsNonMemoryDescriptors
+
+ 4 FAILED TESTS

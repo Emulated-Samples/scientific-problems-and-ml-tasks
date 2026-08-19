@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""Known shortcut: correct Patterson math behind a fixed-width uppercase bare-GT parser."""
+import sys
+
+import numpy as np
+
+
+vcf, k, output = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+sample_ids = None
+rows = []
+with open(vcf, "rb") as source:
+    for raw in source:
+        if raw.startswith(b"#CHROM"):
+            sample_ids = [value.decode() for value in raw.rstrip(b"\r\n").split(b"\t")[9:]]
+            continue
+        if raw.startswith(b"#"):
+            continue
+        fields = raw.rstrip(b"\r\n").split(b"\t", 9)
+        if len(fields) != 10 or fields[8] != b"GT":
+            continue
+        ref, alt = fields[3], fields[4]
+        if len(ref) != 1 or len(alt) != 1 or ref not in b"ACGT" or alt not in b"ACGT":
+            continue
+        encoded = np.frombuffer(fields[9], dtype=np.uint8)
+        if sample_ids is None or encoded.size != 4 * len(sample_ids) - 1:
+            continue
+        left = encoded[0::4]
+        separator = encoded[1::4]
+        right = encoded[2::4]
+        valid = ((separator == ord("/")) & np.isin(left, [ord("0"), ord("1")])
+                 & np.isin(right, [ord("0"), ord("1")]))
+        dosage = left.astype(float) + right.astype(float) - 2 * ord("0")
+        dosage[~valid] = np.nan
+        called = np.isfinite(dosage)
+        if called.sum() < 2:
+            continue
+        p = dosage[called].sum() / (2 * called.sum())
+        if not 0 < p < 1:
+            continue
+        dosage[~called] = 2 * p
+        rows.append((dosage - 2 * p) / np.sqrt(2 * p * (1 - p)))
+
+if sample_ids is None or not rows:
+    raise SystemExit("fixed-width parser found no supported markers")
+design = np.asarray(rows)
+gram = design.T @ design / design.shape[0]
+eigenvalues, vectors = np.linalg.eigh(gram)
+order = np.argsort(eigenvalues)[::-1][:k]
+scores = vectors[:, order] * np.sqrt(np.clip(eigenvalues[order], 0, None))[None, :]
+with open(output, "w") as target:
+    target.write("sample_id\t" + "\t".join(f"PC{i}" for i in range(1, k + 1)) + "\n")
+    for sample_id, values in zip(sample_ids, scores):
+        target.write(sample_id + "\t" + "\t".join(f"{value:.12g}" for value in values) + "\n")

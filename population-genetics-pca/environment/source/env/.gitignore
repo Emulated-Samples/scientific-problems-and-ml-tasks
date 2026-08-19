@@ -1,0 +1,49 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Generated data (regenerated from data/generate.py; keep the repo lean)
+data/generated/
+*.vcf
+*.vcf.gz
+*.truth.json
+
+# tooling caches / scratch
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.log
+scratch/
+environment/dist/
+environment/node_modules/
+# workspace/ is tracked: workspace/README.md + the gold workspace/submission/pca
+# live on `main` (empty on problem/*). Ignore only runtime state the solver drops.
+workspace/.hyperfocal/
+packages/*/
+
+# LIVE CREDENTIALS, never committed. This is not hypothetical and not about the developer's laptop:
+# on a provisioned box the control plane writes `environment/.env` INSIDE this repository's checkout
+# -- AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN, refreshed via SSM. It is 0600
+# root-owned and untracked, so it is invisible until someone runs `git add -A` in a deployed
+# checkout, at which point live cloud credentials land in a PUBLIC repo. `hfdev env-publish` scans
+# every published tree for live dotenv files precisely because this accident is known to happen.
+#
+# This repo is squarely in range: every calibration ladder runs on a provisioned SC box, i.e. on a
+# deployed checkout with that file present. One line of deny costs nothing.
+#
+# No negation is needed here: no tracked file matches these patterns (checked, not assumed). If you
+# ever add a legitimate `*.env`, negate that exact path -- do not weaken the rule.
+.env
+*.env
+
+# NOTE: tasks/from_scratch_pca/tests/grader_pkg/ is a generated mirror of grader/reference/data
+# (via scripts/build_task.py) but is intentionally COMMITTED, not ignored: the Harbor task tree
+# must be self-contained at deploy time (no repo checkout of the source packages). CI runs
+# `build_task.py --check` to fail the build if the committed mirror drifts from source.
